@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-30T03:46:14.261Z</updated>
+  <updated>2020-11-13T10:54:41.309Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数学分析总结归纳</title>
+    <link href="http://yoursite.com/2020/11/12/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2020/11/12/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90%E6%80%BB%E7%BB%93/</id>
+    <published>2020-11-12T13:37:22.000Z</published>
+    <updated>2020-11-13T10:54:41.309Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于马上要数分期中考试了，所以赶紧来整理一波数分相关知识点来复习x</p><p><del>主要还是抄我室友的神仙笔记（bushi</del></p><p>大概以每章节的大块知识点进行分类，然后分别围绕知识点总结和体型做法总结。</p><p>具体概念目前仅限部分概念的完全罗列x <del>有时间再补上，或许是期末复习的时候</del></p><h1 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h1><h2 id="数列极限"><a href="#数列极限" class="headerlink" title="数列极限"></a>数列极限</h2><h2 id="重要知识点"><a href="#重要知识点" class="headerlink" title="重要知识点"></a>重要知识点</h2><h4 id="定义类"><a href="#定义类" class="headerlink" title="定义类"></a>定义类</h4><ol><li><p>实数公理 与 实数稠密性</p></li><li><p>数列极限的定义:</p><p> $\forall \varepsilon &lt;0,\exists N \in N_*$时 $\forall n&gt;N$ , 有$| a_n-a| &lt; \varepsilon$ 则称${a_n}$的极限为a，记为$lim a_n =a (n -&gt;\inf )$</p></li><li><p>数列有界，上确界和下确界</p></li><li>确界原理：非空上（下）有界集必有上（下）确界</li><li>区间套定理</li></ol><h4 id="性质类"><a href="#性质类" class="headerlink" title="性质类"></a>性质类</h4><ol><li>收敛数列的性质</li></ol><ul><li>极限唯一</li><li>收敛数列必有界</li><li>无界数列必发散</li><li>不等式性（$lim a_n=a,lim b_n=b $ &amp; $a&gt;b$ 则 $a_n &gt; (a+b)/2 &gt; b_n$ )</li><li>保号性（$lim a_n=a,\exists N \in N_* $ 当$n&gt;N$ 有$|a_n &gt;|a|/2&gt;0$)</li><li>夹逼性</li><li>推论1</li><li>推论2</li></ul><ol start="2"><li><p>极限四则运算<strong>（必须为有限项）</strong></p></li><li><p>数列的子列收敛 $\Leftrightarrow$ 数列收敛</p></li><li><p>单调有界数列必收敛（从某项开始）</p></li></ol><h3 id="常用结论"><a href="#常用结论" class="headerlink" title="常用结论"></a>常用结论</h3><p>$$<br>\lim\limits_{x\rightarrow\infty} \sqrt[n]{a}=1(a&gt;0)<br>\lim\limits_{x\rightarrow\infty} \sqrt[n]{n}=1<br>$$</p><p>$$<br>\frac{1}{n+1} &lt;ln(1+\frac{1}{n}) &lt;\frac{1}{n}<br>$$</p><p>$$<br>\lim\limits_{x\rightarrow\infty} (1+\frac{1}{n})^{n} =e<br>$$</p><h1 id="单变量函数的连续性"><a href="#单变量函数的连续性" class="headerlink" title="单变量函数的连续性"></a>单变量函数的连续性</h1><h1 id="单变量函数的微分学"><a href="#单变量函数的微分学" class="headerlink" title="单变量函数的微分学"></a>单变量函数的微分学</h1><p>此章节主要以罗列知识点为主</p><h2 id="微分"><a href="#微分" class="headerlink" title="微分"></a>微分</h2><ol><li>Fermat定理：若f在$x_0$取极值点且在此处可导，则$f’(x)=0$ 导数为0的点叫做驻点</li><li>Rolle定理：f在闭区间连续开区间可导则f能去掉区间最大最小值内所有的值</li><li><p>Lagrange（拉格朗日）中值定理：f在闭区间连续开区间可导区间$\varepsilon \in[a,b]$ 使$$ f’(\varepsilon)=\frac{f(b)-f(a)}{b-a}$$</p><ul><li>推论：f在I上连续且对$\forall x$ 有f(x)=0,则f为常值函数</li><li>推论：$|f(x)|&lt;M,|f(x_2 )-f(x_1)|&lt;M|x_2 -x_1|$</li></ul></li><li><p>Cauchy中值定理：f在闭区间连续开区间可导，$$\forall x \in(a,b) ,g’(x) \not=0 ,\exists \varepsilon\in(a,b) ,\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(\varepsilon)}{f(\varepsilon_)}  $$</p></li><li></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;由于马上要数分期中考试了，所以赶紧来整理一波数分相关知识点来复习x&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;主要还是抄我室友的神仙笔记（bushi&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;大概以每章节的大块知识点进行分类，然后分别围绕知识点总结和体型做法总结。&lt;/p&gt;
+&lt;p&gt;具体概念目前仅限部分概念的完</summary>
+      
+    
+    
+    
+    <category term="STUDY" scheme="http://yoursite.com/categories/STUDY/"/>
+    
+    
+    <category term="study_notes" scheme="http://yoursite.com/tags/study-notes/"/>
+    
+    <category term="数学分析" scheme="http://yoursite.com/tags/数学分析/"/>
+    
+  </entry>
   
   <entry>
     <title>SP学习笔记——Matlab使用篇</title>
@@ -53,9 +82,9 @@
     <link href="http://yoursite.com/2020/10/09/SP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E7%AF%87/"/>
     <id>http://yoursite.com/2020/10/09/SP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E7%90%86%E8%AE%BA%E7%AF%87/</id>
     <published>2020-10-09T02:19:51.814Z</published>
-    <updated>2020-11-12T13:39:13.654Z</updated>
+    <updated>2020-11-13T10:58:23.622Z</updated>
     
-    <content type="html"><![CDATA[<p> 目前开始学习信号处理</p><p>先开个坑~~待更新</p><hr><h1 id="傅里叶变换Fourier-Transform"><a href="#傅里叶变换Fourier-Transform" class="headerlink" title="傅里叶变换Fourier Transform"></a>傅里叶变换Fourier Transform</h1><h2 id="引述"><a href="#引述" class="headerlink" title="引述"></a>引述</h2><p>傅里叶变换主要应用于将信号经过处理后变成不同频率的组成</p><p>大概就会将合成的频率组合拆分成单个信号</p><p>有点类似于棱镜对于光，白光透过棱镜会分成不同的彩光。</p><p>将傅里叶变换看做棱镜，信号看做光来理解就差不多</p><p><img src="/2020/10/09/SP学习笔记——理论篇/1.png" alt=""></p><h2 id="Types-of-Fourier"><a href="#Types-of-Fourier" class="headerlink" title="Types of Fourier"></a>Types of Fourier</h2><ul><li><p>Fourier series 傅里叶级数</p></li><li><p>Fourier transform 傅里叶变换</p></li><li><p>Continuous Fourier transform 持续傅里叶变换</p></li><li><p>Discrete-time Fourier transform 离散时间傅里叶变换</p></li><li><p>Discrete Fourier transform 离散傅里叶变换</p></li><li><p>Fast Fourier transform 快速傅里叶变换<del>（FFT 是法法塔！</del></p></li></ul><p>首先是傅里叶级数</p><h2 id="傅里叶级数"><a href="#傅里叶级数" class="headerlink" title="傅里叶级数"></a>傅里叶级数</h2><p><img src="/2020/10/09/SP学习笔记——理论篇/2.png" alt=""></p><p>傅里叶级数的公式<br>$$<br>u(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n\cos2\pi ft +b_n \sin 2\pi nft)<br>$$</p><p>$$<br>x(t) =\sum_{k=-\infty}^{\infty} a_{k}e^{jkw_{0}t}=\sum_{k=-\infty}^{\infty} a_{k}e^{jk\frac{2\pi}{T}t}<br>$$</p><p>$$<br>x[n] =\sum_{k \in <n>} a_{k}e^{jkw_{0}n}=\sum_{k \in <n>}a_{k}e^{jk\frac{2\pi}{T}n}<br>$$</n></n></p><p>$$<br>a_k =\sum_{n \in <n>} x[n]e^{-jkw_{0}n}=\sum_{x \in <n>}a_n e^{-jk\frac{2\pi}{T}n}<br>$$</n></n></p><h1 id="数字图像处理"><a href="#数字图像处理" class="headerlink" title="数字图像处理"></a>数字图像处理</h1><h2 id="拜尔滤镜-Bayer-Filter"><a href="#拜尔滤镜-Bayer-Filter" class="headerlink" title="拜尔滤镜(Bayer Filter)"></a>拜尔滤镜(Bayer Filter)</h2><p>主要把光分成红光</p>]]></content>
+    <content type="html"><![CDATA[<p> 目前开始学习信号处理</p><p>先开个坑~~待更新</p><hr><h1 id="傅里叶变换Fourier-Transform"><a href="#傅里叶变换Fourier-Transform" class="headerlink" title="傅里叶变换Fourier Transform"></a>傅里叶变换Fourier Transform</h1><h2 id="引述"><a href="#引述" class="headerlink" title="引述"></a>引述</h2><p>傅里叶变换主要应用于将信号经过处理后变成不同频率的组成</p><p>大概就会将合成的频率组合拆分成单个信号</p><p>有点类似于棱镜对于光，白光透过棱镜会分成不同的彩光。</p><p>将傅里叶变换看做棱镜，信号看做光来理解就差不多</p><p><img src="/2020/10/09/SP学习笔记——理论篇/1.png" alt=""></p><h2 id="Types-of-Fourier"><a href="#Types-of-Fourier" class="headerlink" title="Types of Fourier"></a>Types of Fourier</h2><ul><li><p>Fourier series 傅里叶级数</p></li><li><p>Fourier transform 傅里叶变换</p></li><li><p>Continuous Fourier transform 持续傅里叶变换</p></li><li><p>Discrete-time Fourier transform 离散时间傅里叶变换</p></li><li><p>Discrete Fourier transform 离散傅里叶变换</p></li><li><p>Fast Fourier transform 快速傅里叶变换<del>（FFT 是法法塔！</del></p></li></ul><p>首先是傅里叶级数</p><h2 id="傅里叶级数"><a href="#傅里叶级数" class="headerlink" title="傅里叶级数"></a>傅里叶级数</h2><p><img src="/2020/10/09/SP学习笔记——理论篇/2.png" alt=""></p><p>傅里叶级数的公式<br>$$<br>u(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n\cos2\pi ft +b_n \sin 2\pi nft)<br>$$</p><p>$$<br>x(t) =\sum_{k=-\infty}^{\infty} a_{k}e^{jkw_{0}t}=\sum_{k=-\infty}^{\infty} a_{k}e^{jk\frac{2\pi}{T}t}<br>$$</p><p>$$<br>x[n] =\sum_{k \in \lt N \gt } a_{k}e^{jkw_{0}n}=\sum_{k \in \lt N \gt }a_{k}e^{jk\frac{2\pi}{T}n}<br>$$</p><p>$$<br>a_k =\sum_{n \in \lt N \gt} x[n]e^{-jkw_{0}n}=\sum_{x \in \lt N \gt}a_n e^{-jk\frac{2\pi}{T}n}<br>$$</p><h1 id="数字图像处理"><a href="#数字图像处理" class="headerlink" title="数字图像处理"></a>数字图像处理</h1><h2 id="拜尔滤镜-Bayer-Filter"><a href="#拜尔滤镜-Bayer-Filter" class="headerlink" title="拜尔滤镜(Bayer Filter)"></a>拜尔滤镜(Bayer Filter)</h2><p>主要把光分成红光</p>]]></content>
     
     
       
@@ -76,27 +105,6 @@
     <category term="信号处理" scheme="http://yoursite.com/tags/信号处理/"/>
     
     <category term="study_notes" scheme="http://yoursite.com/tags/study-notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2020/09/09/about/index/"/>
-    <id>http://yoursite.com/2020/09/09/about/index/</id>
-    <published>2020-09-09T07:44:07.448Z</published>
-    <updated>2020-09-04T15:00:32.135Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="这里是我的新博客！"><a href="#这里是我的新博客！" class="headerlink" title="这里是我的新博客！"></a>这里是我的新博客！</h2><p>可以叫我Aoki_umi 中文Aoki_灏~~</p><p>现在AFO的OIer一名，同时是业余画手</p><p>真实退役的老年选手blog，主要分享经验了，欢迎观光~~</p><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><p>lofter:   <a href="http://aoki-hitomi.lofter.com/" target="_blank" rel="noopener">Aoki_灏</a></p><p>QQ ​： 2830760496</p><p>luogu ​： <a href="https://www.luogu.org/space/show?uid=55501" target="_blank" rel="noopener">Aoki_灏</a></p><p>Github​ :  <a href="https://github.com/AokiUmi" target="_blank" rel="noopener">AokiUmi</a></p><h3 id="个人介绍"><a href="#个人介绍" class="headerlink" title="个人介绍"></a>个人介绍</h3><ul><li>业余同人手绘</li><li>逆裁死忠粉，我永远喜欢逆转裁判，我喜最好！</li><li>男神詹一美，嗯，显而易见。</li><li>ll赛高，umi老婆</li><li>音游玩家，其他都不玩</li><li>热爱时之歌，SOT大法好</li><li>目前drb深坑中~~</li></ul><p>欢迎互换友链，一起加油吧~~</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;这里是我的新博客！&quot;&gt;&lt;a href=&quot;#这里是我的新博客！&quot; class=&quot;headerlink&quot; title=&quot;这里是我的新博客！&quot;&gt;&lt;/a&gt;这里是我的新博客！&lt;/h2&gt;&lt;p&gt;可以叫我Aoki_umi 中文Aoki_灏~~&lt;/p&gt;
-&lt;p&gt;现在AFO的OIer一</summary>
-      
-    
-    
-    
     
   </entry>
   
@@ -390,9 +398,9 @@
     <category term="Contest" scheme="http://yoursite.com/categories/OI/Contest/"/>
     
     
-    <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
-    
     <category term="dp" scheme="http://yoursite.com/tags/dp/"/>
+    
+    <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
     
     <category term="二分" scheme="http://yoursite.com/tags/二分/"/>
     
@@ -484,13 +492,13 @@
     <category term="Contest" scheme="http://yoursite.com/categories/OI/Contest/"/>
     
     
+    <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
+    
     <category term="欧拉函数" scheme="http://yoursite.com/tags/欧拉函数/"/>
     
     <category term="Kruskal" scheme="http://yoursite.com/tags/Kruskal/"/>
     
     <category term="树链剖分" scheme="http://yoursite.com/tags/树链剖分/"/>
-    
-    <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
     
     <category term="题解" scheme="http://yoursite.com/tags/题解/"/>
     
