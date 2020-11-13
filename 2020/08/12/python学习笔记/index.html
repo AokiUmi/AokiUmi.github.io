@@ -113,7 +113,7 @@
 	            <a href="#s1">ARCHIVES</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a>
+	                        <a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/09/">September 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a>
 	                    </ul>
 	        </li>
 	        
@@ -488,15 +488,14 @@ dic<span class="token punctuation">.</span>clear<span class="token punctuation">
 <p>用字典来打标</p>
 <pre class="line-numbers language-python"><code class="language-python">dic<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
-    dic<span class="token punctuation">[</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># dic套list写法 初始化先别list都赋值</span>
-    dic<span class="token punctuation">[</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># dic套tuple写法 初始化先别tuple都赋值</span>
+    dic<span class="token punctuation">[</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true"># dic套list写法 初始化先把list都赋值</span>
     dic<span class="token punctuation">[</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span> <span class="token comment" spellcheck="true"># 普通的初始化</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
     dic<span class="token punctuation">[</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+=</span>x
     dic<span class="token punctuation">[</span>data<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+=</span><span class="token number">1</span> 
 <span class="token comment" spellcheck="true">#这样就能打标了</span>
 <span class="token comment" spellcheck="true"># ps list,tuple不能用来打标） list不好搞 tuple不能改变</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="notice：-1"><a href="#notice：-1" class="headerlink" title="notice："></a>notice：</h4><ul>
 <li>字典的关键字必须为不可变类型，且不能重复。好理解下标嘛</li>
 <li>创建空字典使用 <strong>{ }</strong>。</li>
@@ -955,7 +954,7 @@ func<span class="token punctuation">(</span>pig1<span class="token punctuation">
 func<span class="token punctuation">(</span>dog1<span class="token punctuation">)</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="重载运算符"><a href="#重载运算符" class="headerlink" title="重载运算符"></a>重载运算符</h3><p>以下为可以</p>
+<h3 id="重载运算符"><a href="#重载运算符" class="headerlink" title="重载运算符"></a>重载运算符</h3><p>以下为可以重载的函数（运算符）</p>
 <h4 id="构造和析构"><a href="#构造和析构" class="headerlink" title="构造和析构"></a>构造和析构</h4><p><code>__init__</code><br><code>__del__</code></p>
 <h4 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h4><p><code>__call__</code></p>
 <h4 id="打印操作"><a href="#打印操作" class="headerlink" title="打印操作"></a>打印操作</h4><p><code>__str__</code><br><code>__repr__</code><br>str(x), print(X)：会先尝试<code>__str__</code>方法，然后尝试<code>__repr__</code>方法；repr(X)或交互模式下输入X，只会尝试<code>__repr__</code>方法。</p>
@@ -1076,7 +1075,7 @@ B<span class="token operator">=</span>Vector<span class="token punctuation">(</s
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="Try使用"><a href="#Try使用" class="headerlink" title="Try使用"></a>Try使用</h2><p>try也可以看成是一种if条件语句</p>
 <p>但try有很多错误类型可以根据以下Exception hierarchy中类型进行判断</p>
-<h4 id="Exception-hierarchy"><a href="#Exception-hierarchy" class="headerlink" title="Exception hierarchy"></a>Exception hierarchy</h4><pre class="line-numbers language-python"><code class="language-python">Exception hierarchy （异常继承关系）
+<h3 id="Exception-hierarchy"><a href="#Exception-hierarchy" class="headerlink" title="Exception hierarchy"></a>Exception hierarchy</h3><pre class="line-numbers language-python"><code class="language-python">Exception hierarchy （异常继承关系）
 <span class="token comment" spellcheck="true">###########################################################################</span>
 BaseException （基本异常）
  <span class="token operator">+</span><span class="token operator">-</span><span class="token operator">-</span> SystemExit （系统退出）
@@ -1165,6 +1164,37 @@ BaseException （基本异常）
 <span class="token keyword">finally</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"finally-2"</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="不实用的东西global-amp-nonlocal"><a href="#不实用的东西global-amp-nonlocal" class="headerlink" title="不实用的东西global&amp;nonlocal"></a>不实用的东西global&amp;nonlocal</h2><p>global 定义变量表示所有函数外的全局变量</p>
+<p>nonlocal 定义上一个在函数中定义的x <strong>nonlocal不能调用global 会报错哦</strong></p>
+<p>反正就这意思 懂得都懂应付考试用的</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">global</span> y
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x<span class="token operator">=</span><span class="token number">1</span>
+    <span class="token keyword">def</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x<span class="token operator">=</span><span class="token number">2</span>
+        <span class="token keyword">def</span> <span class="token function">baz</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            nonlocal x
+            <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 2</span>
+            <span class="token keyword">global</span> y
+            y<span class="token operator">=</span><span class="token number">3</span>
+
+        baz<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    bar<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 3</span>
+<span class="token keyword">global</span> y
+<span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x<span class="token operator">=</span><span class="token number">1</span>
+    <span class="token keyword">def</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">baz</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            nonlocal x
+            <span class="token keyword">print</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 1</span>
+        baz<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    bar<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="常用包介绍"><a href="#常用包介绍" class="headerlink" title="常用包介绍"></a>常用包介绍</h1><h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><p>numpy好像是主要在多维数组，大数据的处理上有非常大的用处</p>
 <p>ndarray，具有矢量运算能力，快速、节省空间。numpy支持高级大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
