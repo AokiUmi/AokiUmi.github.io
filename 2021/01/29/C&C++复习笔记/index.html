@@ -224,34 +224,34 @@
 <h2 id="关于extern"><a href="#关于extern" class="headerlink" title="关于extern"></a>关于extern</h2><p>extern用于声明某一个变量而并非定义</p>
 <p>个人感觉和py的global很像，很tm适合出题？？</p>
 <p>但好像只有这一个extern是用来声明全局变量？基本就是一个global的感觉</p>
-<pre class="line-numbers language-c++"><code class="language-c++">#include <stdio.h>
-#include <iostream>
-#include <cstdio>
-// 函数外定义变量 x 和 y
-using namespace std;
-int x;
-int y;
-int addtwonum()
-{
-    // 函数内声明变量 x 和 y 为外部变量
-    extern int x;
-    extern int y;
-    // 给外部变量（全局变量）x 和 y 赋值
-    x = 1;
-    y = 2;
-    return x+y;
-}
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cstdio></span></span>
+<span class="token comment" spellcheck="true">// 函数外定义变量 x 和 y</span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> x<span class="token punctuation">;</span>
+<span class="token keyword">int</span> y<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">addtwonum</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 函数内声明变量 x 和 y 为外部变量</span>
+    <span class="token keyword">extern</span> <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">extern</span> <span class="token keyword">int</span> y<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 给外部变量（全局变量）x 和 y 赋值</span>
+    x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> x<span class="token operator">+</span>y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-int main()
-{
-    int result;
-    // 调用函数 addtwonum
-    result = addtwonum();
-    printf("result 为: %d\n",result);
-    cout<<x<<' '<<y;
-    // 3
-    // 1 2
-    return 0;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> result<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 调用函数 addtwonum</span>
+    result <span class="token operator">=</span> <span class="token function">addtwonum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"result 为: %d\n"</span><span class="token punctuation">,</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span>x<span class="token operator">&lt;&lt;</span><span class="token string">' '</span><span class="token operator">&lt;&lt;</span>y<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 3</span>
+    <span class="token comment" spellcheck="true">// 1 2</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>依旧感觉没什么卵用md</p>
 <p>但感谢菜鸟教程告诉我了一个用途，在引用自己写的类似包？的时候的用的</p>
@@ -279,10 +279,11 @@ int main()
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当上面的代码被编译和执行时，它会产生下列结果：</p>
-<pre><code>$ gcc addtwonum.c test.c -o main
-$ ./main
-result 为: 3
-</code></pre><h2 id="文件的读入与写入"><a href="#文件的读入与写入" class="headerlink" title="文件的读入与写入"></a>文件的读入与写入</h2><p>c++的话很方便</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">$ gcc addtwonum<span class="token punctuation">.</span>c test<span class="token punctuation">.</span>c <span class="token operator">-</span>o main
+$ <span class="token punctuation">.</span><span class="token operator">/</span>main
+result 为<span class="token operator">:</span> <span class="token number">3</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="文件的读入与写入"><a href="#文件的读入与写入" class="headerlink" title="文件的读入与写入"></a>文件的读入与写入</h2><p>c++的话很方便</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token function">freopen</span><span class="token punctuation">(</span><span class="token string">"in.txt"</span><span class="token punctuation">,</span><span class="token string">"r"</span><span class="token punctuation">,</span><span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">freopen</span><span class="token punctuation">(</span><span class="token string">"out.txt"</span><span class="token punctuation">,</span><span class="token string">"w"</span><span class="token punctuation">,</span><span class="token constant">stdout</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
