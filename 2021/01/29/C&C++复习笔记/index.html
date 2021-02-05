@@ -544,6 +544,11 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
 <p>2、非稳定排序：如果 a 原本在 b 的前面，且 a == b，排序之后 a 可能不在 b 的前面，则为非稳定排序。</p>
 <p>3、原地排序：原地排序就是指在排序过程中不申请多余的存储空间，只利用原来存储待排数据的存储空间进行比较和交换的数据排序。</p>
 <p>4、非原地排序：需要利用额外的数组来辅助排序。</p>
+<p><a href="https://www.cnblogs.com/itsharehome/p/11058010.html" target="_blank" rel="noopener">参考1</a><a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">参考2</a></p>
+<p><strong>ps:由于原po很作死想写伪sort代替，于是引入了begin和end参数，导致某些过程变得十分复杂，大家千万不要学我</strong></p>
+<p><strong>一下代码全部是原po自己手撸的，一定不是最简写法，也不好看，就是很好理解，简单来说就是：下面请欣赏Aoki_Umi用作死的c手撸十大排序算法~</strong></p>
+<p>介绍也比较通俗XD</p>
+<p>为什么缩进这么奇怪：\别问，问就是vs自带的</p>
 <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><h4 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h4><p>冒泡排序作为一种比较经典的算法也算是很好理解的，每次遍历找出最大的数把它依次排在末尾，找到最大的数的方式就是比较相邻两个数的大小，越大的数越往后面移动，全遍历找一遍就行了</p>
 <p><img src="/2021/01/29/C&C++复习笔记/1.gif" alt=""></p>
 <h4 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h4><p>时间$O(n^2)$ 最优$O(n)$空间$O(1)$ 总的来说还是很慢的</p>
@@ -622,7 +627,7 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h4 id="算法介绍-2"><a href="#算法介绍-2" class="headerlink" title="算法介绍"></a>算法介绍</h4><p>这个算法形象说就是每次把后面一个没排过序的元素不断往有序的元素里面插，从后往前扫，<del>为啥觉得越来越低效了（bushi</del> 这玩意需要手写队列。。。。说实话用c++堆好像是不是好很多（其实就是快乐的优先队列）越来越复杂了x</p>
 <p><img src="/2021/01/29/C&C++复习笔记/3.gif" alt=""></p>
-<h4 id="复杂度-2"><a href="#复杂度-2" class="headerlink" title="复杂度"></a>复杂度</h4><p>时间$O(n^2)$无论如何都是$O(n)$，空间$O(1)$，实在是慢</p>
+<h4 id="复杂度-2"><a href="#复杂度-2" class="headerlink" title="复杂度"></a>复杂度</h4><p>时间$O(n^2)$无论如何都是$O(n^2)$，空间$O(1)$，实在是慢</p>
 <h4 id="稳定性-2"><a href="#稳定性-2" class="headerlink" title="稳定性"></a>稳定性</h4><p>稳定排序  ，原地排序</p>
 <h4 id="代码编写-2"><a href="#代码编写-2" class="headerlink" title="代码编写"></a>代码编写</h4><pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">sort_insertion</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> begin<span class="token punctuation">,</span><span class="token keyword">int</span> end<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -651,7 +656,7 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><h4 id="算法介绍-3"><a href="#算法介绍-3" class="headerlink" title="算法介绍"></a>算法介绍</h4><p>是插入排序的优化版本，每次把序列分成len/2组，每组跨元素相邻如图所示，每次按组来进行插入排序，以达到优化的效果</p>
 <p><img src="/2021/01/29/C&C++复习笔记/4.jpg" alt=""></p>
-<h4 id="复杂度-3"><a href="#复杂度-3" class="headerlink" title="复杂度"></a>复杂度</h4><p>时间$O(n^{1.3})$最优$O(n)$最坏$O(n^2)$空间$O(1)$</p>
+<h4 id="复杂度-3"><a href="#复杂度-3" class="headerlink" title="复杂度"></a>复杂度</h4><p>时间$O(n^{1.3})$最优$O(n)$最坏$O(n^2)$空间$O(1)$ 玄学的东西</p>
 <h4 id="稳定性-3"><a href="#稳定性-3" class="headerlink" title="稳定性"></a>稳定性</h4><p>非稳定排序 ，原地排序</p>
 <h4 id="代码编写-3"><a href="#代码编写-3" class="headerlink" title="代码编写"></a>代码编写</h4><p>此代码我撸的异常艰辛，主要是因为，太绕了。。。，加了奇怪的参数后</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">sort_shell</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> begin<span class="token punctuation">,</span><span class="token keyword">int</span> end<span class="token punctuation">)</span>
