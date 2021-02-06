@@ -176,7 +176,7 @@
                 <p><del>因为在一次模拟赛中因为高精吃了很大的亏，所以决定学习重载运算符后的高精度算法</del></p>
 <p><del>所以打了一天</del></p>
 <h2 id="什么是重载运算符？"><a href="#什么是重载运算符？" class="headerlink" title="- 什么是重载运算符？"></a>- 什么是重载运算符？</h2><p>  <a href="https://blog.csdn.net/C20190102/article/details/70738801" target="_blank" rel="noopener">可以看这个博客</a></p>
-<p>解释很详细，总之就是用于高精度的一种做法<br>​      相当于把运算符重新自己定义<br>​      百科：运算符重载，就是对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型。<br>​      大概就是这样，具体请参考我推荐的博客</p>
+<p>解释很详细，总之就是自定义运算<br>​      相当于把运算符重新自己定义<br>​      百科：运算符重载，就是对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型。<br>​      大概就是这样，具体请参考我推荐的博客</p>
 <h2 id="如何实现"><a href="#如何实现" class="headerlink" title="- 如何实现"></a>- 如何实现</h2><p> 主要是通过结构体实现，在结构体中重新定义新的变量来进行定义新的运算符，具体看代码</p>
 <h2 id="如何运用到高精度计算"><a href="#如何运用到高精度计算" class="headerlink" title="- 如何运用到高精度计算"></a>- 如何运用到高精度计算</h2><h3 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1. 初始化"></a>1. 初始化</h3><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> BIGNUM
 <span class="token punctuation">{</span>
