@@ -926,11 +926,12 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
 <h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><h4 id="算法介绍-8"><a href="#算法介绍-8" class="headerlink" title="算法介绍"></a>算法介绍</h4><p>感觉是比较迷惑的算法，据说很快很牛逼，确实也挺牛的。但由于我不会链表，俺还是用 c++ vector来实现。。</p>
 <p>是计数排序的高级版，总的来说就是把序列所有数据的区间分段，相当于分为多个桶，然后把数据一次按区间分别放到各个桶中，在每个桶中分别排序，最后将其合并就完了。</p>
 <p>至于怎么查找区间内的所有数，来人，上二分！x</p>
-<p>感觉很玄学不知道为啥这样就快很多了</p>
+<p>感觉很玄学不知道为啥这样就快很多了，据说数据越多越快x</p>
 <p><img src="/2021/01/29/C&C++复习笔记/9.jpg" alt=""></p>
-<h4 id="复杂度-8"><a href="#复杂度-8" class="headerlink" title="复杂度"></a>复杂度</h4><p>时间$O(n+k)  $空间$O(n+k)  $ </p>
+<h4 id="复杂度-8"><a href="#复杂度-8" class="headerlink" title="复杂度"></a>复杂度</h4><p>时间$O(n+k)  $最坏$O(n^2)$空间$O(n+k)  $ </p>
 <h4 id="稳定性-8"><a href="#稳定性-8" class="headerlink" title="稳定性"></a>稳定性</h4><p>稳定排序，非原地排序</p>
-<h4 id="代码实现-8"><a href="#代码实现-8" class="headerlink" title="代码实现"></a>代码实现</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">sort_bucket</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> begin<span class="token punctuation">,</span><span class="token keyword">int</span> end<span class="token punctuation">)</span>
+<h4 id="代码实现-8"><a href="#代码实现-8" class="headerlink" title="代码实现"></a>代码实现</h4><p>注意奇怪的细节（</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">sort_bucket</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> begin<span class="token punctuation">,</span><span class="token keyword">int</span> end<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
          <span class="token keyword">int</span> len <span class="token operator">=</span> end <span class="token operator">-</span> begin <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
          <span class="token keyword">int</span> maxx <span class="token operator">=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">,</span> minn <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -961,6 +962,44 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
          <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><h4 id="算法介绍-9"><a href="#算法介绍-9" class="headerlink" title="算法介绍"></a>算法介绍</h4><p>总的来说也是一种比较神奇的桶排，然后呢也比较鸡肋，只适合小范围的数据排序。</p>
+<p>准备10个桶分别代表数字0-9，以个位数为第一个基准，将所有的数据按个位数字投进10个桶中，再按0-9的顺序将数据倒出来，接下来按十位，百位，依次类推，直到最高位，就挺好玩的x</p>
+<p>由于c没有动态数组，还是用c++写</p>
+<p><img src="/2021/01/29/C&C++复习笔记/10.gif" alt=""></p>
+<h4 id="复杂度-9"><a href="#复杂度-9" class="headerlink" title="复杂度"></a>复杂度</h4><p>时间$O(nk)$空间$O(n+k)$</p>
+<h4 id="稳定性-9"><a href="#稳定性-9" class="headerlink" title="稳定性"></a>稳定性</h4><p>稳定排序，非原地排序（只要是计数类都是这样）</p>
+<h4 id="代码实现-9"><a href="#代码实现-9" class="headerlink" title="代码实现"></a>代码实现</h4><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">sort_radio</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> begin<span class="token punctuation">,</span><span class="token keyword">int</span> end<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+         <span class="token keyword">int</span> maxx <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> begin<span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> end<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+                  maxx <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>maxx<span class="token punctuation">,</span> num<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>mod<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>dev<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+         <span class="token keyword">while</span><span class="token punctuation">(</span>maxx<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span>
+         <span class="token punctuation">{</span>
+                  maxx <span class="token operator">/</span><span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+                  cnt<span class="token operator">++</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> bucket<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> cnt<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">,</span>dev<span class="token operator">*</span><span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>mod<span class="token operator">*</span><span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>
+         <span class="token punctuation">{</span>
+                  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> begin<span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> end<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+                  <span class="token punctuation">{</span>
+                           <span class="token keyword">int</span> number <span class="token operator">=</span> <span class="token punctuation">(</span>num<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">%</span> mod<span class="token punctuation">)</span> <span class="token operator">/</span> dev<span class="token punctuation">;</span>
+                           bucket<span class="token punctuation">[</span>number<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>num<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  <span class="token punctuation">}</span>
+                  <span class="token keyword">int</span> coc <span class="token operator">=</span> begin<span class="token punctuation">;</span>
+                  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> <span class="token number">9</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+                  <span class="token punctuation">{</span>
+                           <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> bucket<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>
+                                    num<span class="token punctuation">[</span>coc<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> bucket<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                           bucket<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  <span class="token punctuation">}</span>
+
+
+         <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>终于都写完啦撒花~~</p>
 
             </div>
 
