@@ -113,7 +113,7 @@
 	            <a href="#s1">ARCHIVES</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="archive-link" href="../archives/2021/01/">January 2021</a></li><li><a class="archive-link" href="../archives/2020/11/">November 2020</a></li><li><a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a>
+	                        <a class="archive-link" href="../archives/2021/01/">January 2021</a></li><li><a class="archive-link" href="../archives/2020/11/">November 2020</a></li><li><a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a></li><li><a class="archive-link" href="../archives/1924/07/">July 1924</a>
 	                    </ul>
 	        </li>
 	        
@@ -178,7 +178,7 @@
 <p>为下学期的cs100准备一下</p>
 <p>顺便带上基础算法复习 排序算法(10种)，二分，堆栈模拟，贪心等</p>
 <p>题目以模拟为主</p>
-<p>首先是C&amp;C++部分的比较预习x</p>
+<p>首先是C&amp;C++部分的 比较预习x</p>
 <p><del>以及因为懒栗子我基本照搬菜鸟教程（</del></p>
 <p>会的东西不会提及大概是注重以前没注意过的</p>
 <p>最近好像C#很流行？也许会顺带看一下</p>
@@ -221,6 +221,12 @@
 </tr>
 </tbody>
 </table>
+<h2 id="关于C-amp-C-的关键字"><a href="#关于C-amp-C-的关键字" class="headerlink" title="关于C&amp;C++的关键字"></a>关于C&amp;C++的关键字</h2><p><img src="/2021/01/29/C&C++复习笔记/15.png" alt=""></p>
+<p><img src="/2021/01/29/C&C++复习笔记/16.jpg" alt=""></p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><h3 id="1．转换说明符"><a href="#1．转换说明符" class="headerlink" title="1．转换说明符"></a>1．转换说明符</h3><p>   %a(%A)   浮点数、十六进制数字和p-(P-)记数法(C99)<br>   %c       字符<br>   %d       有符号十进制整数<br>   %f       浮点数(包括float和double)<br>   %e(%E)   浮点数指数输出[e-(E-)记数法]<br>   %g(%G)   浮点数不显无意义的零”0”<br>   %i       有符号十进制整数(与%d相同)<br>   %u       无符号十进制整数<br>   %o       八进制整数  e.g.   0123<br>   %x(%X)   十六进制整数<br>   %p       指针<br>   %s       字符串<br>   %%      “%”</p>
+<h3 id="2．标志"><a href="#2．标志" class="headerlink" title="2．标志"></a>2．标志</h3><p>   左对齐：”-“  e.g.  “%-20s”<br>   右对齐：”+” e.g.  “%+20s”<br>   空格：若符号为正，则显示空格，负则显示”-“  e.g.  “% “<br>   #：对c,s,d,u类无影响；对o类，在输出时加前缀o；对x类，在输出时加前缀0x；<br>      对e,g,f 类当结果有小数时才给出小数点。</p>
+<h3 id="3．格式字符串（格式）"><a href="#3．格式字符串（格式）" class="headerlink" title="3．格式字符串（格式）"></a>3．格式字符串（格式）</h3><p>   ［标志］［输出最少宽度］［．精度］［长度］类型<br>   “％-md” ：左对齐，若m比实际少时，按实际输出。<br>   “%m.ns”：输出m位，取字符串(左起)n位，左补空格，当n&gt;m or m省略时m=n<br>           e.g.  “%7.2s”  输入CHINA<br>                 　      输出”   CH”<br>   “%m.nf”：输出浮点数，m为宽度，n为小数点右边数位<br>           e.g.  “%”  输入3852.99<br>                        输出3853.0<br>   长度：为ｈ短整形量,ｌ为长整形量</p>
+<p>printf的格式控制的完整格式：<br>% - .n l或h 格式字符<br>下面对组成格式说明的各项加以说明：<br>①%：表示格式说明的起始符号，不可缺少。<br>②-：有-表示左对齐输出，如省略表示右对齐输出。<br>③0：有0表示指定空位填0,如省略表示指定空位不填。<br>④m.n：m指域宽，即对应的输出项在输出设备上所占的字符数。N指精度。用于说明输出的实型数的小数位数。为指定n时，隐含的精度为n=6位。<br>⑤l或h:l对整型指long型，对实型指double型。h用于将整型的格式字符修正为short型。</p>
 <h2 id="关于extern"><a href="#关于extern" class="headerlink" title="关于extern"></a>关于extern</h2><p>extern用于声明某一个变量而并非定义</p>
 <p>个人感觉和py的global很像，很tm适合出题？？</p>
 <p>但好像只有这一个extern是用来声明全局变量？基本就是一个global的感觉</p>
