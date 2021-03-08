@@ -432,11 +432,11 @@
     <category term="Contest" scheme="http://yoursite.com/categories/OI/Contest/"/>
     
     
-    <category term="dp" scheme="http://yoursite.com/tags/dp/"/>
-    
     <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
     
     <category term="二分" scheme="http://yoursite.com/tags/二分/"/>
+    
+    <category term="dp" scheme="http://yoursite.com/tags/dp/"/>
     
     <category term="拓扑排序" scheme="http://yoursite.com/tags/拓扑排序/"/>
     
@@ -526,13 +526,13 @@
     <category term="Contest" scheme="http://yoursite.com/categories/OI/Contest/"/>
     
     
-    <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
-    
     <category term="欧拉函数" scheme="http://yoursite.com/tags/欧拉函数/"/>
     
     <category term="Kruskal" scheme="http://yoursite.com/tags/Kruskal/"/>
     
     <category term="树链剖分" scheme="http://yoursite.com/tags/树链剖分/"/>
+    
+    <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
     
     <category term="题解" scheme="http://yoursite.com/tags/题解/"/>
     
