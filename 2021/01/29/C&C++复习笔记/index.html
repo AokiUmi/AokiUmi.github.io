@@ -113,7 +113,7 @@
 	            <a href="#s1">ARCHIVES</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="archive-link" href="../archives/2021/01/">January 2021</a></li><li><a class="archive-link" href="../archives/2020/11/">November 2020</a></li><li><a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a></li><li><a class="archive-link" href="../archives/1924/07/">July 1924</a>
+	                        <a class="archive-link" href="../archives/2021/04/">April 2021</a></li><li><a class="archive-link" href="../archives/2021/01/">January 2021</a></li><li><a class="archive-link" href="../archives/2020/11/">November 2020</a></li><li><a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a></li><li><a class="archive-link" href="../archives/1924/07/">July 1924</a>
 	                    </ul>
 	        </li>
 	        
@@ -360,6 +360,13 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
 
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>关于和字符，字符串有关的读入复习</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//常用的字符读入，读到空格为止，空格不会被跳过</span>
+<span class="token function">gets</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//读到换行符为止，不读换行符会跳过</span>
+<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%c%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>ch<span class="token punctuation">,</span><span class="token operator">&amp;</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//这几个一起读入的时候，适当getchar()来处理空格问题</span>
+<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%7s"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//只读前7位，后面输入的不管</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>s<span class="token punctuation">)</span><span class="token operator">!=</span><span class="token constant">EOF</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//一直读入，知道遇到EOF为止，在windows里面是CTRL+Z</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><p>就是常用的if语句，简短精炼，但可读性极差</p>
 <p>复习一下规则</p>
 <p><img src="/2021/01/29/C&C++复习笔记/3.png" alt=""></p>
@@ -407,8 +414,9 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
     <span class="token comment" spellcheck="true">//var 变量的地址: 0x7ffeeef168d8</span>
     <span class="token comment" spellcheck="true">//ip 变量存储的地址: 0x7ffeeef168d8</span>
     <span class="token comment" spellcheck="true">//*ip 变量的值: 20</span>
+    <span class="token comment" spellcheck="true">//sizeof(&amp;var) 查询指针的大小</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="NULL指针"><a href="#NULL指针" class="headerlink" title="NULL指针"></a>NULL指针</h3><p>在变量声明的时候，如果没有确切的地址可以赋值，为指针变量赋一个 NULL 值是一个良好的编程习惯。赋为 NULL 值的指针被称为<strong>空</strong>指针。</p>
 <p>NULL 指针是一个定义在标准库中的值为零的常量。</p>
 <p>举个栗子</p>
@@ -447,7 +455,8 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>指针可以用关系运算符进行比较，如 ==、&lt; 和 &gt;</p>
 <p>这个很好理解 不解释了</p>
-<h3 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h3><p>指针指向的内容可以是数字或者字符</p>
+<h3 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h3><p>数组的地址就是储存第一位的地址</p>
+<p>指针指向的内容可以是数字或者字符</p>
 <p>都可以自己定义</p>
 <p>试了一下好像如果是数字不能随便乱搞？</p>
 <p>int指向int是不行的，反正有问题 ，要用只能用系统的地址不能瞎搞</p>
@@ -502,6 +511,7 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>很有趣的是用指针定义的字符串和直接用数组定义的字符串，他们两个的地址差距很大x</p>
 <h3 id="多重指针"><a href="#多重指针" class="headerlink" title="多重指针"></a>多重指针</h3><p><img src="/2021/01/29/C&C++复习笔记/4.png" alt=""></p>
 <p>总之还是很好理解的，能套很多层</p>
 <h3 id="函数与指针"><a href="#函数与指针" class="headerlink" title="函数与指针"></a>函数与指针</h3><p>函数里也允许定义和传递指针，这个也很好理解</p>
@@ -553,8 +563,21 @@ result 为<span class="token operator">:</span> <span class="token number">3</sp
 <span class="token punctuation">}</span>
 <span class="token function">swap</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>a<span class="token punctuation">,</span><span class="token operator">&amp;</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="一个无语的东西"><a href="#一个无语的东西" class="headerlink" title="一个无语的东西"></a>一个无语的东西</h2><p>在写c代码的时候，无意中发现nmd为什么c不支持定义的时候直接赋值？？？实属弱智操作，每次写循环tmd都要把i放在外面写，乌鱼子</p>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><h2 id="一个无语的东西"><a href="#一个无语的东西" class="headerlink" title="一个无语的东西"></a>一个无语的东西</h2><p>在写c代码的时候，无意中发现nmd为什么c不支持定义的时候直接赋值？？？实属弱智操作，每次写循环tmd都要把i放在外面写，乌鱼子 （原来是我没有c11,小丑竟是我自己（</p>
 <p>补充,c没有class气死我了</p>
+<h2 id="动态内存"><a href="#动态内存" class="headerlink" title="动态内存"></a>动态内存</h2><p><code>malloc()</code>函数，用于向系统申请内存</p>
+<p><code>free()</code>释放<code>malloc</code>或<code>calloc、realloc</code>函数给指针变量分配的内存空间的函数使用后该指针变量一定要重新指向NULL，防止野指针出现，有效 规避误操作。</p>
+<pre class="line-numbers language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> size<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> <span class="token operator">*</span>pArray<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+    pArray<span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token operator">*</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//将size大小的float空间赋给指针</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span>pArray<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token operator">*</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*access the array*/</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>pArray<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="算法复习"><a href="#算法复习" class="headerlink" title="算法复习"></a>算法复习</h1><p><strong>用于练习，不做特殊说明都用c来编写</strong></p>
 <h2 id="十大排序算法"><a href="#十大排序算法" class="headerlink" title="十大排序算法"></a>十大排序算法</h2><p>首先写一下基本的相关定义</p>
 <p>1、稳定排序：如果 a 原本在 b 的前面，且 a == b，排序之后 a 仍然在 b 的前面，则为稳定排序。</p>
