@@ -190,7 +190,7 @@
 </ol>
 <h2 id="二阶线性方程"><a href="#二阶线性方程" class="headerlink" title="二阶线性方程"></a>二阶线性方程</h2><p>基本定义：$y’’+P(x)y’+Q(x)y=f(x)(NHL)$     $y’’+P(x)y’+Q(x)y=0(HL)$</p>
 <p>唯一性定理：若函数p(x),q(x),f(x)在区间I上连续，$x_0 \in I $，则对任何给定的数值$\alpha ,\beta$有</p>
-<p>$\begin{cases} y’’+p(x)y’+q(x)y=f(x)&amp;\y(x_0)=\alpha,y’(x_0)=\beta&amp;  \end{cases}$</p>
+<p>$$\begin{cases} y’’+p(x)y’+q(x)y=f(x)&amp; \y(x_0)=\alpha,y’(x_0)=\beta&amp;  \end{cases}$$</p>
 <p>存在唯一解y(x)，当$\alpha =\beta =0$该(HL)只有零解</p>
 <p>线性相关：对函数$y_1(x),y_2(x)$若存在不全为零的常数$c_1,c_2$使$c_1y_1(x)+c_2y_2(x)\equiv 0 (x\in I)$,则这两个函数线性相关，否则使线性无关。</p>
 <p>若$W(x)\equiv 0 \Leftrightarrow$$y_1(x),y_2(x)$线性相关</p>
@@ -199,13 +199,134 @@
 <p>一般带$x^m,e^{ax},sinmx,cosmx$ </p>
 <h2 id="常数变易法"><a href="#常数变易法" class="headerlink" title="常数变易法"></a>常数变易法</h2><p>针对(NHL)，非齐次通解=非齐次特解+齐次通解</p>
 <p>NHL $ y’’+p(x)y’+q(x)y=f(x)$</p>
-<p>步骤：1. 先求出齐次通解$y_1(x),y_2(x)$</p>
-<ol start="2">
-<li>求出行列式$W(x)$，求出$c_1’(x)=\frac{-y_2(x)f(x)}{W(x)},c_2’(x)=\frac{-y_1(x)f(x)}{W(x)}$</li>
+<p>步骤：</p>
+<ol>
+<li><p>先求出齐次通解$y_1(x),y_2(x)$</p>
+</li>
+<li><p>求出行列式$W(x)$，求出$c_1’(x)=\frac{-y_2(x)f(x)}{W(x)},c_2’(x)=\frac{y_1(x)f(x)}{W(x)}$</p>
+</li>
 <li>得到非齐次特解$y^*=c_1(x)y_1(x)+c_2(x)y_2(x)$</li>
 <li>非齐次通解$y=y^*+c_1y_1(x)+c_2y_2(x)$</li>
 </ol>
-<h3 id="二阶常系数齐次线性方程"><a href="#二阶常系数齐次线性方程" class="headerlink" title="二阶常系数齐次线性方程"></a>二阶常系数齐次线性方程</h3>
+<h3 id="二阶常系数齐次线性方程"><a href="#二阶常系数齐次线性方程" class="headerlink" title="二阶常系数齐次线性方程"></a>二阶常系数齐次线性方程</h3><p>形式$y’’+py’+qy=0$ 有特征方程$\lambda^2+p\lambda+q=0  $</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特征根</th>
+<th style="text-align:center">通解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">相异实根$\lambda_1 ,\lambda_2$</td>
+<td style="text-align:center">$c_1e^{\lambda_1x}+c_2e^{\lambda_2x}$</td>
+</tr>
+<tr>
+<td style="text-align:center">相同实根$\lambda$</td>
+<td style="text-align:center">$c_1e^{\lambda x}+c_2xe^{\lambda x}$</td>
+</tr>
+<tr>
+<td style="text-align:center">共轭复根$\alpha ,\beta$</td>
+<td style="text-align:center">$c_1e^{\alpha x}cos\beta x+c_2e^{\alpha x}sin\beta x$</td>
+</tr>
+</tbody>
+</table>
+<p>高于二阶的方程 以此类推</p>
+<h1 id="空间解析几何"><a href="#空间解析几何" class="headerlink" title="空间解析几何"></a>空间解析几何</h1><p>此章主要是计算，就不多写了</p>
+<p>混合积$(\vec{a} \times \vec{b})·\vec{c}=|\vec{a} \times\vec{b}||\vec{c}|cos\theta(\vec{a} \times\vec{b},\vec{c}) $几何意义：以$\vec{a},\vec{b},\vec{c}$为同顶点三条棱的平行六面体的体积</p>
+<p>叉乘预算律：反交换律，结合律，分配律</p>
+<p>异面直线距离$d=\frac{|(\vec{s_1} \times \vec{s_2})\overrightarrow{p_1 p_2}}{|\vec{s_1} \times \vec{s_2}|}$</p>
+<p>点到直线距离$d=\frac{|\overrightarrow{p_1 p_2}\times\vec{s}|}{|\vec{s}|}$</p>
+<h1 id="多变量函数的微分学"><a href="#多变量函数的微分学" class="headerlink" title="多变量函数的微分学"></a>多变量函数的微分学</h1><p>拓扑学相关暂不列举（）</p>
+<h2 id="多变量函数的极限"><a href="#多变量函数的极限" class="headerlink" title="多变量函数的极限"></a>多变量函数的极限</h2><p>对$\forall \varepsilon &gt;0$，当$M(x,y)\in D,\exist \delta&gt;0$,满足$0&lt;\rho(M,M_0)&lt;\delta$或者$0&lt;|x-x_0|&lt;\delta,0&lt;|y-y_0|&lt;\delta$时，有$|f(M)-a|&lt;\varepsilon$ 记为$\lim\limits_{M\rightarrow M_0} f(x)=a$</p>
+<p>常用结论：$\lim\limits_{x\rightarrow 0,y \rightarrow 0}\frac{xy}{x+y}$不存在 令$y=-x+kx^2$得到极限为$-\frac{1}{k}$</p>
+<p>$\lim\limits_{x\rightarrow 0,y \rightarrow 0}\frac{x^2y}{x^4+y^2}$不存在，令$y=kx,y=x^2$</p>
+<p>$\lim\limits_{x\rightarrow 0,y \rightarrow 0}\frac{xy}{x^2+y^2}$不存在，令$y=kx$ 但有累次极限</p>
+<p>累次极限：若存在首次极限，$\phi(x)=\lim\limits_{y\rightarrow y_0} f(x,y),\lim\limits_{x\rightarrow x_0} \phi(x)=a$则称其累次极限为a，记为$\lim\limits_{x \rightarrow x_0}\lim\limits_{y\rightarrow y_0} f(x,y)=a$</p>
+<p><strong>技巧</strong>：遇到$x^2+y^2$ 形式的，令$x=rcos\theta,y=rsin\theta$来计算极限</p>
+<h2 id="多变量函数的连续性"><a href="#多变量函数的连续性" class="headerlink" title="多变量函数的连续性"></a>多变量函数的连续性</h2><p>定义：$\forall \varepsilon &gt;0,\exist \delta&gt;0,\forall M\in B(M_0,\delta)=|f(M)-f(M_0)|&lt;\varepsilon$,即$\lim\limits_{M\rightarrow M_0} f(M)=f(M_0)$则称$f(M)$在$M_0$连续</p>
+<p>类似的还有一致连续性，参考数分I就不列举了</p>
+<h2 id="多变量函数的微分"><a href="#多变量函数的微分" class="headerlink" title="多变量函数的微分"></a>多变量函数的微分</h2><h3 id="偏微商"><a href="#偏微商" class="headerlink" title="偏微商"></a>偏微商</h3><p>偏导数定义：$f_x(x,y)=\lim\limits_{\Delta x \rightarrow 0}\frac{f(x_0+ \Delta x,y_0)-f(x_0,y_0)}{\Delta x}$ </p>
+<p>可偏导未必连续,其他的东西再后面一并写出</p>
+<p>定理：若$f(x,y)$的二阶混合偏导数在 $(x,y)$连续，则$f_{xy}’’(x,y)=f_{yx}’’(x,y)$</p>
+<h3 id="可微性"><a href="#可微性" class="headerlink" title="可微性"></a>可微性</h3><p>全微分：$df(x,y)=f_x’(x,y)dx+f_y’(x,y)dy$</p>
+<p>判断是否可微 $\lim \limits_{\Delta x \rightarrow 0,\Delta y \rightarrow 0} \frac{f(x+\Delta x,y+\Delta y)-f(x,y)-f_x’( x,y)\Delta x-f_y’( x, y)\Delta y}{\sqrt{\Delta x^2+\Delta y^2}} =0$ 则可微</p>
+<p>若不存在或者不为0，则不可微</p>
+<p>这几个概念的关系如图</p>
+<p><img src="/2021/04/23/数学分析II总结/数学分析II总结\0.jpg" alt=""></p>
+<h2 id="方向导数和梯度"><a href="#方向导数和梯度" class="headerlink" title="方向导数和梯度"></a>方向导数和梯度</h2><p>方向导数的定义：设$\vec{e}=(cos \alpha,cos\beta)$, 函数在点$(x_0,y_0)$处沿e的方向导数的定义：$\frac{\eth f}{\eth \vec{e}}(x_0,y_0)=\lim \limits_{t \rightarrow 0}\frac{f(x_0+tcos\alpha,y_0+tcos\beta)-f(x_0,y_0)}{t}$ </p>
+<p>若f<strong>可微</strong>，$\frac{\eth f}{\eth \vec{e}}(x_0,y_0)=f_x’(x_0,y_0)cos\alpha+f_y’(x_0,y_0)cos\beta$</p>
+<p>梯度定义：$grad f(x_0,y_0)=(f_x’(x_0,y_0),f_y’(x_0,y_0))$</p>
+<p><strong>梯度方向使方向导数取最大值时的方向，其模就是方向导数的最大值</strong></p>
+<h2 id="复合函数的微分"><a href="#复合函数的微分" class="headerlink" title="复合函数的微分"></a>复合函数的微分</h2><p><strong>链式法则</strong> 懂得都懂，式子太长不写了</p>
+<p>$Laplace$方程 $\frac{\eth^2u}{\eth^2 x} +\frac{\eth^2u}{\eth^2 y}+ \frac{\eth^2u}{\eth^2 z}=0 $</p>
+<h2 id="向量值函数的微商和微分"><a href="#向量值函数的微商和微分" class="headerlink" title="向量值函数的微商和微分"></a>向量值函数的微商和微分</h2><p>定义：$r’(t)=\lim \limits_{\Delta t \rightarrow 0}\frac{r(t+\Delta t) -r(t)}{\Delta t}$</p>
+<p>性质：</p>
+<ol>
+<li>$\frac{d}{dt}(fa)=f\frac{da}{dt}+\frac{df}{dt}a$</li>
+<li>$\frac{d}{dt}(a·b)=\frac{da}{dt}·b+a·\frac{db}{dt}$</li>
+<li>$\frac{d}{dt}(a \times b)=\frac{da}{dt} \times b+a \times \frac{db}{dt}$</li>
+</ol>
+<p>$Jacobi$行列式$J_x(f)=\frac{\eth(y_1,y_2,···,y_n)}{\eth(x_1,x_2,···,x_n)}$</p>
+<h2 id="隐函数和逆映射定理"><a href="#隐函数和逆映射定理" class="headerlink" title="隐函数和逆映射定理"></a>隐函数和逆映射定理</h2><p>隐函数存在定理：F在$M(x_0,y_0)$邻域内有连续偏导，且$F_x’(x,y) \neq 0,F_y’(x,y) \neq 0，F(x_0,y_0)=0$ ，隐函数$y=f(x)$满足$F(x,f(x))=0,y_0=f(x_0)$ 则$\frac{dy}{dx}=-\frac{F_x’(x,y)}{F_y’(x,y)}$</p>
+<p>有$\begin{cases} F(x,y,u,v)=0 \ G(x,y,u,v)=0\end{cases}$，存在隐映射$$\begin{cases} u=u(x,y) \ v=v(x,y) \end{cases}$$ 则</p>
+<p>$\frac{\eth u}{\eth x}=-\frac{1}{J}\frac{\eth (F,G)}{\eth (x,v)}$$\frac{\eth u}{\eth y}=-\frac{1}{J}\frac{\eth (F,G)}{\eth (y,v)}$ $\frac{\eth v}{\eth x}=-\frac{1}{J}\frac{\eth (F,G)}{\eth (u,x)}$ $\frac{\eth u}{\eth x}=-\frac{1}{J}\frac{\eth (F,G)}{\eth (u,y)}$ </p>
+<h2 id="参数曲线"><a href="#参数曲线" class="headerlink" title="参数曲线"></a>参数曲线</h2><h3 id="空间曲线切线-法平面"><a href="#空间曲线切线-法平面" class="headerlink" title="空间曲线切线/法平面"></a>空间曲线切线/法平面</h3><p>参数式 ：$x=x(t),y=y(t),z=z(t),\vec{\iota}=(x’(t),y’(t),z’(t))$</p>
+<p>一般式：$\begin{cases} F(x,y,u,v)=0 \ G(x,y,u,v)=0\end{cases}，\vec{\iota}=(\frac{\eth(F,G)}{\eth(y,z)},\frac{\eth(F,G)}{\eth(z,x)},\frac{\eth(F,G)}{\eth(x,y)})$</p>
+<h3 id="平面隐式曲线"><a href="#平面隐式曲线" class="headerlink" title="平面隐式曲线"></a>平面隐式曲线</h3><p>$F(x,y)=0,(x-x_0)F_x’+(y-y_0)Fy’=0$</p>
+<h3 id="空间曲面切平面-法线"><a href="#空间曲面切平面-法线" class="headerlink" title="空间曲面切平面/法线"></a>空间曲面切平面/法线</h3><p>隐式：$F(x,y,z)=0,\vec{n}=(F’_x,F’_y,F’_z)$</p>
+<p>显式：$z=f(x,y),\vec{n}=(f_x’,f_y’-1)$</p>
+<p>参数式：$\begin{cases} x=x(u,v) \ y=y(u,v) \ z=z(u,v) \end{cases},\vec{n}=(\frac{\eth(y,z)}{\eth(u,v)},\frac{\eth(z,x)}{\eth(u,v)},\frac{\eth(x,y)}{\eth(u,v)})$ </p>
+<h2 id="多元函数的Taylor公式与极值"><a href="#多元函数的Taylor公式与极值" class="headerlink" title="多元函数的Taylor公式与极值"></a>多元函数的Taylor公式与极值</h2><p>二元函数的微分中值定理：$f(x,y)$在凸区域D内有连续的偏导数，则对D内任何两点$(x_1,y_1),(x_2,y_2)$的直线段上一点$(\xi,\zeta)$有$f(x_2,y_2)-f(x_1,y_1)=(x_2-x_1)f_x’(\xi,\zeta)+(y_2-y_1)f_y’(\xi,\zeta)$</p>
+<p>二元函数的Taylor展开公式：$f(x,y)=f(x_0+\Delta x,y_0+\Delta y)=\sum_{m=0}^{n}\frac{1}{m!}D^mf(x_0,y_0)+R_n,R_n=\frac{1}{(n+1)!}D^{n+1}f(x_0+\theta\Delta y,y_0+\theta\Delta y)$</p>
+<p>其中$D=\Delta x \frac{\eth}{\eth x}+\Delta y \frac{\eth}{\eth y},0&lt;\theta &lt;1$</p>
+<h3 id="二元函数的极值"><a href="#二元函数的极值" class="headerlink" title="二元函数的极值"></a>二元函数的极值</h3><h4 id="极值的必要条件"><a href="#极值的必要条件" class="headerlink" title="极值的必要条件"></a>极值的必要条件</h4><p>$f(x,y)$在$(x_0,y_0)$处取到极值，则$f’_x(x_0,y_0)=f’_y(x_0,y_0)=0$</p>
+<h4 id="极值的充分条件"><a href="#极值的充分条件" class="headerlink" title="极值的充分条件"></a>极值的充分条件</h4><p>记Hesse矩阵 $H=\begin{pmatrix} A=f_{xx} &amp; B=f_{xy} \ B=f_{yx} &amp; C=f_{yy} \end{pmatrix}\ Q(h,k)=\begin{pmatrix} h &amp;k \end{pmatrix}H\begin{pmatrix} h \k \end{pmatrix}=Ah^2+2Bhk+Ck^2 ,\Delta=|H|=AC-B^2$</p>
+<ol>
+<li>当$\Delta &gt;0,A&gt;(&lt;)0$时，即Q为正（负）定矩阵，$(x_0,y_0)$为极小（极大）值</li>
+<li>当$\Delta &lt;0$时，即Q为不定矩阵，$(x_0,y_0)$不是极值点</li>
+<li>当$\Delta  =0$时，即Q为半定矩阵，判断失效</li>
+</ol>
+<h4 id="条件极值"><a href="#条件极值" class="headerlink" title="条件极值"></a>条件极值</h4><ul>
+<li><p>直接法</p>
+<p>如果可以从约束条件$\phi(x,y,z)=0$解出一个变量$z=z(x,y)$则可求$u=f(x,y,z(x,y))$的无条件极值</p>
+</li>
+<li><p>$Lagrange$乘数法</p>
+<p>令$L(x,y,z)=f(x,y,z)+\lambda \phi(x,y,z)$ 求其无条件极值的必要条件，即</p>
+<p>$\begin{cases} L’_x=0 \ L’_y=0 \ L’<em>z=0 \L’</em>\lambda=0 \end{cases}$</p>
+</li>
+</ul>
+<h3 id="二元函数的最值"><a href="#二元函数的最值" class="headerlink" title="二元函数的最值"></a>二元函数的最值</h3><p>原则：有界闭区域上的可微函数的最值在内部驻点或边界点取到</p>
+<p>实际：若在区域内取驻点唯一，此为最值点</p>
+<p>一般就考虑边界和内部，分类讨论，或者一些特殊的没有偏导数的点</p>
+<h2 id="向量场的微商"><a href="#向量场的微商" class="headerlink" title="向量场的微商"></a>向量场的微商</h2><p>$Nabla /Hamilta$算子 $\nabla \phi =grad\phi=\frac{\eth \phi}{\eth x}\vec{i}+\frac{\eth \phi}{\eth y}\vec{j}+\frac{\eth \phi}{\eth z}\vec{k}$</p>
+<p>设有向量场$\vec {v}(x,y,z)=P(x,y,z)\vec{i}+Q(x,y,z)\vec{j}+R(x,y,z)\vec{k}$</p>
+<p>散度定义：$div \vec{v}=\nabla ·\vec{v}=\frac{\eth P}{\eth x}+\frac{\eth Q}{\eth y}+\frac{\eth R}{\eth z}$</p>
+<p>故向量场的散度为数量场</p>
+<p>旋度定义：$rot\vec{v}=\nabla \times \vec{v}=\begin{vmatrix}\vec{i} &amp; \vec{j} &amp;\vec{k} \ \frac{\eth}{\eth x} &amp; \frac{\eth}{\eth y} &amp;\frac{\eth}{\eth z}  \ P &amp; Q &amp; R \end{vmatrix}$</p>
+<p>故向量场的旋度为向量场</p>
+<p>运算律：</p>
+<ol>
+<li>$\nabla(\phi +f)=\nabla \phi+\nabla f$</li>
+<li>$\nabla ·(\vec{a}+\vec{b})=\nabla · \vec{a}+\nabla · \vec{b}$</li>
+<li>$\nabla \times(\vec{a}+\vec{b})=\nabla \times \vec{a}+\nabla \times \vec{b}$</li>
+<li>$\nabla (\phi f)=\phi \nabla f+f\nabla \phi $</li>
+<li>$\nabla (\phi \vec{a})=\phi \nabla ·\vec{a}+\vec{a} ·\nabla \phi $</li>
+<li>$\nabla (\vec{a}\times\vec{b})=\vec{b}·\nabla \times \vec{a}-\vec{a}·\nabla \times \vec{b}$</li>
+<li>$\nabla \times (\phi \vec{a})=\nabla \phi \times \vec{a}+\phi \nabla  \times \vec{a}$</li>
+</ol>
+<h1 id="二重积分"><a href="#二重积分" class="headerlink" title="二重积分"></a>二重积分</h1><p>定义：$f(x,y)$在有界闭界上定义$D=[a,b]\times [c,d]$,若对其任取矩形分割$( (\varepsilon _i \eta <em>i)\in D</em>{ij}$总有$\lim \limits_{|T| \rightarrow 0}\sum_{i=1}^{n}\sum_{j=1}^{m}f(\varepsilon _i \eta <em>i)\Delta \sigma</em>{ij}=I$</p>
+<p>性质：</p>
+<ol>
+<li>线性</li>
+<li>可加性  </li>
+<li>单调性 $f(x,y) \leq g(x,y),\iint_D f(x,y)d\sigma \leq \iint_D g(x,y)d\sigma$</li>
+<li>绝对值不等式 $|\iint_D f(x,y)d\sigma| \leq \iint_D |f(x,y)|d\sigma$</li>
+<li>中值定理 $f(x,y) \in C(D) ,\exist (\xi ,\eta ) \in D , \iint_Df(x,y)d\sigma =f(\xi,\eta)A_D$</li>
+</ol>
+<p>计算方法：$\iint_{[a,b]\times [c,d]}f(x,y)d\sigma = \int_a^bdx\int_c^df(x,y)dy$</p>
+<p><strong>先画图，再划分区域</strong></p>
+<h1 id="三重积分"><a href="#三重积分" class="headerlink" title="三重积分"></a>三重积分</h1>
             </div>
 
             <!-- Post Comments -->
