@@ -68,9 +68,9 @@
     <category term="C&amp;C++" scheme="http://yoursite.com/categories/CS/C-C/"/>
     
     
-    <category term="study_notes" scheme="http://yoursite.com/tags/study-notes/"/>
-    
     <category term="排序" scheme="http://yoursite.com/tags/排序/"/>
+    
+    <category term="study_notes" scheme="http://yoursite.com/tags/study-notes/"/>
     
     <category term="C&amp;C++" scheme="http://yoursite.com/tags/C-C/"/>
     
@@ -131,9 +131,9 @@
     <category term="SIGNAL_PROCESSING" scheme="http://yoursite.com/categories/CS/SIGNAL-PROCESSING/"/>
     
     
-    <category term="信号处理" scheme="http://yoursite.com/tags/信号处理/"/>
-    
     <category term="study_notes" scheme="http://yoursite.com/tags/study-notes/"/>
+    
+    <category term="信号处理" scheme="http://yoursite.com/tags/信号处理/"/>
     
   </entry>
   
@@ -162,9 +162,9 @@
     <category term="SIGNAL_PROCESSING" scheme="http://yoursite.com/categories/CS/SIGNAL-PROCESSING/"/>
     
     
-    <category term="信号处理" scheme="http://yoursite.com/tags/信号处理/"/>
-    
     <category term="study_notes" scheme="http://yoursite.com/tags/study-notes/"/>
+    
+    <category term="信号处理" scheme="http://yoursite.com/tags/信号处理/"/>
     
   </entry>
   
@@ -458,11 +458,11 @@
     <category term="Contest" scheme="http://yoursite.com/categories/OI/Contest/"/>
     
     
-    <category term="dp" scheme="http://yoursite.com/tags/dp/"/>
-    
     <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
     
     <category term="二分" scheme="http://yoursite.com/tags/二分/"/>
+    
+    <category term="dp" scheme="http://yoursite.com/tags/dp/"/>
     
     <category term="拓扑排序" scheme="http://yoursite.com/tags/拓扑排序/"/>
     
