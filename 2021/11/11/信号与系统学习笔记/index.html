@@ -166,39 +166,118 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/images/0024.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/images/0032.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >信号与系统学习笔记</h2></a>
          
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
 
-                <h1 id="傅里叶变换Fourier-Transform"><a href="#傅里叶变换Fourier-Transform" class="headerlink" title="傅里叶变换Fourier Transform"></a>傅里叶变换Fourier Transform</h1><h2 id="引述"><a href="#引述" class="headerlink" title="引述"></a>引述</h2><p>傅里叶变换主要应用于将信号经过处理后变成不同频率的组成</p>
-<p>大概就会将合成的频率组合拆分成单个信号</p>
-<p>有点类似于棱镜对于光，白光透过棱镜会分成不同的彩光。</p>
-<p>将傅里叶变换看做棱镜，信号看做光来理解就差不多</p>
-<p><img src="/2020/10/09/SP学习笔记——理论篇/1.png" alt=""></p>
-<h2 id="Types-of-Fourier"><a href="#Types-of-Fourier" class="headerlink" title="Types of Fourier"></a>Types of Fourier</h2><ul>
-<li><p>Fourier series 傅里叶级数</p>
+                <p>大二期中复习</p>
+<hr>
+<h1 id="基础数学"><a href="#基础数学" class="headerlink" title="基础数学"></a>基础数学</h1><p><img src="/2021/11/11/信号与系统学习笔记/1.png" alt=""></p>
+<p>$e^{j\theta}=cos(\theta)+jsin(\theta)$</p>
+<p>$cos(\theta)=\frac{e^{j\theta}+e^{-j\theta }}{2}$</p>
+<p>$sin(\theta)=\frac{e^{j\theta}-e^{-j\theta }}{2j}$<br>$$<br>\sum_{n=0}^{\infty}{(z_0)^n=\frac{1}{1-z_0}} ,|z_0|&lt;1<br>$$</p>
+<h1 id="连续信号与离散信号"><a href="#连续信号与离散信号" class="headerlink" title="连续信号与离散信号"></a>连续信号与离散信号</h1><p><strong>信号的分类</strong><br>$$<br>E_{\infty}=\int_{-\infty}^{\infty}|x(t)|^2dt<br>=\sum_{n=-\infty}^{\infty}|x[n]|^2<br>$$</p>
+<p>$$<br>P_{\infty}=\lim_{N \rightarrow \infty}\frac{1}{2T}\int_{-T}^{T}|x(t)|^2dt=<br>\lim_{N \rightarrow \infty}\frac{1}{2N+1}\sum_{-N}^{N}|x[t]|^2<br>$$</p>
+<ul>
+<li>有限能量信号（Finite‐energy signal）:$E_{\infty}&lt;\infty,P_{\infty}=0$</li>
+<li>有限功率信号（Finite‐power signal）：$P_{\infty}&lt;\infty,E_{\infty}=\infty$</li>
+<li>无限功率能量信号（Infinite energy &amp; power signal ）：$P_{\infty}\rightarrow\infty,E_{\infty}\rightarrow\infty$</li>
+</ul>
+<p><strong>信号的偶部与奇部</strong></p>
+<p>$x(t)=x_e(t)+x_o(t)$</p>
+<p>$x_e(t)=E_v{x(t)}=1/2[x(t)+x(-t)]$</p>
+<p>$x_o(t)=O_d{x(t)}=1/2[x(t)-x(-t)]$</p>
+<p><strong>信号的频率与周期</strong></p>
+<p>对于连续信号$x(t)=e^{jw_0t}$，有$\frac{2\pi}{|k|w_0}=\frac{T_0}{|k|}$</p>
+<p>对于离散信号$x[n]=e^{jw_0n}$有$\frac{w_0}{2\pi}=\frac{m}{N}$，周期满足$N=m(2\pi/w_0)$ 整数</p>
+<p>区别就是离散信号N一定为正整数</p>
+<h2 id="基础信号"><a href="#基础信号" class="headerlink" title="基础信号"></a>基础信号</h2><p>单位脉冲信号与单位阶跃信号</p>
+<p>离散时间的定义</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/2.png" alt=""></p>
+<p>一些性质     </p>
+<ul>
+<li>$\delta[n]=u[n]-u[n-1]$</li>
+<li><p>$u[n]=\sum_{m=\infty}^{n}\delta[m]$</p>
 </li>
-<li><p>Fourier transform 傅里叶变换</p>
-</li>
-<li><p>Continuous Fourier transform 持续傅里叶变换</p>
-</li>
-<li><p>Discrete-time Fourier transform 离散时间傅里叶变换</p>
-</li>
-<li><p>Discrete Fourier transform 离散傅里叶变换</p>
-</li>
-<li><p>Fast Fourier transform 快速傅里叶变换<del>（FFT 是法法塔！</del></p>
+<li><p>$x[n]\delta[n-n_0]=x[n_0]\delta[n-n_0]$</p>
 </li>
 </ul>
-<p>首先是傅里叶级数</p>
-<h2 id="傅里叶级数"><a href="#傅里叶级数" class="headerlink" title="傅里叶级数"></a>傅里叶级数</h2><p><img src="/2020/10/09/SP学习笔记——理论篇/2.png" alt=""></p>
-<p>傅里叶级数的公式<br>$$<br>u(t)=\frac{a_0}{2}+\sum_{n=1}^{\infty}(a_n\cos2\pi ft +b_n \sin 2\pi nft)<br>$$</p>
-<p>$$<br>x(t) =\sum_{k=-\infty}^{\infty} a_{k}e^{jkw_{0}t}=\sum_{k=-\infty}^{\infty} a_{k}e^{jk\frac{2\pi}{T}t}<br>$$</p>
-<p>$$<br>x[n] =\sum_{k \in \lt N \gt } a_{k}e^{jkw_{0}n}=\sum_{k \in \lt N \gt }a_{k}e^{jk\frac{2\pi}{T}n}<br>$$</p>
-<p>$$<br>a_k =\sum_{n \in \lt N \gt} x[n]e^{-jkw_{0}n}=\sum_{x \in \lt N \gt}a_n e^{-jk\frac{2\pi}{T}n}<br>$$</p>
-<h1 id="数字图像处理"><a href="#数字图像处理" class="headerlink" title="数字图像处理"></a>数字图像处理</h1><h2 id="拜尔滤镜-Bayer-Filter"><a href="#拜尔滤镜-Bayer-Filter" class="headerlink" title="拜尔滤镜(Bayer Filter)"></a>拜尔滤镜(Bayer Filter)</h2><p>主要把光分成红光</p>
+<p>连续时间的定义：</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/3.png" alt=""></p>
+<p><img src="/2021/11/11/信号与系统学习笔记/4.png" alt=""></p>
+<p>一些性质：</p>
+<ul>
+<li>$u(t)=\int_{-\infty}^{t}\delta(\tau )d\tau$</li>
+<li>$\delta(t)=\frac{du(t)}{dt}$</li>
+<li>$x(t)\delta(t-t_0)=x(t_0)\delta(t-t_0)$</li>
+</ul>
+<h2 id="基本信号的性质"><a href="#基本信号的性质" class="headerlink" title="基本信号的性质"></a>基本信号的性质</h2><ul>
+<li><p>记忆系统：输出决定于现在和以前的输入，非记忆就是只和现在状态相关</p>
+<p>例子：$y[n]=\sum_{k=-\infty}^{n}x[k],y[n]=x[n-1]$</p>
+</li>
+<li><p>可逆性：不同输入对应不同输出</p>
+<p>例子：$y[n]=0,y(t)=x^2(t)$不可逆</p>
+</li>
+<li><p>因果性：任何时间的输出都<strong>只由</strong>现在和以前的<strong>状态</strong>决定，注意和记忆区别</p>
+<p>例子：$y[n]=x[n]-x[n+1],y(t)=x(t+1)$非因果</p>
+</li>
+<li><p>稳定性：输入有界，则输出有界一定稳定</p>
+</li>
+<li><p>时不变性：时间平移造成相同的输出平移</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/5.png" alt=""></p>
+</li>
+<li><p>线性：$x_1(t)-&gt;y_1(t),x_2(t)-&gt;y_2(t)$有$ax_1(t)+bx_2(t)-&gt;ay_1(t)+by_2(t)$</p>
+</li>
+</ul>
+<p>易错例子：</p>
+<p>$y(t)=\frac{dx(t)}{dt}=\lim_{\Delta t \rightarrow 0}\frac{x(t+\Delta t)-x(t)}{\Delta x}$</p>
+<p>是记忆，不可逆，非因果，不稳定，时不变，非线性系统（因果用定义判断）</p>
+<h1 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>已知x,y系统的关系，求$h(t)$就是把$x$换成$\delta$</p>
+<p><strong>离散时间</strong></p>
+<p><img src="/2021/11/11/信号与系统学习笔记/6.png" alt=""></p>
+<p>例子：</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/7.png" alt=""></p>
+<p><strong>连续时间</strong></p>
+<p>$\int_{-\infty}^{\infty}x(\tau)h(t-\tau)d\tau=x(t)*h(t)$</p>
+<p>同理</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/9.png" alt=""></p>
+<h2 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h2><p><strong>核心：以$t/n$的大小分类讨论</strong></p>
+<p>一般习惯用画图法，画出$h(t-\tau)$的图来和$x(\tau)$相乘分类讨论</p>
+<p>例子如下：</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/8.png" alt=""></p>
+<p>若$h(t)=f(-t+a)$则画图时候还是处理成$\tau$不用取反，位移看成$h(\tau-(t-a))$，于是对应的位移坐标是$t-a$</p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>以连续时间为例子，离散时间同理</p>
+<ul>
+<li><p>交换律：$x(t)<em>h(t)=h(t)</em>x(t)$</p>
+</li>
+<li><p>分配律：$x(t)<em>(h_1(t)+h_2(t))=x(t)</em>h_1(t)+x(t)*h_2(t)$</p>
+</li>
+<li><p>结合律：$x(t)<em>(h_1(t)</em>h_2(t))=(x(t)<em>h_1(t))</em>h_2(t))$</p>
+</li>
+<li><p>当且仅当$h(t)=0,\forall t \neq 0$，该系统是没有记忆的很好理解因为$x(t)*h(t-\tau)$ 要保证$h(t-\tau)$只有$h(t)$有值</p>
+</li>
+<li><p>如果$h_0(t)*h_1(t)=\delta(t)$则$h_1(t)$是$h_0(t)$的逆系统</p>
+<p>例子：$y(t)=x(t-t_0)$逆系统表达$y_1(t)=x(t+t_0)$因为$\delta(t-t_0)<em>\delta(t+t_0)=\delta(t)$对应$h(t)</em>h_1(t)=\delta(t)$</p>
+</li>
+<li><p>当$h(t)=0 ,t&lt;0$时，$y(t)=x(t)*h(t)$系统是因果的</p>
+<p>这个条件相当于$h(t-\tau)=0,t-\tau &lt;0$ </p>
+</li>
+<li><p>当$h(t)$绝对可积，则该系统稳定$\int_{-\infty}^{\infty}|h(\tau)|d\tau &lt; \infty$</p>
+</li>
+<li><p>单位阶跃响应$s(t)$就是把$x(t)=u(t)$计算得到的值，即$s(t)=\int_{-\infty}^th(\tau)d\tau$</p>
+</li>
+</ul>
+<h2 id="差分与求导"><a href="#差分与求导" class="headerlink" title="差分与求导"></a>差分与求导</h2><p>本质好像就是求微分方程，先根据形式猜测特解，再找出齐次通解，最后用条件求解</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/10.png" alt=""></p>
+<p><img src="/2021/11/11/信号与系统学习笔记/11.png" alt=""></p>
+<p><strong>注意课件上最后带入的时候写错了，负号消失了</strong></p>
+<p>至于差分就是等比\等差数列求解</p>
+<p>然后有一个画图表示的</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/12.png" alt=""></p>
+<p><img src="/2021/11/11/信号与系统学习笔记/13.png" alt=""></p>
 
             </div>
 
