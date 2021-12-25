@@ -180,7 +180,7 @@
 <p>$cos(\theta)=\frac{e^{j\theta}+e^{-j\theta }}{2}$</p>
 <p>$sin(\theta)=\frac{e^{j\theta}-e^{-j\theta }}{2j}$<br>$$<br>\sum_{n=0}^{\infty}{(z_0)^n=\frac{1}{1-z_0}} ,|z_0|&lt;1<br>$$</p>
 <h1 id="连续信号与离散信号"><a href="#连续信号与离散信号" class="headerlink" title="连续信号与离散信号"></a>连续信号与离散信号</h1><p><strong>信号的分类</strong><br>$$<br>E_{\infty}=\int_{-\infty}^{\infty}|x(t)|^2dt<br>=\sum_{n=-\infty}^{\infty}|x[n]|^2<br>$$</p>
-<p>$$<br>P_{\infty}=\lim_{N \rightarrow \infty}\frac{1}{2T}\int_{-T}^{T}|x(t)|^2dt=<br>\lim_{N \rightarrow \infty}\frac{1}{2N+1}\sum_{-N}^{N}|x[t]|^2<br>$$</p>
+<p>$$<br>P_{\infty}=\lim_{N \rightarrow \infty}\frac{1}{2T}\int_{-T}^{T}|x(t)|^2dt=<br>\lim_{N \rightarrow \infty}\frac{1}{2N+1}\sum_{-N}^{N}|x(t)|^2<br>$$</p>
 <ul>
 <li>有限能量信号（Finite‐energy signal）:$E_{\infty}&lt;\infty,P_{\infty}=0$</li>
 <li>有限功率信号（Finite‐power signal）：$P_{\infty}&lt;\infty,E_{\infty}=\infty$</li>
@@ -215,7 +215,7 @@
 <li>$x(t)\delta(t-t_0)=x(t_0)\delta(t-t_0)$</li>
 </ul>
 <h2 id="基本信号的性质"><a href="#基本信号的性质" class="headerlink" title="基本信号的性质"></a>基本信号的性质</h2><ul>
-<li><p>记忆系统：输出决定于现在和以前的输入，非记忆就是只和现在状态相关</p>
+<li><p>记忆系统：输出决定于现在和以前的输入，（不管将来）非记忆就是只和现在状态相关</p>
 <p>例子：$y[n]=\sum_{k=-\infty}^{n}x[k],y[n]=x[n-1]$</p>
 </li>
 <li><p>可逆性：不同输入对应不同输出</p>
@@ -233,7 +233,7 @@
 </li>
 </ul>
 <p>易错例子：</p>
-<p>$y(t)=\frac{dx(t)}{dt}=\lim_{\Delta t \rightarrow 0}\frac{x(t+\Delta t)-x(t)}{\Delta x}$</p>
+<p>$y(t)=\frac{dx(t)}{dt}=\lim_{\Delta t \rightarrow 0}\frac{x(t+\Delta t)-x(t)}{\Delta t}$</p>
 <p>是记忆，不可逆，非因果，不稳定，时不变，非线性系统（因果用定义判断）</p>
 <h1 id="卷积-Convolution"><a href="#卷积-Convolution" class="headerlink" title="卷积(Convolution)"></a>卷积(Convolution)</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>已知x,y系统的关系，求$h(t)$就是把$x$换成$\delta$</p>
 <p><strong>离散时间</strong></p>
@@ -251,7 +251,7 @@
 <p>若$h(t)=f(-t+a)$则画图时候还是处理成$\tau$不用取反，位移看成$h(\tau-(t-a))$，于是对应的位移坐标是$t-a$</p>
 <h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>以连续时间为例子，离散时间同理</p>
 <ul>
-<li><p>交换律： $x(t)<em>h(t)=h(t)</em>x(t)$$</p>
+<li><p>交换律： $x(t)<em>h(t)=h(t)</em>x(t)$</p>
 </li>
 <li><p>分配律： $x(t)<em>(h_1(t)+h_2(t))=x(t)</em>h_1(t)+x(t)*h_2(t)$</p>
 </li>
