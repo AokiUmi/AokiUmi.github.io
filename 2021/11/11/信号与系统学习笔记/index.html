@@ -173,7 +173,7 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
 
-                <p>大二期中复习</p>
+                <p>大二复习</p>
 <hr>
 <h1 id="基础数学"><a href="#基础数学" class="headerlink" title="基础数学"></a>基础数学</h1><p><img src="/2021/11/11/信号与系统学习笔记/1.png" alt=""></p>
 <p>$e^{j\theta}=cos(\theta)+jsin(\theta)$</p>
@@ -388,6 +388,169 @@
 <p><img src="/2021/11/11/信号与系统学习笔记/33.png" alt=""></p>
 <p>二阶的</p>
 <p><img src="/2021/11/11/信号与系统学习笔记/34.png" alt=""></p>
+<h2 id="相位与相角"><a href="#相位与相角" class="headerlink" title="相位与相角"></a>相位与相角</h2><p>$\angle H(jw)$计算方法，基本分数形式就是分母的相角减去分子的相，若有乘法就是加</p>
+<p>$H(jw)=|H(jw)|e^{j\angle H(jw)}$</p>
+<p>例子：$ H(jw)=\frac{jw+2}{(jw)^2+4(jw)+3},$ $tan \theta=\frac{w}{2}-\frac{4w}{3-w^2}$</p>
+<p>$arg(H(jw))=arctan[\frac{w}{2}-\frac{4w}{3-w^2}]$</p>
+<p>group delay：$\tau (w)=-\frac{d}{dw}[\angle H(jw)]$</p>
+<h3 id="Log-Magnitude-and-Bode-Plots"><a href="#Log-Magnitude-and-Bode-Plots" class="headerlink" title="Log-Magnitude and Bode Plots"></a>Log-Magnitude and Bode Plots</h3><p>在卷积中相角的应用</p>
+<p>$y(t)=x(t)*h(t)$ $Y(jw)=H(jw)X(jw)=|H(jw)||X(jw)|e^{j(\angle H(jw) + \angle X(jw))}$</p>
+<p>$\angle Y(jw)= \angle H(jw)+ \angle X(jw)$两边取log</p>
+<p>$log|Y(jw)|=log|H(jw)|+log|X(jw)|$</p>
+<p>波得图(Bode plot)：一阶系统</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/35.png" alt=""></p>
+<p>二阶系统</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/36.png" alt=""></p>
+<p><img src="/2021/11/11/信号与系统学习笔记/37.png" alt=""></p>
+<h1 id="信号的采样与恢复"><a href="#信号的采样与恢复" class="headerlink" title="信号的采样与恢复"></a>信号的采样与恢复</h1><p><img src="/2021/11/11/信号与系统学习笔记/38.png" alt=""></p>
+<p>上图就是用一个离散的周期信号去采样$x(t)$的过程</p>
+<p>但若$x(t)$是一个非周期的又带限的信号</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/39.png" alt=""></p>
+<p>$X_p(jw)=\frac{1}{2\pi}X(jw)*P(jw)$</p>
+<p>$P(jw)=\frac{2\pi}{T}\sum_{k=-\infty}^{\infty}\delta(w-kw_s)=\frac{2\pi}{T} \sum_{k=-\infty}^{\infty} \delta(w-k\frac{2\pi}{T})$</p>
+<p>$X_p(jw)=\frac{1}{2\pi}\sum_{k=-\infty}^{\infty}X(j(w-kw_s))$</p>
+<p>观察得知，当$w_m&lt;w_s+w_m$时候，信号采样的hi和不会出现重叠，若$w_m&gt;w_s-w_m$信号会重复被采样，故部分信号缺失造成误差</p>
+<p>故对有带限的信号，采样频率要满足$w_s&gt;2w_m$这也就是采样定理</p>
+<h2 id="零阶保持"><a href="#零阶保持" class="headerlink" title="零阶保持"></a>零阶保持</h2><p><img src="/2021/11/11/信号与系统学习笔记/40.png" alt=""></p>
+<p><img src="/2021/11/11/信号与系统学习笔记/41.png" alt=""></p>
+<p>这是一种采样后恢复的方式</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/43.png" alt=""></p>
+<h2 id="理想低通滤波器"><a href="#理想低通滤波器" class="headerlink" title="理想低通滤波器"></a>理想低通滤波器</h2><p><img src="/2021/11/11/信号与系统学习笔记/42.png" alt=""></p>
+<p>$h(t)=\frac{Tw_c}{\pi} \frac{sinw_ct}{w_ct}$</p>
+<p>$x_r(t)=\sum_{n=-\infty}^{\infty}x(nT)\frac{Tw_c}{\pi} \frac{sinw_c(t-nT)}{w_c(t-nT)}$</p>
+<h2 id="一阶保持"><a href="#一阶保持" class="headerlink" title="一阶保持"></a>一阶保持</h2><p><img src="/2021/11/11/信号与系统学习笔记/44.png" alt=""></p>
+<p>$H(jw)=\frac{1}{T}[\frac{sin(wT/2)}{w/2}]^2$</p>
+<h2 id="混叠-Aliasing"><a href="#混叠-Aliasing" class="headerlink" title="混叠(Aliasing)"></a>混叠(Aliasing)</h2><p>当$w_s&lt;2w_m$时，取样后会出现混叠现象</p>
+<h2 id="离散与连续时间信号转化"><a href="#离散与连续时间信号转化" class="headerlink" title="离散与连续时间信号转化"></a>离散与连续时间信号转化</h2><h3 id="C-D-conversion"><a href="#C-D-conversion" class="headerlink" title="C/D conversion"></a>C/D conversion</h3><p><img src="/2021/11/11/信号与系统学习笔记/45.png" alt=""></p>
+<p>$x_p(t)=\sum_{n=-\infty}^{\infty}x(nT)\delta(t-nT)$</p>
+<p>$x_d[n]=x_c(nT)$</p>
+<p>推理过程：</p>
+<p>$X_d(e^{j\Omega})=\sum_{-\infty}^{\infty}x_d[n]e^{-jn\Omega}=\sum_{-\infty}^{\infty}x_c(nT)e^{-jn\Omega}$</p>
+<p>$x_p(t)=\sum_{n=-\infty}^{\infty}x_c(nT)\delta(t-nT) \rightarrow X_p(jw)=\sum_{n=-\infty}^{\infty}x_c(nT)e^{-jwnT}$</p>
+<p>如果$w=\Omega /T,X_d(e^{j\Omega})=X_p(j\Omega/T)$</p>
+<p>$X_d(e^{j\Omega})=1/T\sum_{k=-\infty}^{\infty}X(j(\Omega-2k\pi)/T)$</p>
+<h3 id="D-C-conversion"><a href="#D-C-conversion" class="headerlink" title="D/C conversion"></a>D/C conversion</h3><p><img src="/2021/11/11/信号与系统学习笔记/46.png" alt=""></p>
+<p>$y_c(t)=y[n/T]$</p>
+<h3 id="全系统"><a href="#全系统" class="headerlink" title="全系统"></a>全系统</h3><p><img src="/2021/11/11/信号与系统学习笔记/47.png" alt=""></p>
+<h2 id="离散信号的采样"><a href="#离散信号的采样" class="headerlink" title="离散信号的采样"></a>离散信号的采样</h2><p><img src="/2021/11/11/信号与系统学习笔记/48.png" alt=""></p>
+<p>$X_p(e^{jw})=1/N\sum_{k=0}^{N-1}X(e^{j(w-kw_s)})$</p>
+<h2 id="离散信号的恢复"><a href="#离散信号的恢复" class="headerlink" title="离散信号的恢复"></a>离散信号的恢复</h2><p>$x_r[n]=\sum_{k=-\infty}^{\infty}x[kN]\frac{Nw_c}{\pi}\frac{sinw_c(n-kN)}{w_c(n-kN)}$</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/1.jpg" alt=""></p>
+<p>向下取样(SRI)因子M： $y[n]=x[Mn]$</p>
+<h1 id="拉普拉斯变换-The-Laplace-transform"><a href="#拉普拉斯变换-The-Laplace-transform" class="headerlink" title="拉普拉斯变换(The Laplace transform)"></a>拉普拉斯变换(<strong>The</strong> <strong>Laplace</strong> transform)</h1><h2 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h2><p>傅里叶变换的拓展版</p>
+<p>$x(t)\rightarrow X(s),X(s)=\int_{-\infty}^{\infty}x(t)e^{-st}dt,s=\sigma +jw$</p>
+<p>当$s=jw$，就是傅里叶变换</p>
+<h2 id="定义域，零点，极点"><a href="#定义域，零点，极点" class="headerlink" title="定义域，零点，极点"></a>定义域，零点，极点</h2><p>这个是拉普拉斯变换区别于傅里叶变换特有的</p>
+<p>定义域主要是看s的实部取值范围记为$Re[s]$</p>
+<p>$X(s)=\frac{N(s)}{D(s)}$零点就是分子等于零时候s取值，极点是分母等于0的时候s取值</p>
+<p>定义域一定不包括极点，零点无所谓</p>
+<h2 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h2><ol>
+<li><p>The ROC of 𝑋 𝑠 consists of strips parallel to the 𝑗𝜔‐axis in the 𝑠‐p</p>
+<p>$\int_{-\infty}^{\infty}|x(t)|e^{\sigma t}dt&lt;\infty$ 用绝对可积来求定义域</p>
+</li>
+<li><p>For rational Laplace transforms, the ROC does not contain any poles.极点一定不在定义域之内</p>
+</li>
+<li>If $x(t)$is of finite duration and is absolutely integrable, then the ROC is the entire s-plane.绝对可积则包含整个s平面</li>
+<li>后面关于ROC和极点的性质不多赘述</li>
+</ol>
+<h2 id="反拉普拉斯变换"><a href="#反拉普拉斯变换" class="headerlink" title="反拉普拉斯变换"></a>反拉普拉斯变换</h2><p>根据$X(s)$求$x(t)$</p>
+<p>$x(t)=\frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty}X(s)e^{st}ds$</p>
+<h2 id="图像性质"><a href="#图像性质" class="headerlink" title="图像性质"></a>图像性质</h2><p><img src="/2021/11/11/信号与系统学习笔记/2.jpg" alt=""></p>
+<h2 id="常用性质"><a href="#常用性质" class="headerlink" title="常用性质"></a>常用性质</h2><ul>
+<li><p>线性：$x(t)=ax_1(t)+bx_2(t)\rightarrow aX_1(s)+bX_2(s),ROC :R_1 \and R_2$</p>
+</li>
+<li><p>时间平移：$x(t-t_0)\rightarrow e^{-st_0}X(s),ROC:R$ </p>
+<p>$X(s-s_0)\rightarrow e^{jw_0t}x(t),ROC:R$</p>
+</li>
+<li><p>翻倍：$x(at)\rightarrow \frac{1}{|a|}X(\frac{s}{a}),ROC:aR$</p>
+</li>
+<li><p>共轭：$x^<em>(t)\rightarrow X^</em>(s^*),ROC:R$</p>
+</li>
+<li><p>卷积：$x_1(t)*x_2(t)\rightarrow X_1(s)X_2(s),ROC:R_1\and R_2$</p>
+</li>
+<li><p>求导：$\frac{dx(t)}{dt}\rightarrow sX(s),ROC$ :contains $R$</p>
+<p>$-tx(t)\rightarrow \frac{dX(s)}{ds}$</p>
+</li>
+<li><p>积分：$\int_{-\infty}^tx(\tau)d\tau \rightarrow \frac{1}{s}X(s),ROC:R\and [Re[s]&gt;0]$</p>
+</li>
+</ul>
+<p>Initial‐value theorem:$x(0^+)= \lim_{s \rightarrow \infty}sX(s) $</p>
+<p>Final‐value theorem:$\lim_{t \rightarrow \infty}x(t)=\lim_{s \rightarrow0}sX(s)$</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li><p>因果性(Causality)：定义域包括右半平面</p>
+</li>
+<li><p>反因果性(Anti‐causal)：定义域包括左半平面</p>
+</li>
+<li><p>稳定性(Stability)：$H(s)$的脉冲响应绝对可积，定义域包括整个$jw$轴，即虚轴</p>
+<p>对于因果系统，所有极点都在左半平面，即所有极点都有负实部</p>
+</li>
+</ul>
+<p>经典例题</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/3.jpg" alt=""></p>
+<p><img src="/2021/11/11/信号与系统学习笔记/4.jpg" alt=""></p>
+<h2 id="框图表示-Block-Diagram-Representation"><a href="#框图表示-Block-Diagram-Representation" class="headerlink" title="框图表示(Block Diagram Representation)"></a>框图表示(Block Diagram Representation)</h2><p><img src="/2021/11/11/信号与系统学习笔记/5.jpg" alt=""></p>
+<p>一阶系统</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/6.jpg" alt=""></p>
+<p>二阶系统的三种表示</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/7.jpg" alt=""></p>
+<p>如何看八爪鱼</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/8.jpg" alt=""></p>
+<p>上面系数直接写，从幂高到低，下面系数取反。系数也是高到低写，没有框就是1</p>
+<h2 id="单边拉普拉斯变换"><a href="#单边拉普拉斯变换" class="headerlink" title="单边拉普拉斯变换"></a>单边拉普拉斯变换</h2><p>$X(s)= \int_{0^-}^{\infty}x(t)e^{-st}dt$</p>
+<p>$x(t)=0$ for $t&lt;0$ the unilateral and bilateral transforms are identical</p>
+<h3 id="不同的性质点"><a href="#不同的性质点" class="headerlink" title="不同的性质点"></a>不同的性质点</h3><ul>
+<li>求导：$\frac{dx(t)}{dt}\rightarrow sX(s)-x(0^-)$</li>
+<li>卷积：$x_1(t)*x_2(t)\rightarrow X_1(s)X_2(s),ROC:R_1\and R_2$只有$x_1(t),x_2(t)$都满足$t&lt;0,x_1(t)=0,x_2(t)=0$才能用</li>
+</ul>
+<p>用处：求LTI系统的零输入响应，和零状态响应</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/9.jpg" alt=""></p>
+<h1 id="Z变换-The-z‐transform"><a href="#Z变换-The-z‐transform" class="headerlink" title="Z变换(The z‐transform)"></a>Z变换(The z‐transform)</h1><h2 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h2><p>拉普拉斯变换的离散信号版本</p>
+<p>$X(z)=\sum_{n=-\infty}^{+\infty}x[n]z^{-n}$</p>
+<p>定义域都是圆型的</p>
+<p>相似性质都和拉普拉斯相同不多赘述</p>
+<h2 id="反Z变换"><a href="#反Z变换" class="headerlink" title="反Z变换"></a>反Z变换</h2><p>$x[n]=\frac{1}{2\pi j}\int X(z)z^{n-1}dz$</p>
+<p>注意定义域范围来确定最后得到函数</p>
+<h2 id="图像性质-1"><a href="#图像性质-1" class="headerlink" title="图像性质"></a>图像性质</h2><p><img src="/2021/11/11/信号与系统学习笔记/10.jpg" alt=""></p>
+<h2 id="常用性质-1"><a href="#常用性质-1" class="headerlink" title="常用性质"></a>常用性质</h2><ul>
+<li><p>线性：$ax_1[n]+bx_2[n]\rightarrow aX_1(z)+bX_2(z),ROC:R_1 \and R_2$</p>
+</li>
+<li><p>时间平移：$x[n-n_0]\rightarrow z_{-n_0}X(z),ROC:R$</p>
+<p>$X(e^{-jw_0}z)\rightarrow e^{jw_0n}x[n],ROC:R$</p>
+</li>
+<li><p>共轭：$x^<em>[n]\rightarrow X^</em>(z^*),ROC:R$</p>
+</li>
+<li><p>求导：$nx[n]\rightarrow -z\frac{dX(z)}{dz},ROC:R$</p>
+</li>
+<li><p>$x[n]-x[n-1]\rightarrow (1-z^{-1})X(z),ROC :R$,</p>
+<p>$\sum_{k=-\infty}^{n}x[k]\rightarrow \frac{1}{1-z^{-1}}X(z)$</p>
+</li>
+</ul>
+<h2 id="特性-1"><a href="#特性-1" class="headerlink" title="特性"></a>特性</h2><ul>
+<li><p>因果性(Causality)：定义域在某个圆的外侧，包括无穷，$H(z)$分子的最高次数不能高于分母的最高次数</p>
+</li>
+<li><p>稳定性(Stability)：定义域包含单位圆</p>
+<p>如果系统因果，所有极点都在单位圆里面</p>
+</li>
+</ul>
+<p>经典例题：</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/11.jpg" alt=""></p>
+<p><img src="/2021/11/11/信号与系统学习笔记/12.jpg" alt=""></p>
+<p><img src="/2021/11/11/信号与系统学习笔记/13.jpg" alt=""></p>
+<h2 id="框图表示-Block-Diagram-Representation-1"><a href="#框图表示-Block-Diagram-Representation-1" class="headerlink" title="框图表示(Block Diagram Representation)"></a>框图表示(Block Diagram Representation)</h2><p>异曲同工</p>
+<p>一阶系统</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/14.jpg" alt=""></p>
+<p>二阶系统</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/15.jpg" alt=""></p>
+<p>八爪鱼</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/16.jpg" alt=""></p>
+<h2 id="单边Z变换"><a href="#单边Z变换" class="headerlink" title="单边Z变换"></a>单边Z变换</h2><p>$X(z)=\sum_{n=0}^{\infty}x[n]z^{-n}$</p>
+<h3 id="特殊性质"><a href="#特殊性质" class="headerlink" title="特殊性质"></a>特殊性质</h3><ul>
+<li>$x[n+1]\rightarrow zX(z)-zx[0]$</li>
+<li>$x[n-1]\rightarrow z^{-1}X(z)+x[-1]$</li>
+<li>$x[n-2]\rightarrow z^{-2}X(z)+z^{-1}x[-1]+x[-2]$</li>
+</ul>
+<p>主要和单边拉普拉斯变换有相同用处</p>
+<p><img src="/2021/11/11/信号与系统学习笔记/17.jpg" alt=""></p>
 
             </div>
 
