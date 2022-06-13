@@ -552,7 +552,7 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <p><img src="/2022/06/13/CA期末总结/31.png" alt=""></p>
 <p>TLB check -&gt; page check -&gt; allocate new memory -&gt; update page -&gt; update TLB</p>
 <p><img src="/2022/06/13/CA期末总结/32.png" alt=""></p>
-<p>Embedded System Design</p>
+<h1 id="Lecture-24-FGPA"><a href="#Lecture-24-FGPA" class="headerlink" title="Lecture 24: FGPA"></a>Lecture 24: FGPA</h1><p>Embedded System Design</p>
 <p>– Communication devices</p>
 <p>• Wired and wireless routers and switches</p>
 <p>– Automotive applications</p>
@@ -567,6 +567,144 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <p><img src="/2022/06/13/CA期末总结/33.png" alt=""></p>
 <p>FPGA vs others</p>
 <p><img src="/2022/06/13/CA期末总结/34.png" alt=""></p>
+<h1 id="Lecture-25-WSC"><a href="#Lecture-25-WSC" class="headerlink" title="Lecture 25: WSC"></a>Lecture 25: WSC</h1><p>• Warehouse Scale Computing</p>
+<p>• Request-level Parallelism</p>
+<p>e.g. Web search</p>
+<p>• Data-level Parallelism</p>
+<p>– MapReduce</p>
+<p>– Hadoop, Spark</p>
+<h4 id="Impact-on-WSC-software"><a href="#Impact-on-WSC-software" class="headerlink" title="Impact on WSC software"></a>Impact on WSC software</h4><p>• Latency, bandwidth à Performance</p>
+<p>– Independent data set within an array</p>
+<p>– Locality of access within server or rack</p>
+<p>• High failure rate à Reliability, Availability</p>
+<p>– Preventing failures is expensive</p>
+<p>– Cope with failures gracefully</p>
+<p>• Varying workloads à Scalability, Availability</p>
+<p>– Scale up and down gracefully</p>
+<p><img src="/2022/06/13/CA期末总结/35.png" alt=""></p>
+<ul>
+<li>MapReduce</li>
+</ul>
+<p>Warehouse-Scale Computers (WSCs)</p>
+<p>– New class of computers</p>
+<p>– Scalability, energy efficiency, high failure rate</p>
+<p>• Cloud Computing</p>
+<p>– Benefits of WSC computing for third parties</p>
+<p>– “Elastic” pay as you go resource allocation</p>
+<p>• Request-Level Parallelism</p>
+<p>– High request volume, each largely independent of other</p>
+<p>– Use replication for better request throughput, availability</p>
+<p>• MapReduce Data Parallelism</p>
+<p>– Map: Divide large data set into pieces for independent parallel processing</p>
+<p>– Reduce: Combine and process intermediate results to obtain final result</p>
+<p>– Hadoop, Spark</p>
+<h1 id="Lecture-26-Advanced-Caches"><a href="#Lecture-26-Advanced-Caches" class="headerlink" title="Lecture 26: Advanced Caches"></a>Lecture 26: Advanced Caches</h1><p>Advanced Caches:</p>
+<ul>
+<li>MRU is LRU</li>
+</ul>
+<p><img src="/2022/06/13/CA期末总结/36.png" alt=""></p>
+<ul>
+<li><p>Reduce the size of LLC</p>
+</li>
+<li><p>LLC is not monolithic</p>
+</li>
+</ul>
+<h1 id="Lecture-27-I-O-DMA-Disks-Networking"><a href="#Lecture-27-I-O-DMA-Disks-Networking" class="headerlink" title="Lecture 27: I/O: DMA, Disks, Networking"></a>Lecture 27: I/O: DMA, Disks, Networking</h1><p>• Direct Memory Access (DMA)</p>
+<p>• Disks</p>
+<p>• Networking</p>
+<p>Shared vs. Switch-Based Networks</p>
+<p>Software Protocol to Send and Receive</p>
+<h3 id="PIO-DMA"><a href="#PIO-DMA" class="headerlink" title="PIO/DMA"></a>PIO/DMA</h3><p><a href="https://blog.csdn.net/amf12345/article/details/91450694" target="_blank" rel="noopener">PIO模式和DMA模式的区别_</a></p>
+<p>硬盘和内存之间数据传送的两种方式：一是PIO模式，二是DNA模式</p>
+<p>  PIO模式下通过CPU来控制硬盘和内存之间的数据传输，是一种通过CPU执行I/O端口指令来进行数据的读写的数据交换模式。</p>
+<p> DMA模式下，CPU并不全程参与数据的传送工作，只需下达命令即可。DMA方式下有控制器和通道，CPU只须向DMA控制器下达指令，让DMA控制器来处理数据的传送，数据传送完毕再把信息反馈给CPU，这样就很大程度上减轻了CPU资源占有率。DMA模式与PIO模式的区别就在于，DMA模式不过分依赖CPU，可以大大节省系统资源，二者在传输速度上的差异并不十分明显。DMA模式又可以分为Single-Word DMA（单字节DMA）和Multi-Word DMA（多字节DMA）两种，其中所能达到的最大传输速率也只有16.6MB/s。</p>
+<p>DMA 传送方式的优先级高于程序中断，两者的区别主要表现在对CPU的干扰程度不同。程序中断请求不但使CPU停下来，而且要CPU执行中断服务程序为中断请求服务，这个请求包括了对断点和现场的处理以及CPU与外设的传送，所以CPU付出了很多的代价；DMA请求仅仅使CPU暂停一下，不需要对断点和现场的处理，并且是由DMA控制外设与主存之间的数据传送，无需CPU的干预，DMA只是借用了一点CPU的时间而已。还有一个区别就是，CPU对这两个请求的响应时间不同，对程序中断请求一般都在执行完一条指令的时钟周期末尾响应，而对DMA的请求，由于考虑它的高效性，CPU在每条指令执行的各个阶段之中都可以让给DMA使用，是立即响应。　DMA主要由硬件来实现，此时高速外设和内存之间进行数据交换不通过CPU的控制，而是利用系统总线。DMA方式是I/O系统与主机交换数据的主要方式之一，另外还有程序查询方式和中断方式。</p>
+<p><img src="/2022/06/13/CA期末总结/37.png" alt=""></p>
+<p>• I/O gives computers their 5 senses</p>
+<p>• I/O speed range is 100-million to one</p>
+<p>• Polling vs. Interrupts</p>
+<p>• DMA to avoid wasting CPU time on data transfers</p>
+<p>• Disks for persistent storage, replaced by flash</p>
+<p>• Networks: computer-to-computer I/O</p>
+<p>– Protocol suites allow networking of heterogeneous</p>
+<p>components. Abstraction!!!</p>
+<h1 id="Lecture-28-Dependability-and-RAID"><a href="#Lecture-28-Dependability-and-RAID" class="headerlink" title="Lecture 28: Dependability and RAID"></a>Lecture 28: Dependability and RAID</h1><p>Dependability via Redundancy</p>
+<p><img src="/2022/06/13/CA期末总结/38.png" alt=""></p>
+<p><img src="/2022/06/13/CA期末总结/39.png" alt=""></p>
+<ul>
+<li>汉明码 Parity /Hamming Error Correction Code</li>
+</ul>
+<p><img src="/2022/06/13/CA期末总结/40.png" alt=""><a href="https://blog.csdn.net/weixin_61985100/article/details/123300540" target="_blank" rel="noopener">汉明码解释</a></p>
+<h3 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h3><p><a href="https://blog.csdn.net/kid00013/article/details/123151776" target="_blank" rel="noopener">RAID磁盘阵列详解</a></p>
+<p>1.什么是RAID磁盘阵列<br>RAID是英文Redundant Array of Independent Disks的缩写，中文翻译过来就是“独立冗余磁盘阵列”。简单的说，RAID是一种把多块独立的硬盘（物理硬盘）按不同的方式组合起来形成一个硬盘组（逻辑硬盘），从而提供比单个硬盘更高的存储性能和提供数据备份技术。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。磁盘阵列还能利用同位检查（Parity Check）的观念，在数组中任意一个硬盘故障时，仍可读出数据，在数据重构时，将数据经计算后重新置入新硬盘中。</p>
+<p>RAID功能实现</p>
+<p>提高IO能力,磁盘并行读写</p>
+<p>提高耐用性,磁盘冗余算法来实现</p>
+<p>RAID实现的方式</p>
+<p>外接式磁盘阵列：通过扩展卡提供适配能力</p>
+<p>内接式RAID：主板集成RAID控制器，安装OS前在BIOS里配置</p>
+<p>软件RAID：通过OS实现</p>
+<p>2.RAID各种级别<br>2.1 RAID 0<br>RAID 0连续以位或字节为单位分割数据，并行读/写于多个磁盘上，因此具有很高的数据传输率，但它没有数据冗余<br>RAID 0只是单纯地提高性能，并没有为数据的可靠性提供保证，而且其中的一个磁盘失效将影响到所有数据<br>RAID 0不能应用于数据安全性要求高的场合</p>
+<p>2.2 RAID 1<br>通过磁盘数据镜像实现数据冗余，在成对的独立磁盘上产生互为备份的数据<br>当原始数据繁忙时，可直接从镜像拷贝中读取数据，因此RAID1可以提高读取性能<br>RAID1是磁盘阵列中单位成本最高的，但提供了很高的数据安全性和可用性。当一个磁盘失效时，系统可以自动切换到镜像磁盘上读写，而不需要重组失效的数据</p>
+<p>2.3 RAID 5<br>N（N&gt;=3）块盘组成阵列，一份数据产生N-1个条带，同时还有1份校验数据，共N份数据在N块盘上循环均衡存储<br>N块盘同时读写，读性能很高，但由于有校验机制的问题，写性能相对不高<br>（N-1）/N磁盘利用率<br>可靠性高，允许坏1块盘，不影响所有数据</p>
+<p> 2.4 RAID 6<br>N（N&gt;=4）块盘组成阵列，（N-2）/N磁盘利用率<br>与RAID5相比，RAID6增加了第二个独立的奇偶校验信息块<br>两个独立的奇偶系统使用不同的算法，即使两块磁盘同时失效也不会影响数据的使用<br>相对于RAID5有更大的“写损失，因此写性能较差</p>
+<p>2.5 RAID 10<br>RAID10其实是RAID 1+0</p>
+<p>N（偶数，N&gt;=4）块盘两两镜像后，再组合成一个RAID0<br>N/2磁盘利用率<br>N/2块盘同时写入，N块盘同时读取<br>性能高，可靠性高</p>
+<table>
+<thead>
+<tr>
+<th>RAID等级</th>
+<th>需要硬盘数量</th>
+<th>容错能力</th>
+<th>读写能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAID 0</td>
+<td>最少1个</td>
+<td>无</td>
+<td>读写性能高</td>
+</tr>
+<tr>
+<td>RAID 1</td>
+<td>N（偶数）</td>
+<td>有</td>
+<td>读性能高、写性能低</td>
+</tr>
+<tr>
+<td>RAID 5</td>
+<td>N&gt;=3</td>
+<td>有（最多一个坏盘）</td>
+<td>读写性能高</td>
+</tr>
+<tr>
+<td>RAID 10</td>
+<td>N&gt;=4(偶数)</td>
+<td>有（每组最多坏一个盘）</td>
+<td>读写性能高</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Lecture-29-Security"><a href="#Lecture-29-Security" class="headerlink" title="Lecture 29: Security"></a>Lecture 29: Security</h1><p>· Heartbleed</p>
+<p>· Flush+Reload</p>
+<p>· Meltdown </p>
+<ul>
+<li><p>covers： Virtual Memory; Protection Levels; Instruction Pipelining; Out-of</p>
+<p>order Execution; Speculative Execution; CPU Caching.</p>
+</li>
+</ul>
+<p>· Spectre</p>
+<p><img src="/2022/06/13/CA期末总结/41.png" alt=""></p>
+<p>• Every part of a computer can be vulnerable</p>
+<p>– Be vigilant and attentive in designing and</p>
+<p>programming</p>
+<p>• Security and privacy have different presences</p>
+<p>– More than DoS, DDoS, virus, Trojan, ransomware,</p>
+<p>spyware, and phishing emails</p>
+<p>• The challenges for a computer architect</p>
+<p>– To rule out any possibility of vulnerabilities</p>
+<p>– To achieve both high performance and security</p>
 
             </div>
 
