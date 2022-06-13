@@ -571,9 +571,9 @@ thumbnail: /images/0034.jpg
     <category term="Contest" scheme="http://yoursite.com/categories/OI/Contest/"/>
     
     
-    <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
-    
     <category term="dp" scheme="http://yoursite.com/tags/dp/"/>
+    
+    <category term="模拟赛" scheme="http://yoursite.com/tags/模拟赛/"/>
     
     <category term="二分" scheme="http://yoursite.com/tags/二分/"/>
     
