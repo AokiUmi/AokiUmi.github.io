@@ -177,16 +177,14 @@
 <p>• Great Ideas in Computer Architecture</p>
 <p>• What you need to know about this class</p>
 <p>• Everything is a Number</p>
-<h1 id="Lecture-2-Introduction-to-C-I"><a href="#Lecture-2-Introduction-to-C-I" class="headerlink" title="Lecture 2: Introduction to C I"></a>Lecture 2: Introduction to C I</h1><p>• Compile vs. Interpret</p>
+<h1 id="Lecture-2-C-I"><a href="#Lecture-2-C-I" class="headerlink" title="Lecture 2: C I"></a>Lecture 2: C I</h1><p>• Compile vs. Interpret 不同进制数字表示法</p>
 <ul>
-<li><p>不同进制数字表示法</p>
-</li>
-<li><p>二进制的表示方法：1.Unsigned Integers 2.Two’s-Complement 二补数（取反+1）3. One’s-Complement 一补数（直接取反）</p>
+<li><p>二进制的表示方法：1.Unsigned Integers 2.Two’s-Complement 二补数（取反+1）3. One’s-Complement 一补数（直接取反）4. Sign Magnitude 只有最高位表示符号</p>
 </li>
 <li><p>CPP Macro 宏定义 <code>#define MAG(x, y) (sqrt( (x)*(x) + (y)*(y)))</code> 要加很多括号不然就会有问题</p>
 </li>
 </ul>
-<h1 id="Lecture-3-Introduction-to-C-II"><a href="#Lecture-3-Introduction-to-C-II" class="headerlink" title="Lecture 3: Introduction to C II"></a>Lecture 3: Introduction to C II</h1><p>• Pointers</p>
+<h1 id="Lecture-3-C-II"><a href="#Lecture-3-C-II" class="headerlink" title="Lecture 3: C II"></a>Lecture 3: C II</h1><p>• Pointers</p>
 <p>• Pointers &amp; Arrays</p>
 <p>• C Memory Management</p>
 <p>• C Bugs</p>
@@ -196,8 +194,7 @@
 <li>空悬指针  指向的空间已被释放</li>
 <li>野指针  指针未被初始化(赋值)</li>
 </ul>
-<p>· C内存管理</p>
-<p>静态内存、动态内存<br>静态内存分配好后，程序运行过程中一直存在不会被释放，且一旦分配好，其内存大小就固定下来不能改变，在编译和链接的阶段就会分配好。<br>动态内存是程序运行过程中，根据程序的需要分配和释放，其大小可变。</p>
+<h3 id="C内存管理"><a href="#C内存管理" class="headerlink" title="C内存管理"></a>C内存管理</h3><p>静态内存、动态内存<br>静态内存分配好后，程序运行过程中一直存在不会被释放，且一旦分配好，其内存大小就固定下来不能改变，在编译和链接的阶段就会分配好。<br>动态内存是程序运行过程中，根据程序的需要分配和释放，其大小可变。</p>
 <p>2 堆与栈<br>堆是程序通过调用malloc或new分配，调用free或delete释放。 栈是线性结构，堆是链表结构。</p>
 <p>3 C的内存分配<br>全局变量和static修饰的静态变量都存放在静态内存区<br>函数内部定义的局部变量，存储在栈上，函数退出时，其占用内存被收回。<br>调用malloc或new得到的内存在堆上，不再需要时要显示的调用free或delete来释放，否则会造成内存泄漏</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//全局初始化区 ，static</span>
@@ -216,15 +213,127 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <span class="token function">strcpy</span><span class="token punctuation">(</span>p1<span class="token punctuation">,</span> <span class="token string">"123456"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//"123456\0"放在常量区，编译器可能会将它与p3所指向的"123456"优化成一个地方。 </span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="Lecture-4-RISC-V-I"><a href="#Lecture-4-RISC-V-I" class="headerlink" title="Lecture 4: RISC-V I"></a>Lecture 4: RISC-V I</h1><ul>
-<li>Big Endian vs. Little Endian</li>
-</ul>
-<p><img src="/2022/06/13/CA期末总结/2.png" alt=""></p>
+<h1 id="Lecture-4-RISC-V-I"><a href="#Lecture-4-RISC-V-I" class="headerlink" title="Lecture 4: RISC-V I"></a>Lecture 4: RISC-V I</h1><h3 id="Big-Endian-vs-Little-Endian"><a href="#Big-Endian-vs-Little-Endian" class="headerlink" title="Big Endian vs. Little Endian"></a>Big Endian vs. Little Endian</h3><p><img src="/2022/06/13/CA期末总结/2.png" alt=""></p>
 <h1 id="Lecture-5-RISC-V-II-III-IV"><a href="#Lecture-5-RISC-V-II-III-IV" class="headerlink" title="Lecture 5: RISC-V II III IV"></a>Lecture 5: RISC-V II III IV</h1><p>introduce how to write risc-v 具体看绿卡就行</p>
 <p><img src="/2022/06/13/CA期末总结/3.png" alt=""></p>
 <h1 id="Lecture-8-RISC-V-V"><a href="#Lecture-8-RISC-V-V" class="headerlink" title="Lecture 8: RISC-V V"></a>Lecture 8: RISC-V V</h1><p>浮点数表示法</p>
+<p><a href="http://www.speedfly.cn/tools/hexconvert/" target="_blank" rel="noopener">在线进制转换-IEE754浮点数16进制转换</a></p>
 <p><img src="/2022/06/13/CA期末总结/4.png" alt=""></p>
-<h1 id="Lecture-9-SDS"><a href="#Lecture-9-SDS" class="headerlink" title="Lecture 9: SDS"></a>Lecture 9: SDS</h1><ul>
+<h1 id="Lecture-9-Call"><a href="#Lecture-9-Call" class="headerlink" title="Lecture 9: Call"></a>Lecture 9: Call</h1><h4 id="Interpretation"><a href="#Interpretation" class="headerlink" title="Interpretation"></a>Interpretation</h4><p>• Python interpreter is just a program that reads a</p>
+<p>python program and performs the functions of</p>
+<p>that python program.</p>
+<ul>
+<li>Interpretation vs. Translation</li>
+</ul>
+<p><img src="/2022/06/13/CA期末总结/42.png" title="" alt="" data-align="inline"></p>
+<h2 id="Compiler"><a href="#Compiler" class="headerlink" title="Compiler"></a>Compiler</h2><p>Input: High-Level Language Code</p>
+<p>Output: Assembly Language Code</p>
+<p>Pseudo-instructions: instructions that assembler understands but not in machine</p>
+<p><img src="/2022/06/13/CA期末总结/43.png" alt=""></p>
+<h2 id="Assembler"><a href="#Assembler" class="headerlink" title="Assembler"></a>Assembler</h2><p>Input: Assembly Language Code</p>
+<p>Output: Object Code, information tables</p>
+<p>Reads and Uses Directives</p>
+<ul>
+<li><p>Replace Pseudo-instructions</p>
+</li>
+<li><p>Produce Machine Language</p>
+</li>
+<li><p>Creates Object File</p>
+</li>
+</ul>
+<p>Assembler Directives</p>
+<p>• Give directions to assembler, but do not produce machine instructions</p>
+<h3 id="Producing-Machine-Language"><a href="#Producing-Machine-Language" class="headerlink" title="Producing Machine Language"></a>Producing Machine Language</h3><p>• Simple Case</p>
+<p>• What about Branches?</p>
+<p>– PC-Relative (e.g., beq/bne and jal)</p>
+<p>– So once pseudo-instructions are replaced by real ones, we know by how many instructions to branch</p>
+<p>• “Forward Reference” problem ：Solved by taking two passes over the program</p>
+<ul>
+<li><p>First pass remembers position of labels</p>
+</li>
+<li><p>Second pass uses label positions to generate code</p>
+</li>
+</ul>
+<h3 id="Symbol-Table"><a href="#Symbol-Table" class="headerlink" title="Symbol Table"></a>Symbol Table</h3><p>List of “items” in this file that may be used by</p>
+<p>other files</p>
+<p>– Labels: function calling</p>
+<p>– Data: anything in the .data section; variables which may be accessed across files</p>
+<h3 id="Relocation-Table"><a href="#Relocation-Table" class="headerlink" title="Relocation Table"></a>Relocation Table</h3><p>• List of “items” whose address this file needs</p>
+<p><img src="/2022/06/13/CA期末总结/44.png" alt=""></p>
+<h3 id="Assembly-Step"><a href="#Assembly-Step" class="headerlink" title="Assembly Step :"></a>Assembly Step :</h3><ul>
+<li><p>Instructions and Labels have addresses</p>
+</li>
+<li><p>Create relocation table and symbol table</p>
+</li>
+<li><p>Generate object (.o) file,Output binary representation for</p>
+<p>• text segment (instructions)</p>
+<p>• data segment (data)</p>
+<p>• symbol and relocation tables</p>
+</li>
+</ul>
+<h2 id="Linker"><a href="#Linker" class="headerlink" title="Linker"></a>Linker</h2><p>• Input: Object code files, information tables</p>
+<p>• Output: Executable code</p>
+<p>• Combines several object (.o) files into a single executable (“linking”)</p>
+<p>• Enable separate compilation of files</p>
+<p>– Changes to one file do not require recompilation of the whole program</p>
+<p>• Linux source &gt; 20 M lines of code!</p>
+<p>– Old name “Link Editor” from editing the “links” in jump and link instructions</p>
+<p><img src="/2022/06/13/CA期末总结/45.png" alt=""></p>
+<p><img src="/2022/06/13/CA期末总结/46.png" alt=""></p>
+<p>• To resolve references:</p>
+<p>– search for reference (data or label) in all “user” symbol tables</p>
+<p>– if not found, search library files</p>
+<p>– once absolute address is determined, fill in the machine code appropriately</p>
+<h2 id="Loader"><a href="#Loader" class="headerlink" title="Loader"></a>Loader</h2><p>• Input: Executable Code</p>
+<p>• Output: (program is run)</p>
+<p>• Executable files are stored on disk</p>
+<p>• When one is run, loader’s job is to load it into</p>
+<p>memory and start it running</p>
+<p>• In reality, loader is the operating system (OS)</p>
+<p>– loading is one of the OS tasks</p>
+<p><img src="/2022/06/13/CA期末总结/47.png" alt=""></p>
+<h3 id="Static-vs-Dynamically-linked-libraries"><a href="#Static-vs-Dynamically-linked-libraries" class="headerlink" title="Static vs Dynamically linked libraries"></a>Static vs Dynamically linked libraries</h3><p><img src="/2022/06/13/CA期末总结/48.png" alt=""></p>
+<h2 id="Some-steps-for-each-stages"><a href="#Some-steps-for-each-stages" class="headerlink" title="Some steps for each stages"></a>Some steps for each stages</h2><h3 id="Compiler-1"><a href="#Compiler-1" class="headerlink" title="Compiler"></a>Compiler</h3><ol>
+<li><p>Uses Lexers to process the input into tokens.</p>
+</li>
+<li><p>Be responsible for loop unrolling</p>
+</li>
+<li><p>Produce an executable binary from a collection of <strong>C source files</strong></p>
+</li>
+<li><p>Checks if there are any syntax errors in the C source files.</p>
+</li>
+<li><p>Resolve #include directives.</p>
+</li>
+</ol>
+<h3 id="Assembler-1"><a href="#Assembler-1" class="headerlink" title="Assembler"></a>Assembler</h3><ol>
+<li><p>Prepares the relocation table.</p>
+</li>
+<li><p>Produce an executable binary from a collection of C source files.</p>
+</li>
+<li><p>Translate symbolic register name to integer register name.</p>
+</li>
+</ol>
+<h3 id="Linker-1"><a href="#Linker-1" class="headerlink" title="Linker"></a>Linker</h3><ol>
+<li><p>Prepares the virtual address space for the static section.</p>
+</li>
+<li><p>Fills in the final value for the immediate in jump instructions. Note that the label<br>we are jumping to exists in a different file than the jump instruction.</p>
+</li>
+<li><p>Incorporates statically-linked libraries.</p>
+</li>
+<li><p>Produces <strong>executable file</strong>containing text and data (plus header).</p>
+</li>
+<li><p>Produce an <strong><em>executable binary</em></strong> from a collection of C source files.</p>
+</li>
+<li><p>Relocation</p>
+</li>
+</ol>
+<h3 id="Loader-1"><a href="#Loader-1" class="headerlink" title="Loader"></a>Loader</h3><ol>
+<li><p>Copies instructions and data from executable file into the address space.</p>
+</li>
+<li><p>Runtime symbol resolution</p>
+</li>
+</ol>
+<h1 id="Lecture-10-SDS"><a href="#Lecture-10-SDS" class="headerlink" title="Lecture 10: SDS"></a>Lecture 10: SDS</h1><ul>
 <li>CMOS</li>
 </ul>
 <p><img src="/2022/06/13/CA期末总结/5.png" alt=""></p>
@@ -243,7 +352,7 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <p><img src="/2022/06/13/CA期末总结/9.png" alt=""></p>
 <p>min clk period= clk-to-q delay + max CL delay +set up time</p>
 <p>longest set up time = min (clk period - input delay) (包括寄存器clk delay) 算从输入到寄存器的delay</p>
-<p>longest hold time = min output delay (从输出口子到输入线的delay）</p>
+<p>longest hold time = min output delay (从输出口子到output的delay）</p>
 <p>clk-q + best case CL delay &lt; hold time</p>
 <h1 id="Lecture-12-CPU-Control-amp-Datapath"><a href="#Lecture-12-CPU-Control-amp-Datapath" class="headerlink" title="Lecture 12 : CPU Control &amp; Datapath"></a>Lecture 12 : CPU Control &amp; Datapath</h1><p><img src="/2022/06/13/CA期末总结/12.png" alt=""></p>
 <p>Complete Datapath</p>
@@ -256,9 +365,7 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <p>• R-type instructions</p>
 <p>• Load</p>
 <p>– Control</p>
-<p>Single Cycle Performance without pipeline: $t_{clk}=t_{pc-clk-q}+t_{IMEMread}+t_{RF read}+t_{mux}+t_{ALU}+t_{DMEMread}+t_{max}+t_{RFsetup}$</p>
-<p>how to speed up of 5 through pipelining:</p>
-<ol>
+<h3 id="Single-Cycle-Performance-without-pipeline-t-clk-t-pc-clk-q-t-IMEMread-t-RF-read-t-mux-t-ALU-t-DMEMread-t-mux-t-RFsetup"><a href="#Single-Cycle-Performance-without-pipeline-t-clk-t-pc-clk-q-t-IMEMread-t-RF-read-t-mux-t-ALU-t-DMEMread-t-mux-t-RFsetup" class="headerlink" title="Single Cycle Performance without pipeline: $t_{clk}=t_{pc-clk-q}+t_{IMEMread}+t_{RF read}+t_{mux}+t_{ALU}+t_{DMEMread}+t_{mux}+t_{RFsetup}$"></a>Single Cycle Performance without pipeline: $t_{clk}=t_{pc-clk-q}+t_{IMEMread}+t_{RF read}+t_{mux}+t_{ALU}+t_{DMEMread}+t_{mux}+t_{RFsetup}$</h3><h3 id="how-to-speed-up-of-5-through-pipelining"><a href="#how-to-speed-up-of-5-through-pipelining" class="headerlink" title="how to speed up of 5 through pipelining:"></a>how to speed up of 5 through pipelining:</h3><ol>
 <li><p>No hazards</p>
 </li>
 <li><p>No pipeline register delay</p>
@@ -266,14 +373,14 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <li><p>All pipeline stages have equal delay</p>
 </li>
 </ol>
-<p>5 stages pipelining</p>
-<p>IF : $t_{clk-q}+t_{MEMread}+t_{Regsetup}$</p>
+<h3 id="5-stages-pipelining"><a href="#5-stages-pipelining" class="headerlink" title="5 stages pipelining"></a>5 stages pipelining</h3><p>IF : $t_{clk-q}+t_{MEMread}+t_{Regsetup}$</p>
 <p>ID：$t_{clk-q}+t_{RFread}+t_{Regsetup}$</p>
 <p>EX：$t_{clk-q}+t_{mux}+t_{ALU}+t_{Regsetup}+t_{mux}$</p>
 <p>MEM：$t_{Regclk-q}+t_{MEMread}+t_{mux}+t_{Regsetup}$</p>
 <p>WB：$t_{Regclk-q}+t_{RFsetup}$</p>
 <p><img src="/2022/06/13/CA期末总结/16.png" alt=""></p>
 <p><img src="/2022/06/13/CA期末总结/17.png" alt=""></p>
+<p>Structural hazards occur when more than one instruction needs to use the same datapath resource at the same time. Structural hazards can always be resolved by adding more hardware.</p>
 <h3 id="Data-Hazard-solution"><a href="#Data-Hazard-solution" class="headerlink" title="Data Hazard solution"></a>Data Hazard solution</h3><ul>
 <li><p>stalling</p>
 </li>
@@ -441,6 +548,7 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <li><p>OpenMP</p>
 </li>
 </ul>
+<p><a href="https://cloud.tencent.com/developer/article/1949206" target="_blank" rel="noopener">【OpenMP学习笔记】</a></p>
 <p><img src="/2022/06/13/CA期末总结/26.png" alt=""></p>
 <p><img src="/2022/06/13/CA期末总结/27.png" alt=""></p>
 <ul>
@@ -449,6 +557,7 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <li><p>OpenMP lock (too slow)</p>
 </li>
 </ul>
+<p>OpenMP for loop divides index regions sequentially per thread in default.<br>For potential spatial locality and cache optimization.</p>
 <p>OpenMP in lab</p>
 <pre class="line-numbers language-c"><code class="language-c"><span class="token comment" spellcheck="true">// EDIT THIS FUNCTION PART 1</span>
 <span class="token keyword">double</span> <span class="token function">dotp_manual_optimized</span> <span class="token punctuation">(</span><span class="token keyword">double</span> <span class="token operator">*</span>x<span class="token punctuation">,</span> <span class="token keyword">double</span> <span class="token operator">*</span>y<span class="token punctuation">,</span> <span class="token keyword">int</span> arr_size<span class="token punctuation">)</span>
@@ -528,10 +637,11 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="Lecture-22-OS"><a href="#Lecture-22-OS" class="headerlink" title="Lecture 22: OS"></a>Lecture 22: OS</h1><p>• OS Boot Sequence and Operation</p>
 <p>• Devices and I/O, interrupt and traps</p>
-<p>I/O Example (polling) :mouse/processor</p>
+<p>I/O Example (<strong>polling</strong>) :mouse/processor</p>
 <p><img src="/2022/06/13/CA期末总结/28.png" alt=""></p>
-<p>Interrupt-driven I/O:Disk</p>
+<p><strong>Interrupt-driven</strong> I/O:Disk</p>
 <p><img src="/2022/06/13/CA期末总结/29.png" alt=""></p>
+<h3 id="Polling-compare-with-Interrupt"><a href="#Polling-compare-with-Interrupt" class="headerlink" title="Polling compare with Interrupt"></a>Polling compare with Interrupt</h3><p>Polling: CPU periodically queries device to determine if they need attention<br>Interrupts: Each device signals to CPU that it wants to be serviced<br>The latter one is better since it utilizes CPU better</p>
 <p>Traps/Interrupts/Exceptions</p>
 <p>• Application, Multiprogramming/time-sharing</p>
 <h1 id="Lecture-24-VM"><a href="#Lecture-24-VM" class="headerlink" title="Lecture 24: VM"></a>Lecture 24: VM</h1><ul>
@@ -552,8 +662,14 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <p><img src="/2022/06/13/CA期末总结/31.png" alt=""></p>
 <p>TLB check -&gt; page check -&gt; allocate new memory -&gt; update page -&gt; update TLB</p>
 <p><img src="/2022/06/13/CA期末总结/32.png" alt=""></p>
-<h1 id="Lecture-24-FGPA"><a href="#Lecture-24-FGPA" class="headerlink" title="Lecture 24: FGPA"></a>Lecture 24: FGPA</h1><p>Embedded System Design</p>
-<p>– Communication devices</p>
+<h3 id="Some-true-or-false-statement"><a href="#Some-true-or-false-statement" class="headerlink" title="Some true or false statement"></a>Some true or false statement</h3><ol>
+<li>In a bare system without virtual memory, a program can modify any part of the memory. T</li>
+<li>Both base and bound memory system and paged memory system can run programs with larger memory than DRAM. F</li>
+<li>The TLB should be flushed after a context switch or when any new memory is allocated. F</li>
+<li>Increasing page table size can always lead to reduction in page faults. F</li>
+</ol>
+<h1 id="Lecture-24-FGPA"><a href="#Lecture-24-FGPA" class="headerlink" title="Lecture 24: FGPA"></a>Lecture 24: FGPA</h1><h3 id="FPGA-application-devices"><a href="#FPGA-application-devices" class="headerlink" title="FPGA application/devices"></a>FPGA application/devices</h3><p>• Communication devices<br>Wired and wireless routers and switches<br>• Automotive applications<br>Braking systems, traction control, airbag release systems, and cruise-control<br>applications<br>• Aerospace applications<br>Flight-control systems, engine controllers, auto-pilots and passenger in-flight<br>entertainment systems<br>• Defense systems<br>Radar systems, fighter aircraft flight-control systems, radio systems, and missile guidance systems</p>
+<h3 id="Embedded-System-Design"><a href="#Embedded-System-Design" class="headerlink" title="Embedded System Design"></a>Embedded System Design</h3><p>– Communication devices</p>
 <p>• Wired and wireless routers and switches</p>
 <p>– Automotive applications</p>
 <p>• Braking systems, traction control, airbag release systems,</p>
@@ -564,15 +680,26 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <p>– Defence systems</p>
 <p>• Radar systems, fighter aircraft flight-control systems, radio</p>
 <p>systems, and missile guidance systems</p>
-<p><img src="/2022/06/13/CA期末总结/33.png" alt=""></p>
+<h3 id="some-statements"><a href="#some-statements" class="headerlink" title="some statements"></a>some statements</h3><ol>
+<li><p>Embedded System are designed to perform predefined functions on certain platforms.</p>
+</li>
+<li><p>Embedded Systems usually provide limited functions and have fewer components than Computer Systems.</p>
+</li>
+<li><p>ASIC can not be changed once designed, but it is suitable<br>for high-volume mass production.</p>
+</li>
+<li><p><img src="/2022/06/13/CA期末总结/33.png" alt=""></p>
+</li>
+</ol>
 <p>FPGA vs others</p>
 <p><img src="/2022/06/13/CA期末总结/34.png" alt=""></p>
-<h1 id="Lecture-25-WSC"><a href="#Lecture-25-WSC" class="headerlink" title="Lecture 25: WSC"></a>Lecture 25: WSC</h1><p>• Warehouse Scale Computing</p>
-<p>• Request-level Parallelism</p>
+<h1 id="Lecture-25-WSC"><a href="#Lecture-25-WSC" class="headerlink" title="Lecture 25: WSC"></a>Lecture 25: WSC</h1><h4 id="Warehouse-Scale-Computing"><a href="#Warehouse-Scale-Computing" class="headerlink" title="Warehouse Scale Computing"></a>Warehouse Scale Computing</h4><p>• Request-level Parallelism</p>
 <p>e.g. Web search</p>
 <p>• Data-level Parallelism</p>
+<p>Static web servers use request-level Parallelism while MapReduce is Data-level Parallelism.</p>
+<p>Inefficient load balancing in a warehouse-scale computer may lead to higher<br>energy consumptions.</p>
 <p>– MapReduce</p>
 <p>– Hadoop, Spark</p>
+<p>two parallelism strategies in WSC. : Request-level, Data-level</p>
 <h4 id="Impact-on-WSC-software"><a href="#Impact-on-WSC-software" class="headerlink" title="Impact on WSC software"></a>Impact on WSC software</h4><p>• Latency, bandwidth à Performance</p>
 <p>– Independent data set within an array</p>
 <p>– Locality of access within server or rack</p>
@@ -647,6 +774,7 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <p>2.RAID各种级别<br>2.1 RAID 0<br>RAID 0连续以位或字节为单位分割数据，并行读/写于多个磁盘上，因此具有很高的数据传输率，但它没有数据冗余<br>RAID 0只是单纯地提高性能，并没有为数据的可靠性提供保证，而且其中的一个磁盘失效将影响到所有数据<br>RAID 0不能应用于数据安全性要求高的场合</p>
 <p>2.2 RAID 1<br>通过磁盘数据镜像实现数据冗余，在成对的独立磁盘上产生互为备份的数据<br>当原始数据繁忙时，可直接从镜像拷贝中读取数据，因此RAID1可以提高读取性能<br>RAID1是磁盘阵列中单位成本最高的，但提供了很高的数据安全性和可用性。当一个磁盘失效时，系统可以自动切换到镜像磁盘上读写，而不需要重组失效的数据</p>
 <p>2.3 RAID 5<br>N（N&gt;=3）块盘组成阵列，一份数据产生N-1个条带，同时还有1份校验数据，共N份数据在N块盘上循环均衡存储<br>N块盘同时读写，读性能很高，但由于有校验机制的问题，写性能相对不高<br>（N-1）/N磁盘利用率<br>可靠性高，允许坏1块盘，不影响所有数据</p>
+<p>. RAID 3 employs the strategy of byte-level striping with single parity disk, which is inefficient to detect errors.</p>
 <p> 2.4 RAID 6<br>N（N&gt;=4）块盘组成阵列，（N-2）/N磁盘利用率<br>与RAID5相比，RAID6增加了第二个独立的奇偶校验信息块<br>两个独立的奇偶系统使用不同的算法，即使两块磁盘同时失效也不会影响数据的使用<br>相对于RAID5有更大的“写损失，因此写性能较差</p>
 <p>2.5 RAID 10<br>RAID10其实是RAID 1+0</p>
 <p>N（偶数，N&gt;=4）块盘两两镜像后，再组合成一个RAID0<br>N/2磁盘利用率<br>N/2块盘同时写入，N块盘同时读取<br>性能高，可靠性高</p>
@@ -686,16 +814,15 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 </tr>
 </tbody>
 </table>
-<h1 id="Lecture-29-Security"><a href="#Lecture-29-Security" class="headerlink" title="Lecture 29: Security"></a>Lecture 29: Security</h1><p>· Heartbleed</p>
-<p>· Flush+Reload</p>
-<p>· Meltdown </p>
-<ul>
+<h1 id="Lecture-29-Security"><a href="#Lecture-29-Security" class="headerlink" title="Lecture 29: Security"></a>Lecture 29: Security</h1><h3 id="Heartbleed"><a href="#Heartbleed" class="headerlink" title="Heartbleed"></a>Heartbleed</h3><h3 id="Flush-Reload"><a href="#Flush-Reload" class="headerlink" title="Flush+Reload"></a>Flush+Reload</h3><p>Flash memory can be used as a disk cache to a magnetic hard disk.</p>
+<h3 id="Meltdown"><a href="#Meltdown" class="headerlink" title="Meltdown"></a>Meltdown</h3><ul>
 <li><p>covers： Virtual Memory; Protection Levels; Instruction Pipelining; Out-of</p>
 <p>order Execution; Speculative Execution; CPU Caching.</p>
 </li>
+<li><p>Keywords: Cache, timing, speculative execution, memory paging, OS pages, data of another process (4 of those keywords are enough).<br>We want to read from OS pages that hold data of other processes. Those are in our<br>Virtual Memory space in order for the OS to process them quickly. But it is forbidden for our process to read them. If we try to read them the OS will check (with an ”if”) if we are allowed to read them and thus return with a page fault. But speculative execution will nevertheless cause those pages to be read (but the process doesn’t see the result).</p>
+</li>
 </ul>
-<p>· Spectre</p>
-<p><img src="/2022/06/13/CA期末总结/41.png" alt=""></p>
+<h3 id="Spectre"><a href="#Spectre" class="headerlink" title="Spectre"></a>Spectre</h3><p><img src="/2022/06/13/CA期末总结/41.png" alt=""></p>
 <p>• Every part of a computer can be vulnerable</p>
 <p>– Be vigilant and attentive in designing and</p>
 <p>programming</p>
