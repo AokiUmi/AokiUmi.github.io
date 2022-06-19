@@ -204,7 +204,7 @@
 <span class="token keyword">int</span> b<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//stack</span>
 <span class="token keyword">char</span> s<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"abc"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//stack</span>
 <span class="token keyword">char</span> <span class="token operator">*</span>p2<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//stack</span>
-<span class="token keyword">char</span> <span class="token operator">*</span>p3 <span class="token operator">=</span> <span class="token string">"123456"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//"123456\0"在常量区，静态内存，p3在栈上。 </span>
+<span class="token keyword">char</span> <span class="token operator">*</span>p3 <span class="token operator">=</span> <span class="token string">"123456"</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//"123456\0"在static，静态内存，p3在栈上。 </span>
 p3<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-</span><span class="token operator">></span><span class="token keyword">static</span> 
 <span class="token keyword">static</span> <span class="token keyword">int</span> c <span class="token operator">=</span><span class="token number">0</span>； <span class="token comment" spellcheck="true">//全局（静态）初始化区 static</span>
 p1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// heap</span>
@@ -352,7 +352,7 @@ p2 <span class="token operator">=</span> <span class="token punctuation">(</span
 <p><img src="/2022/06/13/CA期末总结/9.png" alt=""></p>
 <p>min clk period= clk-to-q delay + max CL delay +set up time</p>
 <p>longest set up time = min (clk period - input delay) (包括寄存器clk delay) 算从输入到寄存器的delay</p>
-<p>longest hold time = min output delay (从输出口子到output的delay）</p>
+<p>longest hold time = min output delay (包括寄存器clk delay，从输出口子到output的delay）</p>
 <p>clk-q + best case CL delay &lt; hold time</p>
 <h1 id="Lecture-12-CPU-Control-amp-Datapath"><a href="#Lecture-12-CPU-Control-amp-Datapath" class="headerlink" title="Lecture 12 : CPU Control &amp; Datapath"></a>Lecture 12 : CPU Control &amp; Datapath</h1><p><img src="/2022/06/13/CA期末总结/12.png" alt=""></p>
 <p>Complete Datapath</p>
