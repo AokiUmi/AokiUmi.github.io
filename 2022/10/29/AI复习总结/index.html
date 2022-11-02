@@ -188,7 +188,7 @@
 <p>跟踪哪些状态已经扩展过，确保每一个节点在扩展前不在这个集合中，并且在扩展后将其加入集合里。经过这种优化的树搜索称为<strong>图搜索（graph search）</strong></p>
 <h2 id="DFS-Depth-First-Search"><a href="#DFS-Depth-First-Search" class="headerlink" title="DFS(Depth-First Search)"></a>DFS(Depth-First Search)</h2><p>深度优先搜索，故名意思一条边走到底再回去，优先搜索最深的边，用stack实现，头进头出</p>
 <p>时间复杂度$O(b^m)$ 空间复杂度$O(bm)$</p>
-<p>Complete（完备性）：深度优先搜索并<strong>不具有完备性</strong>。如果在状态空间图中存在回路，这必然意味着相应搜索树的深度将是无限的。因此，存在这样一种可能性，即DFS老实地在无限大的搜索树中搜索最深的节点而不幸地陷入僵局，注定无法找到解。</p>
+<p>Complete（完备性）：定义是保证能找到答案在答案存在的情况。深度优先搜索并<strong>不具有完备性</strong>。如果在状态空间图中存在回路，这必然意味着相应搜索树的深度将是无限的。因此，存在这样一种可能性，即DFS老实地在无限大的搜索树中搜索最深的节点而不幸地陷入僵局，注定无法找到解。</p>
 <p>Optimal：显然不是最优</p>
 <p><img src="/2022/10/29/AI复习总结/1.png" alt=""></p>
 <h2 id="BFS-Breadth-First-Search"><a href="#BFS-Breadth-First-Search" class="headerlink" title="BFS(Breadth-First Search)"></a>BFS(Breadth-First Search)</h2><p>广度优先搜索，优先最浅的边，用queue实现，头进尾出</p>
@@ -201,7 +201,7 @@
 <p>从深度为0开始，深度不断增大，直到找到目标</p>
 <p>Complete：Yes</p>
 <p>Optimal：Yes</p>
-<p>时间复杂度和空间复杂度都是$ O(b^d)$</p>
+<p>时间复杂度和空间复杂度都是$ O(b^d)$,<strong>比BFS空间更优</strong></p>
 <h2 id="UCS-Uniform-Cost-Search"><a href="#UCS-Uniform-Cost-Search" class="headerlink" title="UCS(Uniform Cost Search)"></a>UCS(Uniform Cost Search)</h2><p>优先搜索最便宜的点路径，用的是优先队列</p>
 <p>If that solution costs $C^<em>$ and arcs cost(两点间的最小代价) $\epsilon$ , then the“effective depth” is roughly $C^</em>/\epsilon$</p>
 <p>时间复杂度$O(C^*/\epsilon)$(exponential in effective depth)</p>
@@ -211,11 +211,13 @@
 <p><img src="/2022/10/29/AI复习总结/4.png" alt=""></p>
 <h2 id="GS-Greedy-Search"><a href="#GS-Greedy-Search" class="headerlink" title="GS(Greedy Search)"></a>GS(Greedy Search)</h2><p>Heuristics函数，估计期望函数一般表示到重点的距离估计</p>
 <p>贪心直往离终点最近的路走，必然不优。</p>
+<p>Complete：Yes</p>
+<p>Opitimal：No</p>
 <p>如果存在一个目标状态，贪婪搜索<strong>无法保证能找到它</strong>，它也<strong>不是最优的</strong>，尤其是在选择了非常糟糕的启发函数的情况下。在不同场景中。它的行为通常是不可预测的，有可能一路直奔目标状态，也有可能像一个被错误引导的DFS一样并遍历所有的错误区域。</p>
 <h2 id="A-Search"><a href="#A-Search" class="headerlink" title="A* Search"></a>A* Search</h2><p>$f(n)=g(n)+h(n)$</p>
 <p>结合贪心和UCS，按该点的h+该点到起点的cost</p>
-<p>H函数的性质：①admissible：$0\leq h(n)\leq h^*(n)$，小于实际n到重点的距离。<strong>满足此性质即可满足最优解</strong></p>
-<p>②Consistency：$h(A)-h(C)\leq cost(A,C)$，两个点H只差小于真实距离</p>
+<p>H函数的性质：①admissible：$0\leq h(n)\leq h^*(n)$，小于实际n到重点的距离。</p>
+<p>②Consistency：$h(A)-h(C)\leq cost(A,C)$，两个点H只差小于真实距离，<strong>满足此性质即可满足最优解</strong></p>
 <p>Consistency $\implies$ admissibility</p>
 <h1 id="CSP-Constraint-Satisfaction-Problems"><a href="#CSP-Constraint-Satisfaction-Problems" class="headerlink" title="CSP(Constraint Satisfaction Problems)"></a>CSP(Constraint Satisfaction Problems)</h1><p>Constraint Graphs：图上相连的点表示这两个点之间有限制关系</p>
 <h2 id="搜索方法："><a href="#搜索方法：" class="headerlink" title="搜索方法："></a>搜索方法：</h2><p>Backtracking Search：总的来说就是DFS+回溯算法，把所有可以取的值都取试一遍，可以继续就不断往下搜索，遇到问题就返回，不断撤回取值换一个值知道找到解。很慢，会走很多弯路，浪费时间。</p>
@@ -276,14 +278,37 @@
 <p>or alternatively</p>
 <p>$ \neg P_1 \bigcup \neg  P_2 \bigcup … \neg P_n \bigcup Q$</p>
 <p>where Ps and Q are non-negated proposition symbols</p>
+<h2 id="经典例题"><a href="#经典例题" class="headerlink" title="经典例题"></a>经典例题</h2><p>$[C \bigcup (\neg A \bigcap \neg B)] = [(\neg A \bigcap \neg B)\bigcup (C \bigcap \neg B) \bigcup ( \neg A \bigcap C) \bigcup C]$</p>
+<p>$(\neg A \bigcup \neg B)=((A \bigcap B) \rightarrow (A \bigcap \neg A))$</p>
+<h2 id="Validity-and-satisfiability"><a href="#Validity-and-satisfiability" class="headerlink" title="Validity and satisfiability"></a>Validity and satisfiability</h2><p>A sentence is valid if it is true in all models</p>
+<p>A sentence is satisfiable if it is true in some model</p>
+<p>A sentence is unsatisfiable if it is true in no models</p>
+<p>S is valid iff. $\neg $S is unsatisfiable</p>
+<h2 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h2><h3 id="entails"><a href="#entails" class="headerlink" title="entails"></a>entails</h3><p>$ A| !!!\ = B$ A entails B,相当于$A \implies B$</p>
+<p>A is valid if and only if True entails A</p>
+<h3 id="proof"><a href="#proof" class="headerlink" title="proof"></a>proof</h3><p>$A | !!!- B$ a demonstration of entailment from A to B</p>
+<p>Method 1: model checking</p>
+<p>Method 2: application of inference rules</p>
+<p><strong>Sound inference</strong>：everything that can be proved is in fact entailed</p>
+<p><strong>Complete inference</strong>：everything that is entailed can be proved</p>
+<p>Resolution algorithm：Prove$KB |!!!= \alpha$ Proof by contradiction,show $KB |!!!= \alpha$ is unsatisfiable</p>
+<ul>
+<li><p>把$KB  \bigcap \neg \alpha$转换为CNF</p>
+</li>
+<li><p>. Repeatedly apply the resolution rule to add new clauses, until one of the two things happens</p>
+<p>a) Two clauses resolve to yield the empty clause, in which</p>
+<p>case$KB |!!! = \alpha $</p>
+<p>b) There is no new clause that can be added, in which case</p>
+<p>KB does not entail α</p>
+</li>
+</ul>
 <h2 id="Forward-chaining"><a href="#Forward-chaining" class="headerlink" title="Forward chaining"></a>Forward chaining</h2><p>从 implies 前面的条件开始往implies后面的值推导</p>
 <p><img src="/2022/10/29/AI复习总结/17.png" alt=""></p>
 <p>从A B L M  P Q ，没往上推 节点的未知数就-1，直到都为0</p>
 <h2 id="Backward-chaining"><a href="#Backward-chaining" class="headerlink" title="Backward chaining"></a>Backward chaining</h2><p>从果找因</p>
 <p>• Idea: work backwards from the query q:</p>
-<p>– to prove q by BC,</p>
-<p>• check if q is known to be true already, or</p>
-<p>• prove by BC all premises of some rule concluding q</p>
+<p>– to prove q by BC</p>
+<p>• check if q is known to be true already, or prove by BC all premises of some rule concluding q</p>
 <p>• Avoid loops: check if new subgoal is already on the goal</p>
 <p>stack</p>
 <p>• Avoid repeated work: check if new subgoal</p>
@@ -342,6 +367,7 @@
 <li><p>Avoid repeated subgoals by caching previous results不会重复找子问题</p>
 </li>
 </ul>
+<p><strong>FC and BC are sound and complete with Horn clauses and run linear in space and time.</strong></p>
 <h1 id="Bayes-Network"><a href="#Bayes-Network" class="headerlink" title="Bayes Network"></a>Bayes Network</h1><h2 id="条件独立"><a href="#条件独立" class="headerlink" title="条件独立"></a>条件独立</h2><p>$X \perp !!! \perp Y|Z$ : X is conditionally independent of Y given Z</p>
 <p>$X \perp !!! \perp Y|Z \Leftrightarrow P(x|y,z)=P(x|z),P(x,y|z)=P(x|z)P(y|z)$</p>
 <p>贝叶斯网络是一种描述<strong>随机变量之间互相条件独立关系的有向无环图</strong>。在这个有向无环图中，每个节点代表一个<strong>随机变量对其父节点的条件概率分布</strong> $P(X_i|parents(X_i)$ ，每一条边可以理解成变量之间的联系。</p>
@@ -350,8 +376,14 @@
 <p>贝叶斯网络是有向无环图，$B \rightarrow A$ 代表B是A的条件，有公式</p>
 <p>$P(X_1,…,X_n)=\prod_{i}P(X_i|Parents(X_i)$</p>
 <p><img src="/2022/10/29/AI复习总结/22.png" alt=""></p>
+<p>When Bayes nets reflect the true causal patterns:</p>
+<p>▪ Often simpler (fewer parents, fewer parameters)</p>
+<p>▪ Often easier to assess probabilities</p>
+<p>▪ Often more robust: e.g., changes in frequency of burglaries should not affect the rest of the model</p>
+<p>BNs need not actually be causal</p>
+<p><strong>BN don’t need to reflect the true causal patterns</strong></p>
 <h3 id="给定贝叶斯网络上部分点，判断两点是否独立："><a href="#给定贝叶斯网络上部分点，判断两点是否独立：" class="headerlink" title="给定贝叶斯网络上部分点，判断两点是否独立："></a>给定贝叶斯网络上部分点，判断两点是否独立：</h3><p><strong>[Step 1]. Draw the ancestral graph.</strong></p>
-<p>根据原始概率图，构建包括表达式中包含的变量以及这些变量的ancestor节点（父节点、父节点的父节点…）的图。</p>
+<p>根据原始概率图，构建包括表达式中包含的变量以及这些变量的ancestor节点（父节点、父节点的父节点…）的图。<strong>注意不能包括孩子节点，不然会引起错误。</strong></p>
 <p><strong>[Step 2]. “Moralize” the ancestral graph by “marrying” the parents.</strong></p>
 <p>连接图中每个collider结构中的父节点，即若两个节点有同一个子节点，则连接这两个节点。（若一个变量的节点有多个父节点，则分别链接每一对父节点）。</p>
 <p><strong>[Step 3]. “Disorient” the graph by replacing the directed edges (arrows) with undirected edges (lines).</strong></p>
@@ -412,15 +444,19 @@
 <p>需要一直单独的概率和条件概率</p>
 <p><img src="/2022/10/29/AI复习总结/31.png" alt=""></p>
 <h2 id="Eliminate-factors"><a href="#Eliminate-factors" class="headerlink" title="Eliminate factors"></a>Eliminate factors</h2><p>直接把某个变量删掉，必须知道联合分布</p>
+<p>一般采用enumeration 的顺序，即从条件到非条件，沿着箭头来，但也可以不按这个顺序来。</p>
+<p>每次eliminate一个变量就相当于把他哦才能够贝叶斯网络里面划掉，只用eliminate目标变量的祖先节点，不用管孩子节点。</p>
 <p><img src="/2022/10/29/AI复习总结/32.png" alt=""></p>
 <h1 id="Bayes-Nets-Approximate-Inference"><a href="#Bayes-Nets-Approximate-Inference" class="headerlink" title="Bayes Nets: Approximate Inference"></a>Bayes Nets: Approximate Inference</h1><h2 id="Prior-Sampling-直接采样"><a href="#Prior-Sampling-直接采样" class="headerlink" title="Prior Sampling (直接采样)"></a>Prior Sampling (直接采样)</h2><p>生成全联合概率分布，这里可以理解为路上的随机采访，因为每个节点的值概率是不一样的，所以在每个节点采样值和概率相关，我们就是通过直接采样，就像街上的直接采访一样，一个一个采样，最后生成一个概率分布表。</p>
 <p>直接按原图的顺序一个个采就行</p>
 <p><img src="/2022/10/29/AI复习总结/33.png" alt=""></p>
 <h2 id="Rejection-Sampling-拒绝采样"><a href="#Rejection-Sampling-拒绝采样" class="headerlink" title="Rejection Sampling(拒绝采样)"></a>Rejection Sampling(拒绝采样)</h2><p>在直接采样的基础上删去不符合的样本</p>
+<p>对于含有随机接受度的拒绝采样，如果采样被拒绝了即取负值，则在下一个接受度重新取直到是正的再继续取别的。只要被拒绝就重新采样。</p>
 <p><img src="/2022/10/29/AI复习总结/34.png" alt=""></p>
 <h2 id="Likelihood-Weighting-似然加权"><a href="#Likelihood-Weighting-似然加权" class="headerlink" title="Likelihood Weighting(似然加权)"></a>Likelihood Weighting(似然加权)</h2><p>对<strong>证据变量不采样</strong>，直接利用条件分布表的概率，给每个样本一个权重，也称作似然。</p>
 <p>我的理解就是weight就是证据变量的条件概率乘积下图的意思就是采样S,W是证据变量，其他都要有一个采样这里sample是c,s,r,w，c,r都是采样的</p>
-<p>所以该样本weight就等于$P(S|C)P(W|S,C)$，这个1.0指的是weight一开始就是1.0给我干寂寞了之前一直没看懂</p>
+<p>所以该样本weight就等于$P(S|C)P(W|S,R)$，这个1.0指的是weight一开始就是1.0给我干寂寞了之前一直没看懂</p>
+<p>weight是evidence的$e_i,\prod_i^mP(e_i|Parents(e_i))$</p>
 <p><img src="/2022/10/29/AI复习总结/35.png" alt=""></p>
 <p>下图写的就是这个过程</p>
 <p><img src="/2022/10/29/AI复习总结/36.png" alt=""></p>

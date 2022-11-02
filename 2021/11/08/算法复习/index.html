@@ -174,6 +174,7 @@
             <div class="typo" style="padding: 3rem;">
 
                 <p>参考博客：<a href="https://www.zhihu.com/people/aokihao" target="_blank" rel="noopener">背包</a> <a href="https://www.shangmayuan.com/a/6c325edebbc54ef0a85917a9.html" target="_blank" rel="noopener">N,NP,NPC</a> <a href="https://zhuanlan.zhihu.com/p/54510444" target="_blank" rel="noopener">A*</a>这几个比较难所有参考比较多</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>Poly-time: There exists constants $c &gt; 0$ and $d &gt; 0 $such that on every input of size N, its running time is bounded by $cN^d$ steps</p>
 <h1 id="基础结构"><a href="#基础结构" class="headerlink" title="基础结构"></a>基础结构</h1><h2 id="链表-List"><a href="#链表-List" class="headerlink" title="链表(List)"></a>链表(List)</h2><p>记录头尾指针代表链表的开始和结束，中间用next表示前后关系的线性结构。</p>
 <h3 id="支持的操作与其复杂度"><a href="#支持的操作与其复杂度" class="headerlink" title="支持的操作与其复杂度"></a>支持的操作与其复杂度</h3><p>· 头尾插入元素$O(1)$，删除尾部$O(n)$</p>
 <p>· 其他位置插入删除都是$O(n)$（先要找到这个元素再在前后插入，知道位置只用$O(1)$)</p>
@@ -189,7 +190,7 @@
 <p>但如果对应格子已经满了，就采用线性或者更跳跃的方式往后找空余的格子</p>
 <p>线性探查(probe)——直接一个一个往后找</p>
 <p>二次探查——$ (k+k*k)/2$     1，2，4，7，11 优点为花费时间更少</p>
-<h2 id="树-Trees"><a href="#树-Trees" class="headerlink" title="树(Trees)"></a>树(Trees)</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<h2 id="树-Trees"><a href="#树-Trees" class="headerlink" title="树(Trees)"></a>树(Trees)</h2><h3 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
 <li>深度(depth)：<strong>根节点记为深度0</strong>，树的高度指最大深度</li>
 <li>父亲(parent)与孩子(children)节点：从根节点往下遍历，由一条边相连的两个节点互为父亲与孩子节点，深度小的为父亲</li>
 <li>度数(degree)：父亲节点的孩子数量</li>
@@ -223,8 +224,18 @@
 <p>性质：节点为n，高度为$h=\lfloor lg(n) \rfloor$ </p>
 </li>
 </ul>
-<h1 id="复杂度计算"><a href="#复杂度计算" class="headerlink" title="复杂度计算"></a>复杂度计算</h1><p><img src="/2021/11/08/算法复习/4.png" alt=""></p>
+<h1 id="复杂度计算"><a href="#复杂度计算" class="headerlink" title="复杂度计算"></a>复杂度计算</h1><h2 id="三种复杂度表示的定义和证明"><a href="#三种复杂度表示的定义和证明" class="headerlink" title="三种复杂度表示的定义和证明"></a>三种复杂度表示的定义和证明</h2><p>• Upper bounds. T(n) is $ O(f(n))$ if there exist constants c &gt; 0 and $n_0 \geq  0$ such that for all $n \geq n_0$we have$ T(n) \leq c・f(n)$</p>
+<p>• Lower bounds. T(n) is $Ω(f(n))$ if there exist constants $ c &gt; 0 $and $ n_0 \geq 0 $such that for all $n \geq n_0$ we have $T(n) \geq c・f(n)$</p>
+<p>• Tight bounds. T(n) is $ Θ(f(n))$ if T(n) is both $ O(f(n))$ and $ Ω(f(n))$.</p>
+<p>• Exist constants$ c_1, c_2, n_0$, such that$ c_1f(n) \leq T(n) \leq c_2f(n) $for all$ n \geq n_0$</p>
+<p><img src="/2021/11/08/算法复习/24.png" alt=""></p>
+<p><img src="/2021/11/08/算法复习/4.png" alt=""></p>
 <p><img src="/2021/11/08/算法复习/5.png" alt=""></p>
+<p><strong>关于复杂度的加法原则</strong></p>
+<p><img src="/2021/11/08/算法复习/25.png" alt=""></p>
+<p>多项式的一些复杂度定理：</p>
+<p><img src="/2021/11/08/算法复习/26.png" alt=""></p>
+<p>$O(k^2n^k/k!)=O(n^k)$</p>
 <h1 id="数据结构相关算法"><a href="#数据结构相关算法" class="headerlink" title="数据结构相关算法"></a>数据结构相关算法</h1><h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><p>逆序对定义：原先数组内和排序后数组顺序相反的数对</p>
 <p>计算逆序对：用归并排序</p>
 <h3 id="插入排序-Insertion-Sort"><a href="#插入排序-Insertion-Sort" class="headerlink" title="插入排序(Insertion Sort)"></a>插入排序(Insertion Sort)</h3><p>将序列分为有序序列和无序序列两段，每次将无序序列开头的数插入前面的有序序列中，直到所有数都有序</p>
@@ -247,7 +258,7 @@
 <p>复杂度：$O(nlogn)$，非原地排序，非稳定排序</p>
 <h3 id="选择排序-Selection-Sort"><a href="#选择排序-Selection-Sort" class="headerlink" title="选择排序(Selection Sort)"></a>选择排序(Selection Sort)</h3><p>每次从前往后找出无序序列中最小的一个数和无序序列第一个数交换位置，暴力找，很慢。</p>
 <p>复杂度：$O(n^2)$，原地排序，非稳定排序</p>
-<h3 id="Master-Theorem"><a href="#Master-Theorem" class="headerlink" title="Master Theorem"></a>Master Theorem</h3><p>一个在归并算法中运用的求复杂度的理论<br>$$<br>T(n)=aT(\frac{n}{b})+f(n),T(0)=0,T(1)=\Theta(1)<br>$$<br>a代表子问题的数量，n/b指子问题的大小，f(n)是divide and combine</p>
+<h3 id="Master-Theorem"><a href="#Master-Theorem" class="headerlink" title="Master Theorem"></a>Master Theorem</h3><p>一个在归并算法中运用的求复杂度的理论<br>$<br>T(n)=aT(\frac{n}{b})+f(n),T(0)=0,T(1)=\Theta(1)<br>$<br>a代表子问题的数量，n/b指子问题的大小，f(n)是divide and combine</p>
 <p><img src="/2021/11/08/算法复习/6.png" alt=""></p>
 <p>这个理论运用的实例：求矩阵乘法</p>
 <p><img src="/2021/11/08/算法复习/7.png" alt=""></p>
@@ -507,8 +518,7 @@ queue⬅st
     Ⅱ<span class="token punctuation">.</span>更新t的所有出边 t→b（权值为w）
        <span class="token comment" spellcheck="true">//如果更新成功的话，就把b加入队列，b就是待更新的点，先判断b是否已经被更新过了，如果已经更新过了</span>
 <span class="token punctuation">}</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>一般情况下时间复杂度：$O ( |E| )$，最坏的情况下是：$O(|V||E|)$</p>
 <h3 id="Floyd"><a href="#Floyd" class="headerlink" title="Floyd"></a>Floyd</h3><p>当$|E|=\Theta(|V|^2)$，用$Dijkstra$求所有点对的最短路$O(|V|^3ln|V|)$太拉了所以用Floyd</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>k<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span>
@@ -574,6 +584,11 @@ queue⬅st
 <p>f(n’) ≥ f(n)</p>
 <p>这个性质只针对两个点，基本就看$h(n),h(n’)+w(n,n’)$</p>
 <p><strong>Theorem: If <em>h(n)</em> is consistent, A* using GRAPH-SEARCH is optimal</strong></p>
+<h1 id="其他算法"><a href="#其他算法" class="headerlink" title="其他算法"></a>其他算法</h1><h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h2><p>主要列举一下证明，反证法</p>
+<p><img src="/2021/11/08/算法复习/27.png" alt=""></p>
+<h3 id="Inversions"><a href="#Inversions" class="headerlink" title="Inversions"></a>Inversions</h3><p>An inversion in schedule S is a pair of jobs i and j such that: i &lt; j but j scheduled before i</p>
+<p><img src="/2021/11/08/算法复习/28.png" alt=""></p>
+<p>贪心没有inversions，inversions一定相邻</p>
 <h2 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h2><p>这个就不说理论了，直接上例题</p>
 <h3 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h3><ul>
 <li><p>01背包</p>
@@ -620,7 +635,7 @@ f<span class="token punctuation">[</span>j<span class="token punctuation">]</spa
 </ol>
 <p>这道题给了我们一个数组（元素非负），和一个目标值，要求给数组中每个数字前添加正号或负号所组成的表达式结果与目标值S相等，求有多少种情况。</p>
 <p>假设所有元素和为sum，所有添加正号的元素的和为A，所有添加负号的元素和为B，则有<code>sum = A + B</code> 且 <code>S = A - B</code>，解方程得<code>A = (sum + S)/2</code>。即题目转换成：从数组中选取一些元素使和恰好为<code>(sum + S) / 2</code>。可见这是一个恰好装满的01背包问题，要求所有方案数，将1.2节状态转移方程中的max改成求和即可。需要注意的是，虽然这里是恰好装满，但是dp初始值不应该是<code>inf</code>，因为这里求的不是总价值而是方案数，应该全部初始为0（除了dp[0]初始化为1）。</p>
-<p><strong>一些其他的dp问题 </strong></p>
+<p><strong>一些其他的dp问题</strong></p>
 <ul>
 <li><p>最长公共子串</p>
 <p>$dp[i][j]$表示比较到$A[i],B[j]$时候的最长公共子串，且此时$A[i],B[j]$为最长公共子串的最后一个元素，故要求$A[i]=B[j]$</p>
