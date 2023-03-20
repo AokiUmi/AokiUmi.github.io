@@ -113,7 +113,7 @@
 	            <a href="#s1">ARCHIVES</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="archive-link" href="../archives/2022/10/">October 2022</a></li><li><a class="archive-link" href="../archives/2022/06/">June 2022</a></li><li><a class="archive-link" href="../archives/2022/01/">January 2022</a></li><li><a class="archive-link" href="../archives/2021/11/">November 2021</a></li><li><a class="archive-link" href="../archives/2021/04/">April 2021</a></li><li><a class="archive-link" href="../archives/2021/01/">January 2021</a></li><li><a class="archive-link" href="../archives/2020/11/">November 2020</a></li><li><a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a></li><li><a class="archive-link" href="../archives/1924/07/">July 1924</a>
+	                        <a class="archive-link" href="../archives/2022/10/">October 2022</a></li><li><a class="archive-link" href="../archives/2022/06/">June 2022</a></li><li><a class="archive-link" href="../archives/2022/01/">January 2022</a></li><li><a class="archive-link" href="../archives/2021/11/">November 2021</a></li><li><a class="archive-link" href="../archives/2021/04/">April 2021</a></li><li><a class="archive-link" href="../archives/2021/01/">January 2021</a></li><li><a class="archive-link" href="../archives/2020/11/">November 2020</a></li><li><a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a>
 	                    </ul>
 	        </li>
 	        
@@ -499,11 +499,42 @@
 </li>
 </ul>
 <p>吉布斯采样就是接受值一直为1的特例，一直接受新采样的样本</p>
+<h1 id="Markov-logic"><a href="#Markov-logic" class="headerlink" title="Markov logic"></a>Markov logic</h1><p> A Markov Logic Network (MLN) is <strong>a set of pairs (F, w)</strong></p>
+<p>where</p>
+<ul>
+<li><p>F is a formula in first-order logic</p>
+</li>
+<li><p>w is a real number</p>
+</li>
+</ul>
+<p>Together with a set of <strong>constants</strong>, it defines a Markov network with</p>
+<ul>
+<li><p>One node for each grounding of each predicate in the MLN</p>
+</li>
+<li><p>One clique for each grounding of each formula F in the MLN, with the potential being: exp(w) for node assignments that satisfy F, 1 otherwise</p>
+</li>
+</ul>
+<p><img src="/2022/10/29/AI复习总结/61.png" alt=""></p>
+<p><img src="/2022/10/29/AI复习总结/62.png" alt=""></p>
+<p><strong>MLN is template for ground Markov nets</strong></p>
+<p>Probability of a word x: $P(x)=\frac{1}{Z}(\sum_iw_in_i(x))$,$w_i$ weight of formula i, $n_i(x)$ No. of true groundings of formula i in x</p>
+<p><img src="/2022/10/29/AI复习总结/63.png" alt=""></p>
+<p>Infinite weights -&gt; First-order logic</p>
+<p><strong>Markov logic allows contradictions between formulas</strong></p>
+<h3 id="Relation-to-PRM"><a href="#Relation-to-PRM" class="headerlink" title="Relation to PRM"></a>Relation to PRM</h3><ul>
+<li><p>MLN is More general and flexible than PRM</p>
+</li>
+<li><p>In principle, a PRM can be converted into a MLN by writing a formula for each entry of each CPT and setting the weight to be the logarithm of the conditional probability</p>
+</li>
+</ul>
+<p><img src="/2022/10/29/AI复习总结/64.png" alt=""></p>
 <h1 id="Markov-Models"><a href="#Markov-Models" class="headerlink" title="Markov Models"></a>Markov Models</h1><p>▪  <strong>Past and future independent given the present</strong></p>
 <p>▪ <strong>Each time step only depends on the previous</strong></p>
 <p>first-order Markov model</p>
-<h3 id="Stationary-distribution"><a href="#Stationary-distribution" class="headerlink" title="Stationary distribution"></a>Stationary distribution</h3><p>求无限的分布时候：$P_{\infty }(X)=\sum_xP(X|x)P_{\infty}(x) $<img src="/2022/10/29/AI复习总结/41.png" alt=""></p>
-<h2 id="HMM"><a href="#HMM" class="headerlink" title="HMM"></a>HMM</h2><ol>
+<h3 id="Stationary-distribution"><a href="#Stationary-distribution" class="headerlink" title="Stationary distribution"></a>Stationary distribution</h3><p>求无限的分布时候：$P_{\infty }(X)=\sum_xP(X|x)P_{\infty}(x) $</p>
+<p><img src="/2022/10/29/AI复习总结/41.png" alt=""></p>
+<h2 id="HMM"><a href="#HMM" class="headerlink" title="HMM"></a>HMM</h2><p>If the hidden state at time t is given, both the evidence at time t and the hidden state at time t + 1 are independent of the hidden state at time t − 1.</p>
+<ol>
 <li><p>先求$P(x_t|e_{1:t})$，一般为已知，没有e0就直接用，有先算$P(x_0|e_0)=P(e_0|x_0)P(x_0)$</p>
 </li>
 <li><p>再求$P(e_{t+1}|x_{t+1})\sum_{x_t}P(x_t|e_{1:t})P(X_{t+1}|x_t)$</p>
@@ -511,28 +542,35 @@
 <li><p>最后标准化</p>
 </li>
 </ol>
+<p>$P(X_{t+1}|e_{1:t})=\sum_{X_t}P(X_t|e_{1:t})P(X_{t+1}|X_t,e_{1:t})$</p>
 <p><img src="/2022/10/29/AI复习总结/42.png" alt=""></p>
 <h3 id="Forward-algorithm"><a href="#Forward-algorithm" class="headerlink" title="Forward algorithm"></a>Forward algorithm</h3><p>cost per time:$O(|X|^2)$,$|X|$ 是state数量</p>
 <p>$f_{1:t+1}=\alpha P(e_{t+1}|x_{t+1})\sum_{x_t}f_{1:t}[x_t]P(X_{t+1}|x_t)$</p>
 <p><img src="/2022/10/29/AI复习总结/43.png" alt=""></p>
 <h3 id="Viterbi-algorithm"><a href="#Viterbi-algorithm" class="headerlink" title="Viterbi algorithm"></a>Viterbi algorithm</h3><p>Forward求和，这个求最大值</p>
 <p>$m_{1:t+1}=P(e_{t+1}|x_{t+1})max_{x_t}{m_{1:t}[x_t]P(X_{t+1}|x_t)}$</p>
-<p>Time:$O(|X|^2T)$, Space $O(|X|T)$</p>
+<p>Time:$O(|X|^2T)$, Space $O(|X|T)$,T length of sequence</p>
+<p>Both the time complexity and the space complexity of the Viterbi algorithm are linear in  the length of the sequence.</p>
 <p><img src="/2022/10/29/AI复习总结/45.png" alt=""></p>
 <p>两者比较，时间复杂度相同</p>
 <p><img src="/2022/10/29/AI复习总结/44.png" alt=""></p>
 <h2 id="Dynamic-Bayes-Nets"><a href="#Dynamic-Bayes-Nets" class="headerlink" title="Dynamic Bayes Nets"></a>Dynamic Bayes Nets</h2><p>▪ Every HMM is a DBN，hmm都是dbn</p>
+<ul>
+<li>Every hidden Markov model can be represented as a dynamic Bayesian network with a single state variable and a single evidence variable.</li>
+</ul>
 <p>▪ Each HMM state is Cartesian product of DBN state variables</p>
 <p>▪ Every discrete DBN can be represented by a HMM，只有离散的dbn才是hmm</p>
 <p>DBN优点：参数更少，Sparse dependencies</p>
 <h2 id="Particle-Filtering"><a href="#Particle-Filtering" class="headerlink" title="Particle Filtering"></a>Particle Filtering</h2><p>Represent belief state at each step by a set of samples（Samples are called particles）</p>
+<p>Each iteration of particle fifiltering consists of propagate forward, observe and resample</p>
 <p><strong>Initialization</strong></p>
 <p>▪ sample N particles from the initial distribution $P(X_0 ）$，All particles have a weight of 1</p>
 <p>▪ Each particle is moved by sampling its next position from the transition model:$x_{t+1} $~$P(X_{t+1}|x_t)$</p>
-<p>▪ Similar to likelihood weighting, weight amples based on the evidence $W=P(e_t|x_t)$</p>
+<p>▪ Similar to likelihood weighting, weight samples based on the evidence $W=P(e_t|x_t)$</p>
 <p>▪ Rather than tracking weighted samples, we resample. Each new sample is selected from the current population of samples; the probability is proportional to its weight</p>
 <p><img src="/2022/10/29/AI复习总结/46.png" alt=""></p>
 <h1 id="Markov-Decision-Processes"><a href="#Markov-Decision-Processes" class="headerlink" title="Markov Decision Processes"></a>Markov Decision Processes</h1><p><strong>MDPs are non-deterministic search problems</strong></p>
+<p>MDP satisfy the memoryless property.</p>
 <p>马尔可夫决策过程是一个五元组，求解一个马尔可夫决策过程，则意味着找到最优<strong>策略π*</strong></p>
 <p>S：有限状态集</p>
 <p>A：有限动作集</p>
@@ -550,14 +588,16 @@
 <ol start="3">
 <li>最优策略$\pi ^*(s)$</li>
 </ol>
-<p>$Q^<em>(s,a)=\sum_{s’}T(s,a,s’)[R(s,a,s’)+ \gamma V^</em>(s’)$,$V^<em>(s)=max_a\sum_{s’}T(s,a,s’)[R(s,a,s’)+\gamma V^</em>(s’)]$</p>
+<p>$Q^<em>(s,a)=\sum_{s’}T(s,a,s’)[R(s,a,s’)+ \gamma V^</em>(s’)]$,$V^<em>(s)=max_a\sum_{s’}T(s,a,s’)[R(s,a,s’)+\gamma V^</em>(s’)]$</p>
 <h3 id="值迭代-Value-Iteration-求解马尔科夫决策过程"><a href="#值迭代-Value-Iteration-求解马尔科夫决策过程" class="headerlink" title="值迭代 (Value Iteration)求解马尔科夫决策过程"></a><strong>值迭代 (Value Iteration)求解马尔科夫决策过程</strong></h3><p>现在我们有了一个能验证MDP中各状态的值的最优性的框架，接下来自然就想知道如何能精确计算出这些最优值。为此我们需要<strong>限时值（time-limited values）</strong>（强化有限界得到的结果）。限制时间步数为k的一个状态s的限时值表示为 $V_k(s)$ ，代表着在已知当前MDP会在k时间步后终止的情况下，从s出发能得到的最大期望效益。这也正是一个在MDP的搜索树上执行的k层expectimax所返回的东西。</p>
 <blockquote>
 <p>简单来说，值迭代就是给定k，也就是步数为k，在这k步之内，我们希望值迭代已经到达稳定状态，即下一次迭代与这一次的完全相同，这时我们就得到一个最优决策，也就是从哪里出发能够得到最大期望效益。</p>
 </blockquote>
 <p>$V_{k+1}(s)\leftarrow max_a \sum_{s’}T(s,a,s’)[R(s,a,s’)+\gamma V_k(s’)]$</p>
 <p>Time:$O(S^2A)$</p>
-<h3 id="策略迭代-Policy-Iteration求解马尔科夫决策过程"><a href="#策略迭代-Policy-Iteration求解马尔科夫决策过程" class="headerlink" title="策略迭代 Policy Iteration求解马尔科夫决策过程"></a><strong>策略迭代 Policy Iteration求解马尔科夫决策过程</strong></h3><p><strong>策略提取 Policy Extraction</strong></p>
+<p>$V_k$ converge as long as $\gamma &lt;1$</p>
+<h3 id="策略迭代-Policy-Iteration求解马尔科夫决策过程"><a href="#策略迭代-Policy-Iteration求解马尔科夫决策过程" class="headerlink" title="策略迭代 Policy Iteration求解马尔科夫决策过程"></a><strong>策略迭代 Policy Iteration求解马尔科夫决策过程</strong></h3><p>Time:$O(S^2A)$ </p>
+<p><strong>策略提取 Policy Extraction</strong></p>
 <p>还记得我们解决MDP的最终目标是要确定一个最优策略。只需要确定所有状态的最优值就能达成这一目标，这可以通过一种叫策略提取(policy extraction)的方法来实现。策略提取的背后的思想非常简单：如果你处于一种状态s，你应该采取会产生最大期望效益的行动a。不难想到，a正是会将我们带到具有最大q值的q状态的操作，于是最优策略可以表达为：</p>
 <p>$\pi^<em>(s)=argmax_a\sum_{s’}T(s,a,s’)[R(s,a,s’)+\gamma V^</em>(s’)]$</p>
 <p>为了取得最好的效益，状态的最优q值对策略提取来说是最好的，因为在这种情况下，只需要一次argmax就能确定从一个状态出发的最优行动。仅保存每个 $V^*(s)$意味着我们必须在取argmax之前用Bellman方程重新计算所有必须的q值，相当于进行一次深度为1的expectimax。</p>
@@ -595,9 +635,51 @@
 <p><img src="/2022/10/29/AI复习总结/48.png" alt=""></p>
 <h2 id="Model-Based-Learning"><a href="#Model-Based-Learning" class="headerlink" title="Model-Based Learning"></a>Model-Based Learning</h2><p><strong>离线学习</strong>(off-line)也通常称为批学习，是指对独立数据进行训练，将训练所得的模型用于预测任务中。将全部数据放入模型中进行计算，一旦出现需要变更的部分，只能通过再训练(retraining)的方式，这将花费更长的时间，并且将数据全部存在服务器或者终端上非常占地方，对内存要求高。Q学习就是离线学习</p>
 <p><strong>在线学习</strong>(in-line)也称为增量学习或适应性学习，是指对一定顺序下接收数据，每接收一个数据，模型会对它进行预测并对当前模型进行更新，然后处理下一个数据。这对模型的选择是一个完全不同，更复杂的问题。需要混合假设更新和对每轮新到达示例的假设评估。换句话说，你只能访问之前的数据，来回答当前的问题。</p>
+<h2 id="Model-Free-Learning"><a href="#Model-Free-Learning" class="headerlink" title="Model-Free Learning"></a>Model-Free Learning</h2><ul>
+<li><p>Input: a fixed policy (s)</p>
+</li>
+<li><p>You don’t know the transitions T(s,a,s’)</p>
+</li>
+<li><p>You don’t know the rewards R(s,a,s’)</p>
+</li>
+<li><p>Goal: learn the state values</p>
+</li>
+</ul>
+<h3 id="Direct-Evaluation"><a href="#Direct-Evaluation" class="headerlink" title="Direct Evaluation"></a>Direct Evaluation</h3><p>Goal: Compute values for each state under $\pi$</p>
+<p>Idea: Average together observed sample values</p>
+<p>▪ Act according to $\pi$</p>
+<p>▪ Every time you visit a state, write down what the sum of discounted rewards turned out to be</p>
+<p>▪ Average those samples</p>
+<p><strong>Good</strong>: </p>
+<p>▪ It’s easy to understand</p>
+<p>▪ It doesn’t require any knowledge of T, R</p>
+<p>▪ It eventually computes the correct average values, using just sample transitions</p>
+<p><strong>Bad</strong>:<br>▪ It wastes information about state connections</p>
+<p>▪ Each state must be learned separately</p>
+<p>▪ So, it takes a long time to learn</p>
 <h3 id="Passive-Reinforcement-Learning"><a href="#Passive-Reinforcement-Learning" class="headerlink" title="Passive Reinforcement Learning"></a>Passive Reinforcement Learning</h3><p>TD学习的基本思想是<strong>从每一次经验中学习</strong>（这里我的理解是从v中学习，一定程度上也可以称为v学习），而不是像直接评估那样简单地记录总奖励和访问状态并在最后学习。在策略评估中，我们使用固定策略和贝尔曼方程产生的方程评估该策略下的状态值：</p>
+<p><strong>Temporal Difference Learning</strong></p>
+<p>▪ (Policy still fixed, still doing evaluation!)</p>
+<p>▪ Move the value towards the sample</p>
 <p><img src="/2022/10/29/AI复习总结/49.png" alt=""></p>
-<h2 id="Model-Free-Learning"><a href="#Model-Free-Learning" class="headerlink" title="Model-Free Learning"></a>Model-Free Learning</h2><h3 id="Active-Reinforcement-Learning"><a href="#Active-Reinforcement-Learning" class="headerlink" title="Active Reinforcement Learning"></a>Active Reinforcement Learning</h3><p><img src="/2022/10/29/AI复习总结/50.png" alt=""></p>
+<p>Decreasing learning rate (alpha) can give converging averages</p>
+<h2 id="Model-Based-Learning-1"><a href="#Model-Based-Learning-1" class="headerlink" title="Model-Based Learning"></a>Model-Based Learning</h2><p>▪ Learn an approximate model based on experiences</p>
+<p>▪ Solve for values as if the learned model was correct</p>
+<ul>
+<li><p>Step 1: Learn empirical MDP model</p>
+</li>
+<li><p>Step 2: Solve the learned MDP</p>
+</li>
+</ul>
+<h3 id="Active-Reinforcement-Learning"><a href="#Active-Reinforcement-Learning" class="headerlink" title="Active Reinforcement Learning"></a>Active Reinforcement Learning</h3><p><img src="/2022/10/29/AI复习总结/50.png" alt=""></p>
+<p>Q-learning can converge to the optimal policy even if you are acting sub-optimally when you explore.</p>
+<p>The factor for Q-learning to converge to the optimal Q-values:</p>
+<ul>
+<li><p>Every state-action pair is visited infinitely often.</p>
+</li>
+<li><p>The learning rate is decreased to 0 over time.</p>
+</li>
+</ul>
 <p><strong>Full reinforcement learning</strong></p>
 <p>▪ You don’t know the transitions T(s,a,s’)</p>
 <p>▪ You don’t know the rewards R(s,a,s’)</p>
@@ -605,15 +687,23 @@
 <p>▪ Goal: learn the optimal policy / values</p>
 <p>Q-learning：off-policy learning</p>
 <p><img src="/2022/10/29/AI复习总结/51.png" alt=""></p>
+<h3 id="Regret"><a href="#Regret" class="headerlink" title="Regret"></a>Regret</h3><p>The $\epsilon $-greedy strategy often produces a lower regret for a decaying $\epsilon$ than a fixed one.</p>
+<p>Regret is a measure of your total mistake cost: the difference between your (expected) rewards, including youthful suboptimality, and optimal (expected) rewards</p>
+<p>Minimizing regret goes beyond learning to be optimal – it requires optimally learning to be optimal</p>
+<h2 id="Approximate-Q-Learning"><a href="#Approximate-Q-Learning" class="headerlink" title="Approximate Q-Learning"></a>Approximate Q-Learning</h2><p>Approximate Q-learning is model-free learning</p>
+<p>▪ Learn about some small number of training states from experience</p>
+<p>▪ Generalize that experience to new, similar situations</p>
+<p>Compared with Q-learning, approximate Q-learning that describes each state with a vector of features can be helpful when the number of states is huge.</p>
 <h3 id="Linear-Value-Functions"><a href="#Linear-Value-Functions" class="headerlink" title="Linear Value Functions"></a>Linear Value Functions</h3><p><img src="/2022/10/29/AI复习总结/52.png" alt=""></p>
 <p>  Q-learning:</p>
 <p>transition=$(s,a,r,s’)$</p>
-<p>difference=$[r+\gamma max_{a’}Q(s’,a’)]-Q(s.a)$</p>
+<p>difference=$[r+\gamma max_{a’}Q(s’,a’)]-Q(s,a)$</p>
 <p>$Q(s,a)=Q(s,a)+\alpha [difference],w_i=w_i+\alpha [difference]f_i(s,a)$</p>
 <h1 id="Supervised-Machine-Learning"><a href="#Supervised-Machine-Learning" class="headerlink" title="Supervised Machine Learning"></a>Supervised Machine Learning</h1><h2 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naïve Bayes"></a>Naïve Bayes</h2><p>$P(Y,F_1,…,F_n)=P(Y)\prod _iP(F_i|Y)$</p>
 <p>nx|F|x|Y| parameters</p>
 <p><strong>Total number of parameters is linear in n</strong></p>
 <p>Goal: compute posterior distribution over label variable</p>
+<p>The na ̈ıve Bayes assumption takes all features to be independent given the class label.</p>
 <h2 id="Overfitting过拟合"><a href="#Overfitting过拟合" class="headerlink" title="Overfitting过拟合"></a>Overfitting过拟合</h2><p><strong>原因：</strong></p>
 <p>1.训练集的数据太少</p>
 <p>2.训练集和新数据的特征分布不一致</p>
@@ -623,17 +713,49 @@
 <p>加大数据集（Training and test Set）使模型在训练的过程中尽可能多的见到更多的问题，从而使学到的分布更加全面更加General。比如采集更多的样本，或者采取Data Augmentation的方法。</p>
 <p>改进你的模型。<br>2.1. 比如将你的模型进行简化，从而减少一些不重要的参数和属性。比如如果你使用神经网络，你可以减少Hidden Layer，或者减少每个Hidden Layer中的神经元数量（Dropout等）；或者如果你使用Adaboost这类的Ensemble Learning方法，你可以减少模型所包含的Weak Learner的数量，并且尽可能的简化每一个Weak Learner。<br>2.2 你也可以采取一些Regularization的方法主动地调节模型的参数值，比如L1， L2 Norm等等。采用这类方法，可以很大程度的惩罚模型内部的参数，从而阻止Overfitting的发生。（之后的专栏会有介绍）。</p>
 <p>提前结束无意义的训练 Early Stop。比如当我们训练一个Logistic Regression时，我们的目标是专注于找到合适的参数，使Loss（error）尽可能的小。如果重复过多次数的训练，会导致训练出来的模型过分专注于解决训练集，从而使模型不具备Generalization。如下图，可以看到，过多的training iteration，确实可以降低Training Loss，但是也会使模型过分专注于training Samples,从而使Test Loss提高（即Overfit）。这时候我们需要提前结束训练，阻止Test Error的提升。</p>
+<p><strong>Avoid overfitting</strong></p>
+<ul>
+<li><p>Acquire more training data (not always possible)</p>
+</li>
+<li><p>Remove irrelevant attributes (not always possible)</p>
+</li>
+<li><p>Limit the model expressiveness by regularization, early stopping, pruning, etc.</p>
+</li>
+<li><p>We can use smoothing or regularization to improve model’s generalization.</p>
+</li>
+</ul>
+<p>we may smooth the empirical rate to improve generalization</p>
 <h2 id="Laplace-Smoothing"><a href="#Laplace-Smoothing" class="headerlink" title="Laplace Smoothing"></a>Laplace Smoothing</h2><p><img src="/2022/10/29/AI复习总结/53.png" alt=""></p>
 <p>$c(x)$权重，k给定，|X|x有多少取值，N x权重和</p>
+<h3 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h3><p>Least squares: Minimizing squared error最小二乘法</p>
 <h1 id="Unsupervised-Machine-Learning"><a href="#Unsupervised-Machine-Learning" class="headerlink" title="Unsupervised Machine Learning"></a>Unsupervised Machine Learning</h1><h2 id="K-Means"><a href="#K-Means" class="headerlink" title="K-Means"></a>K-Means</h2><p><img src="/2022/10/29/AI复习总结/54.png" alt=""></p>
-<h2 id="EM"><a href="#EM" class="headerlink" title="EM"></a>EM</h2><p>[E step] Compute probability of each instance having each</p>
-<p>possible label，Compute label distribution of each data point</p>
+<h2 id="EM"><a href="#EM" class="headerlink" title="EM"></a>EM</h2><p>The EM algorithm can be used to learn any model with hidden variables (missing data)</p>
+<p>[E step] Compute probability of each instance having each possible label，Compute label distribution of each data point</p>
 <p>[M step] Treating each instance as fractionally having both labels,</p>
-<p>compute the new parameter values，Compute weighted MLE of parameters given label distributions</p>
+<p>compute the new parameter values，Compute weighted MLE of parameters given label distributions, When using the EM algorithm to learn a Gaussian mixture model, the M-step computes weighted maximum likelihood estimation (MLE).</p>
 <p><img src="/2022/10/29/AI复习总结/55.png" alt=""></p>
 <p>The label distributions computed at E-step are point-estimations</p>
 <p><img src="/2022/10/29/AI复习总结/56.png" alt=""></p>
-<h1 id="Natural-Language-Processing"><a href="#Natural-Language-Processing" class="headerlink" title="Natural Language Processing"></a>Natural Language Processing</h1><p><img src="/2022/10/29/AI复习总结/57.png" alt=""></p>
+<h3 id="EM-amp-K-means"><a href="#EM-amp-K-means" class="headerlink" title="EM &amp; K-means"></a>EM &amp; K-means</h3><p><img src="/2022/10/29/AI复习总结/65.png" alt=""></p>
+<p>A neural network with a sufficient number of neurons and a complex enough architecture can approximate any continuous function to any desired accuracy.</p>
+<p>In Convolutional Neural Networks, different hidden units organized into the same “feature map” share weight parameters.</p>
+<h1 id="Natural-Language-Processing"><a href="#Natural-Language-Processing" class="headerlink" title="Natural Language Processing"></a>Natural Language Processing</h1><h2 id="Context-Free-Grammars"><a href="#Context-Free-Grammars" class="headerlink" title="Context-Free Grammars"></a>Context-Free Grammars</h2><p><strong>four components</strong></p>
+<p> A set of terminals (words)</p>
+<p> A set N of nonterminals (phrases)</p>
+<p> A start symbol SN</p>
+<p> A set R of production rules</p>
+<p> Specifies how a nonterminal can produce a string of terminals and/or nonterminals</p>
+<p>Any arbitrary CFG can be rewritten into the Chomsky normal form (CNF), Probabilistic CFGs tend to assign larger probabilities to smaller parse trees.</p>
+<h2 id="CFG-Chomsky-Normal-Form-，乔姆斯基规范形式"><a href="#CFG-Chomsky-Normal-Form-，乔姆斯基规范形式" class="headerlink" title="CFG(Chomsky Normal Form)，乔姆斯基规范形式"></a>CFG(Chomsky Normal Form)，乔姆斯基规范形式</h2><p>具有以下形式：</p>
+<pre class="line-numbers language-rust"><code class="language-rust">A <span class="token punctuation">-></span> a
+A <span class="token punctuation">-></span> BC
+S <span class="token punctuation">-></span> ε
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>小写字母表示终结符号，大写表示非终结符。<br>产生式的体要么由单个终结符号或者ε构成，要么由两个非终结符构成。</p>
+<p>题目转换只需要满足箭头后面只有两个大写单词，不会是一个或者三个，多于两个用x新增一行，只有一个向下面合并</p>
+<p><img src="/2022/10/29/AI复习总结/57.png" alt=""></p>
+<p>Ambiguity: A sentence is ambiguous if it has more than one possible parse tree</p>
+<p>Probabilistic CFGs have ambiguity problem.</p>
 <h2 id="Cocke–Younger–Kasami-Algorithm-CYK"><a href="#Cocke–Younger–Kasami-Algorithm-CYK" class="headerlink" title="Cocke–Younger–Kasami Algorithm (CYK)"></a>Cocke–Younger–Kasami Algorithm (CYK)</h2><p>Base case:</p>
 <p> A is in cell [i-1,i] iff. there exists a rule A → wi</p>
 <p>Recursion:</p>
@@ -684,7 +806,7 @@
                 <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
             </ul>
             
-            	<span id="busuanzi_container_site_pv">2022总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+            	<span id="busuanzi_container_site_pv">2023总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 			
         </div>
     </div>
