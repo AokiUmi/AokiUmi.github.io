@@ -212,7 +212,7 @@
 <li><p>ambiguous，imprecise</p>
 </li>
 </ul>
-<p>—— Software Design: Choose algorithms&amp;data structures tosolve the problem</p>
+<p>—— <strong>Software Design</strong>: Choose algorithms&amp;data structures tosolve the problem</p>
 <p><strong>Algorithm</strong></p>
 <ul>
 <li><p>step-by-step <strong>procedure</strong>，guaranteed to finishi</p>
@@ -220,7 +220,7 @@
 <li><p>Definiteness, effective computability, finiteness</p>
 </li>
 </ul>
-<p>—– Programming: Use a programming language to implement design</p>
+<p>—– <strong>Programming</strong>: Use a programming language to implement design</p>
 <p><strong>Program</strong></p>
 <ul>
 <li><p>Express the algorithm <strong>using a computer language</strong></p>
@@ -256,7 +256,7 @@
 <li><p>Many <strong>different ways to implement a single function</strong>(e.g., addition)</p>
 </li>
 </ul>
-<p>—– Implement &amp; Fabricate: Transform logic circuits into masks for transistors and other layers, then fabricate</p>
+<p>—– <strong>Implement &amp; Fabricate</strong>: Transform logic circuits into masks for transistors and other layers, then fabricate</p>
 <p><strong>Devices</strong></p>
 <ul>
 <li><p>Transistor-based implementation of logic circuits</p>
@@ -299,12 +299,13 @@
 <p>The rest of the bits work the same as unsigned binary</p>
 <p><strong>Negative</strong> numbers start with 1</p>
 <p>The interpretation is more complex</p>
-<p>负数 到 二补数：-5 到 5 -&gt; 0101 -&gt; 1010 + 1 = 1011</p>
-<p>1101 -&gt; 0010 + 1= 0011 -&gt; 3 -&gt; -3</p>
+<p>十进制负数 到 二补数：-5 到 5 -&gt; 0101 -&gt; 1010 + 1 = 1011</p>
+<p>二补数负数 到 十进制负数1101 -&gt; 0010 + 1= 0011 -&gt; 3 -&gt; -3</p>
 <h3 id="Addition"><a href="#Addition" class="headerlink" title="Addition"></a>Addition</h3><p>Addition works the way it does for unsigned binary numbers</p>
 <h3 id="Subtraction"><a href="#Subtraction" class="headerlink" title="Subtraction"></a>Subtraction</h3><p>Instead of subtraction with borrowing, we <strong>add the negation</strong> of the value we wish to subtract</p>
 <p>This method simplifies computer hardware</p>
 <h3 id="Operand-Result-Bitwidths-Match"><a href="#Operand-Result-Bitwidths-Match" class="headerlink" title="Operand/Result Bitwidths Match"></a>Operand/Result Bitwidths Match</h3><p>Operands and results must have the same number of bits for the math to work correctly</p>
+<p>operand是符号两边的数字</p>
 <h2 id="Signed-Extension"><a href="#Signed-Extension" class="headerlink" title="Signed Extension"></a>Signed Extension</h2><p>前面是0就补0，是1就补1</p>
 <p>每种表达的范围，超出范围就overflow</p>
 <p>unsigned number:  $[0,2^{n}-1]$</p>
