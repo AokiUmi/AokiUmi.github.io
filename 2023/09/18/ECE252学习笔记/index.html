@@ -113,7 +113,7 @@
 	            <a href="#s1">ARCHIVES</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="archive-link" href="../archives/2023/09/">September 2023</a></li><li><a class="archive-link" href="../archives/2022/10/">October 2022</a></li><li><a class="archive-link" href="../archives/2022/06/">June 2022</a></li><li><a class="archive-link" href="../archives/2022/01/">January 2022</a></li><li><a class="archive-link" href="../archives/2021/11/">November 2021</a></li><li><a class="archive-link" href="../archives/2021/04/">April 2021</a></li><li><a class="archive-link" href="../archives/2021/01/">January 2021</a></li><li><a class="archive-link" href="../archives/2020/11/">November 2020</a></li><li><a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a>
+	                        <a class="archive-link" href="../archives/2023/10/">October 2023</a></li><li><a class="archive-link" href="../archives/2023/09/">September 2023</a></li><li><a class="archive-link" href="../archives/2022/10/">October 2022</a></li><li><a class="archive-link" href="../archives/2022/06/">June 2022</a></li><li><a class="archive-link" href="../archives/2022/01/">January 2022</a></li><li><a class="archive-link" href="../archives/2021/11/">November 2021</a></li><li><a class="archive-link" href="../archives/2021/04/">April 2021</a></li><li><a class="archive-link" href="../archives/2021/01/">January 2021</a></li><li><a class="archive-link" href="../archives/2020/11/">November 2020</a></li><li><a class="archive-link" href="../archives/2020/10/">October 2020</a></li><li><a class="archive-link" href="../archives/2020/08/">August 2020</a></li><li><a class="archive-link" href="../archives/2020/06/">June 2020</a></li><li><a class="archive-link" href="../archives/2020/05/">May 2020</a></li><li><a class="archive-link" href="../archives/2020/04/">April 2020</a></li><li><a class="archive-link" href="../archives/2020/02/">February 2020</a></li><li><a class="archive-link" href="../archives/2018/11/">November 2018</a></li><li><a class="archive-link" href="../archives/2018/10/">October 2018</a></li><li><a class="archive-link" href="../archives/2018/09/">September 2018</a></li><li><a class="archive-link" href="../archives/2018/08/">August 2018</a></li><li><a class="archive-link" href="../archives/2018/07/">July 2018</a></li><li><a class="archive-link" href="../archives/2018/05/">May 2018</a></li><li><a class="archive-link" href="../archives/2018/04/">April 2018</a></li><li><a class="archive-link" href="../archives/2018/03/">March 2018</a></li><li><a class="archive-link" href="../archives/2018/01/">January 2018</a>
 	                    </ul>
 	        </li>
 	        
@@ -288,8 +288,8 @@
 <p>Binary to Octal: Directly substitute a hex digit fora <strong>3-bit</strong> binary number (or vice versa!)</p>
 <p><img src="/2023/09/18/ECE252学习笔记/4.png" alt=""></p>
 <p>Octal to Hex: </p>
-<p>Use binary as an intermediate form!</p>
 <p><img src="/2023/09/18/ECE252学习笔记/5.png" alt=""></p>
+<p>Use binary as an intermediate form!</p>
 <p>Decimal to Octal, Decimal to Hex: use Binary as an intermediate form</p>
 <p>left: most significant, right: less significant</p>
 <p>Multiply: move to left, Multiplying a base $R$ number by $R^N$ “shifts” the number left by $N$ positions</p>
@@ -321,6 +321,180 @@
 <p>1001 -7 |0101 5 overflow</p>
 <p>lf the result of adding <strong>two positive 2’s-complement numbers</strong> appears to be <strong>positive</strong>, then the operation <strong>did not overflow</strong>.</p>
 <p>lf adding <strong>two unsigned numbers overflows</strong> , the result will appear to be<br><strong>smaller than it should be</strong>. </p>
+<h1 id="Week03"><a href="#Week03" class="headerlink" title="Week03"></a>Week03</h1><h2 id="Fixed-Floating"><a href="#Fixed-Floating" class="headerlink" title="Fixed Floating"></a>Fixed Floating</h2><p>When the format defines a “fixed” position for the radix point within the number’s digits, it is called <strong>fixed-point</strong> </p>
+<p><img src="/2023/09/18/ECE252学习笔记/7.png" alt=""> </p>
+<h2 id="Floating-Point"><a href="#Floating-Point" class="headerlink" title="Floating-Point"></a>Floating-Point</h2><p>Floating-point: the format defines a way toe ncode the radix point location into the number(i.e., the position <strong>is not “fixed” in one place</strong>)</p>
+<ul>
+<li><p>More flexibility than fixed-point… and more complexity!</p>
+</li>
+<li><p>Scientific Notation is floating-point</p>
+</li>
+</ul>
+<h2 id="IEEE-32-Bit-Floating-Point"><a href="#IEEE-32-Bit-Floating-Point" class="headerlink" title="IEEE 32-Bit Floating-Point"></a>IEEE 32-Bit Floating-Point</h2><p><img src="/2023/09/18/ECE252学习笔记/6.png" alt="">  </p>
+<p>$(-1)^{sign} <em> 1.signficand </em> 2 ^{exponent-127}$</p>
+<h2 id="Format-Comparison"><a href="#Format-Comparison" class="headerlink" title="Format Comparison"></a>Format Comparison</h2><p><img src="/2023/09/18/ECE252学习笔记/8.png" alt="">  </p>
+<p><strong>Range</strong>: from the leftmost to the rightmostrepresentable values on the number line</p>
+<p><strong>Precision</strong>: number of significant digits</p>
+<p>Integer: $XXXX XXXX$ </p>
+<ul>
+<li><p>precision: 8 bits</p>
+</li>
+<li><p>range: $[0,2^8-1]$</p>
+</li>
+</ul>
+<p>Fixed: $XXXX.XXXX$</p>
+<ul>
+<li><p>precision: 8 bits</p>
+</li>
+<li><p>range: $[0,2^4-1+ 1- 2^{-4}]$</p>
+</li>
+</ul>
+<p>Float: $1.XXXX * 2^{XXXX}$</p>
+<ul>
+<li><p>precision: <strong>5 bits</strong> notes（不需要转成十进制） precision=1+significand</p>
+</li>
+<li><p>range: $[1,(1+1-2^{-4} )* 2^{2^4-1}]$</p>
+</li>
+</ul>
+<h2 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h2><p>A computer stores text in memory as <strong>binary</strong></p>
+<p>It uses <strong>8 binary-bits, 2 hex-bits (has been extended)</strong> to represent <strong>128</strong> different characters </p>
+<p>Alphanumeric characters A-Z, a-z,0-9, encoded to allow easy sorting and transformation</p>
+<h1 id="Week04"><a href="#Week04" class="headerlink" title="Week04"></a>Week04</h1><h2 id="Logic-Functions"><a href="#Logic-Functions" class="headerlink" title="Logic Functions"></a>Logic Functions</h2><h3 id="Ones-and-Zeros"><a href="#Ones-and-Zeros" class="headerlink" title="Ones and Zeros"></a>Ones and Zeros</h3><ul>
+<li><p>Digital circuits manipulate voltage levels that weconsider more abstractly to be <strong>ones and zeros</strong></p>
+</li>
+<li><p>We call these circuits <strong>logic circuits</strong> because they operate on and produce <strong>Boolean</strong> results</p>
+</li>
+<li><p>Boolean variables have only two possible values<br>TRUE (corresponding to “one”)<br>FALSE (corresponding to “zero”)</p>
+</li>
+</ul>
+<h3 id="Logic-Operator"><a href="#Logic-Operator" class="headerlink" title="Logic Operator"></a>Logic Operator</h3><p>AND: $A \cdot B$</p>
+<p>OR: $A + B$</p>
+<p>NOT: $\bar{A}$</p>
+<p>XOR: $A \oplus B$ 相同是0，不同是1</p>
+<h3 id="The-Odd-Function"><a href="#The-Odd-Function" class="headerlink" title="The Odd Function"></a>The Odd Function</h3><p>ex:$(A \oplus B) \oplus C$</p>
+<p>output is 1 only when an odd # of the inputs are 1</p>
+<h3 id="Bitwise-Logic-Functions"><a href="#Bitwise-Logic-Functions" class="headerlink" title="Bitwise Logic Functions"></a>Bitwise Logic Functions</h3><p>A <strong>bitwise</strong> operation computes each bit of an N-bit result based on the value(s) in the<br>corresponding position of the N-bit operand(s) 按位运算</p>
+<h2 id="Combinational-Logic"><a href="#Combinational-Logic" class="headerlink" title="Combinational Logic"></a>Combinational Logic</h2><p>we think of logic circuits as having Boolean input values and <strong>producing Boolean results</strong><br>In reality, they are built from transistors that connecteach output to power or ground based on the design ofthe circuit and the <strong>voltage level</strong> of each input</p>
+<ul>
+<li><p>Logic circuits are at <strong>a higher level of abstraction</strong></p>
+</li>
+<li><p>Each transistor acts like a <strong>switch</strong>…</p>
+</li>
+</ul>
+<h3 id="Transistors"><a href="#Transistors" class="headerlink" title="Transistors"></a>Transistors</h3><p><img src="/2023/09/18/ECE252学习笔记/9.png" alt="">  </p>
+<p>A logic gate is an electric circuit that contains transistors that connect the output to power or ground based on the input voltage(s)</p>
+<ul>
+<li><p>power -&gt; voltage interpreted as logic 1</p>
+</li>
+<li><p>ground -&gt; voltage interpreted as loaic 0</p>
+<p>  NOT gate use 2 transistors</p>
+</li>
+</ul>
+<h3 id="Logic-Gates"><a href="#Logic-Gates" class="headerlink" title="Logic Gates"></a>Logic Gates</h3><p><img src="/2023/09/18/ECE252学习笔记/10.png" alt="">  </p>
+<h2 id="Combinational-Blocks"><a href="#Combinational-Blocks" class="headerlink" title="Combinational Blocks"></a>Combinational Blocks</h2><h3 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h3><p>Converts an <strong>n-bit</strong> input codeword into a unique m-bit output value, where $m=2^n$</p>
+<p><strong>Exactly one</strong> output can be true at any given time</p>
+<p>Here we are only concerned with how the decoder <strong>behaves</strong>, not how it is constructed internally</p>
+<p>If the input value is N, the output is N</p>
+<p><img src="/2023/09/18/ECE252学习笔记/11.png" alt="">  </p>
+<h3 id="Multiplexers-Muxes"><a href="#Multiplexers-Muxes" class="headerlink" title="Multiplexers(Muxes)"></a>Multiplexers(Muxes)</h3><p>Selection: based on the select input(s), choose one of the data inputs to drive the output</p>
+<ul>
+<li><p>Output is equal to <strong>one</strong> of the data inputs</p>
+</li>
+<li><p><strong>Select inputs</strong> indicate which data input</p>
+</li>
+</ul>
+<p>n select lines, $2^n$ input lines</p>
+<p><img src="/2023/09/18/ECE252学习笔记/12.png" alt="">  </p>
+<p>Data inputs must <strong>be labeled</strong> to indicate which input is chosen for <strong>a given select value</strong><br>Select inputs must <strong>be labeled</strong> so we know <strong>the ordering of bits</strong> within the select value We need to interpret the select as a binary number</p>
+<p>Exception: a 2:1 mux has only one select signal so it does not need a label</p>
+<h3 id="Adders"><a href="#Adders" class="headerlink" title="Adders"></a>Adders</h3><h4 id="Full-adder"><a href="#Full-adder" class="headerlink" title="Full adder:"></a>Full adder:</h4><p><strong>Accept three inputs</strong>: a bit from each addend and a carry value from bit position to the right<br><strong>Produce two outputs</strong>: the sum bit at that position, and a carry value to send to the bit position to the left</p>
+<p>A full adder performs addition for <strong>a single bit position</strong></p>
+<p>Cout,Cin: 进位</p>
+<h4 id="Ripple-Carry-Adder"><a href="#Ripple-Carry-Adder" class="headerlink" title="Ripple Carry Adder"></a>Ripple Carry Adder</h4><p>A series of full adders, where each full adder performs the addition for a single bit position.</p>
+<p><img src="/2023/09/18/ECE252学习笔记/13.png" alt="">  </p>
+<h1 id="Week05"><a href="#Week05" class="headerlink" title="Week05"></a>Week05</h1><h2 id="Combinational-Logic-1"><a href="#Combinational-Logic-1" class="headerlink" title="Combinational Logic"></a>Combinational Logic</h2><p>So far, all of the logic circuits we have talked about have been combinational</p>
+<ul>
+<li><p>Circuit outputs only depend on current input values</p>
+</li>
+<li><p>Adder, Mux, Decoder,</p>
+</li>
+</ul>
+<h2 id="Sequential-Circuits"><a href="#Sequential-Circuits" class="headerlink" title="Sequential Circuits"></a>Sequential Circuits</h2><ul>
+<li><p>Some systems need to store information about <strong>past behavior</strong> to know how to react to inputs</p>
+</li>
+<li><p>Sometimes just need to store data for later access</p>
+</li>
+</ul>
+<h2 id="Flip-Flop"><a href="#Flip-Flop" class="headerlink" title="Flip-Flop"></a>Flip-Flop</h2><p>It has <strong>one bit</strong> of data input, <strong>one bit</strong> of data output<br>It also has a “clock” input that controls when the value carried by the input signal is stored into the flip-flop</p>
+<p>The value held by a flip-flop cannot change until the clock allows it(or power is lost to the system…)</p>
+<p>The flip-flop’s output is always equal to the value it is storing</p>
+<p><img src="/2023/09/18/ECE252学习笔记/14.png" alt="">  </p>
+<h3 id="Clock-signal"><a href="#Clock-signal" class="headerlink" title="Clock signal"></a>Clock signal</h3><p>A clock is a special signal that oscillates between 1and 0 at a specific frequency</p>
+<p><img src="/2023/09/18/ECE252学习笔记/15.png" alt=""> </p>
+<p>This D flip-flop updates when the clock transitions from 0 to 1(rising edge)</p>
+<p>The flip-flop input is only stored at the rising clock edge(“triggering” edge)</p>
+<h3 id="Counter-Circuit"><a href="#Counter-Circuit" class="headerlink" title="Counter Circuit"></a>Counter Circuit</h3><p>约等于每次给自己加1</p>
+<p><img src="/2023/09/18/ECE252学习笔记/23.png" alt="">  </p>
+<h2 id="Finite-State-Machine"><a href="#Finite-State-Machine" class="headerlink" title="Finite State Machine"></a>Finite State Machine</h2><p>Any practical sequential circuit is a Finite State Machine (FSM)</p>
+<p>State: current “status” -&gt; the contents of the flip-flops</p>
+<ul>
+<li><p>state diagram of a Flip-Flop only 2 state</p>
+</li>
+<li><p>counter state diagram only 4 state</p>
+</li>
+</ul>
+<p>Each state in an FSM is assigned <strong>a binary code</strong></p>
+<ul>
+<li><p>The FSM contains <strong>one flip-flop per bit</strong> of state</p>
+</li>
+<li><p>During operation, the code stored in the FSM’s flip-flopstells us (and the machine) which is the <strong>current state</strong>.</p>
+</li>
+<li><p>The next state becomes the current state when theflip-flop contents are updated</p>
+</li>
+</ul>
+<p>The FSM’s behavior depends both upon the <strong>current state and the input(s)</strong></p>
+<ul>
+<li>The next state is <strong>a function of the current state and current input values</strong></li>
+</ul>
+<h3 id="Hardware-Design"><a href="#Hardware-Design" class="headerlink" title="Hardware Design"></a>Hardware Design</h3><p>A register is a group of flip-flops used to storemulti-bit binary values</p>
+<p><img src="/2023/09/18/ECE252学习笔记/16.png" alt=""> </p>
+<h2 id="Register-Memory"><a href="#Register-Memory" class="headerlink" title="Register Memory"></a>Register Memory</h2><h3 id="Register"><a href="#Register" class="headerlink" title="Register"></a>Register</h3><p>A register is a group of flip-flops used to <strong>store multi-bit binary values</strong></p>
+<h3 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a>Counter</h3><p>Use adders and registers</p>
+<p><img src="/2023/09/18/ECE252学习笔记/24.png" alt=""> </p>
+<h3 id="Enable"><a href="#Enable" class="headerlink" title="Enable"></a>Enable</h3><p>Sometimes we want a flip-flop to “hold” its value for multiple clock cycles, regardless of its input</p>
+<ul>
+<li>But a flip-flop always stores the input value at the triggering edge of the clock…</li>
+</ul>
+<p>Solution: add logic so that we can choose to store a new value or the value already in the flip-flop</p>
+<ul>
+<li>Selection <strong>based on the value of a special input signal</strong> called an enable</li>
+</ul>
+<p><img src="/2023/09/18/ECE252学习笔记/18.png" alt=""></p>
+<p><img src="/2023/09/18/ECE252学习笔记/19.png" alt=""> </p>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>$M$-bits number specifies $2^M$ locations</p>
+<p>Each location stores a single N-bit word</p>
+<p>$N$ is the data size of the memory</p>
+<p>The capacity of a memory is: $2^M * N$</p>
+<p>A memory is conceptually like <strong>an array of registers</strong> </p>
+<p><strong>Only one location</strong> can be accessed at a time,either to write (store) a value or read a value</p>
+<p>To access a register, we index into the array using the address for that register</p>
+<p>set WE to 1 for write, WE to 1 for read</p>
+<p><strong>In a memory :</strong></p>
+<ul>
+<li><p>$n$-bits address for $2^n$ locatioins </p>
+</li>
+<li><p>the number of address bits dictates <strong>the maximum number</strong> of addressable locations in the memory</p>
+</li>
+</ul>
+<p>Address selects which register supplies data out using <strong>muxs</strong></p>
+<p>Address selects which register using <strong>decoders</strong></p>
+<p><img src="/2023/09/18/ECE252学习笔记/20.png" alt=""> </p>
+<h3 id="Read"><a href="#Read" class="headerlink" title="Read"></a>Read</h3><p>using mux to select output location from read</p>
+<p>no inputs and we</p>
+<p><img src="/2023/09/18/ECE252学习笔记/21.png" alt=""> </p>
+<h3 id="Write"><a href="#Write" class="headerlink" title="Write"></a>Write</h3><p>input data, using decoder to select address to write, we enable</p>
+<p>no mux and output</p>
+<p><img src="/2023/09/18/ECE252学习笔记/22.png" alt=""> </p>
 
             </div>
 
