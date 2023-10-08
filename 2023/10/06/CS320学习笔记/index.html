@@ -173,7 +173,250 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
 
-                
+                <pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> CS320学习笔记
+<span class="token key atrule">date</span><span class="token punctuation">:</span> 2023/10/7 19<span class="token punctuation">:</span><span class="token datetime number">11:08</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> python
+<span class="token punctuation">-</span> study_notes
+<span class="token key atrule">categories</span><span class="token punctuation">:</span> 
+<span class="token punctuation">-</span> CS
+<span class="token punctuation">-</span> PYTHON
+<span class="token punctuation">-</span> ALGORITHM
+<span class="token key atrule">thumbnail</span><span class="token punctuation">:</span> /images/0051.jpg
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Reproducibility"><a href="#Reproducibility" class="headerlink" title="Reproducibility"></a>Reproducibility</h1><p><strong>reproducibility</strong>: others can run our analysis code and get same results</p>
+<p>Each process owns address space (one huge list)</p>
+<p>Multiple lists start at different address in address space; normally, append is faster than pop, since pop need to move all next items forward 4 bytes.</p>
+<p>Use ASCII to store strings, use specific <strong>ISA to store codes</strong>.</p>
+<p>CPU interact with memory: </p>
+<ul>
+<li><p>keep track of what instruction we’re on</p>
+</li>
+<li><p>understand instruction codes</p>
+</li>
+</ul>
+<p>A CPU can <strong>only run programs</strong> that <strong>use instructions it understands</strong>.</p>
+<p><strong>CPU:</strong> chip that executes instructions, tracks position in code</p>
+<p>process: a running program</p>
+<h2 id="Interpreters"><a href="#Interpreters" class="headerlink" title="Interpreters"></a>Interpreters</h2><p>make it easier to run the same code on different machines</p>
+<p>A compiler is another tool for running the same code on different CPUs</p>
+<p>Interpreter <strong>translates Python code</strong> into machine code for a give CPU instruction set, </p>
+<p>hiding details about the <strong>CPU’s instruction</strong> set from the programmer.</p>
+<p>Translate from the instructions of one CPU architecture to instructions of a different CPU architecture.</p>
+<h2 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h2><p>OS jobs: Allocate and Abstract Resources, software that <strong>manage computer hardware and software resources</strong>, providing a stable and consistent interface for users and applications to interact with the computer system.</p>
+<p>Only one process can run on CPU at a time  (or a few things if the CPU has multiple “cores”)</p>
+<ul>
+<li><p>process management</p>
+</li>
+<li><p>memory management</p>
+</li>
+</ul>
+<p>The Python interpreter mostly lets you [Python Programmer] ignore the CPU you run on.</p>
+<p>But you still need to work a bit to “fit” the code to the OS.</p>
+<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><p>version control system tools</p>
+<p>features:</p>
+<ul>
+<li><p>it allows people to create snapshots of their work even while offline</p>
+</li>
+<li><p>it allows programmers to document the changes they made</p>
+</li>
+<li><p>it allows multiple version of history in the same repo</p>
+</li>
+<li><p>it sometimes automatically resolves conflicts</p>
+</li>
+<li><p><del>it automatically creates commits at regular intervals, it automatically creates commits when files change</del></p>
+</li>
+</ul>
+<p><strong>git branch:</strong> list your branches. a * will appear next to the currently active branch</p>
+<p><strong>git checkout:</strong> switch to another branch and check it out into your working directory</p>
+<p><strong>HEAD:</strong> wherever you currently are (only one of these) , * means where your HEAD is</p>
+<p><strong>tag:</strong> label tied to a specific commit number  </p>
+<p><strong>branch:</strong> label tied to end of chain (moves upon new commits</p>
+<p><strong>commit:</strong> a snapshot of files at a point in time</p>
+<p><strong>merge:</strong> to combine changes on another branch into the current branch  </p>
+<p><strong>conflict:</strong> differences that cannot automatically be merged</p>
+<p><strong>headless:</strong> HEAD does not point to any branch</p>
+<p><strong>Detached HEAD:</strong> refers to a situation where the <strong>HEAD</strong> pointer (which usually points to a branch reference) <strong>directly points to a specific commit</strong>, <strong>rather than pointing to the latest commit of a branch</strong>. </p>
+<p>In simpler terms, when you’re working in a normal branch (say, “master” or “main”), the HEAD points to the name of that branch, and that branch name points to the latest commit. </p>
+<p>Any new commits you make will advance the branch to point to the newer commit, and HEAD follows along because it’s pointing to the branch name.</p>
+<p><img src="/2023/10/06/CS320学习笔记/1.png" alt=""></p>
+<p>As you can see, HEAD points to the controller branch, which points to the last commit. Everything looks perfect. After running <strong>git checkout 87ec91d,</strong> the repo looks like this:</p>
+<p><img src="/2023/10/06/CS320学习笔记/2.png" alt=""></p>
+<p>This is the detached HEAD state; HEAD is pointing directly to a commit instead of a branch.</p>
+<p>git demonstration</p>
+<p><img src="/2023/10/06/CS320学习笔记/3.png" alt=""></p>
+<p>If you’re on branch <strong>x</strong> and run ‘git merge y’, then you will point to new branch named <strong>x</strong></p>
+<p>When making a git commit, the head is recommend to point to <strong>branch</strong>, otherwise may cause detached HEAD problem</p>
+<p><strong>checkout:</strong></p>
+<ul>
+<li><p>output is <strong>bytes</strong>, not string</p>
+</li>
+<li><p><code>checkout([&quot;git&quot;,&quot;commit&quot;,cwd=&quot;directory_name&quot;)</code></p>
+</li>
+</ul>
+<h1 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h1><p>Things that affect performance:</p>
+<ul>
+<li>speed of the computer (CPU, etc)  </li>
+<li>speed of Python (quality+efficiency of interpretation)  </li>
+<li>algorithm: strategy for solving the problem  </li>
+<li>input size: how much data do we have?</li>
+</ul>
+<p>when analyze complexity, only care about big inputs</p>
+<p><img src="/2023/10/06/CS320学习笔记/4.png" alt=""></p>
+<p>A step is any unit of work with boudned execution time. (“bounded” does not mean “fixed”)</p>
+<h2 id="Big-O"><a href="#Big-O" class="headerlink" title="Big O"></a>Big O</h2><p>If $f(N) \leq C * g(N)$, then $f(N) \in O(g(N))$</p>
+<p><strong>Common complexity for list operation:</strong></p>
+<ul>
+<li><p>$O(1)$: <code>len(L),L[-1],L[-10],L.append(x),L.pop(-1)</code></p>
+</li>
+<li><p>$O(N)$: <code>L.insert(0,x),L.pop(0),max(L),min(L),sum(L),L2.extend(L1),found x in L</code></p>
+</li>
+</ul>
+<p><strong>Special case:</strong></p>
+<p>for <code>deque</code>(双端队列): $O(1)$<code>deque.popleft(0),deque.pop()</code></p>
+<p>for <code>heapq</code>(小根堆): $O(1)$ <code>heapq.heappop()</code></p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p>看图说话</p>
+<p><img src="/2023/10/06/CS320学习笔记/5.png" alt=""></p>
+<p><img src="/2023/10/06/CS320学习笔记/6.png" alt=""></p>
+<p><img src="/2023/10/06/CS320学习笔记/7.png" alt=""></p>
+<h1 id="Object-Oriented-Programming"><a href="#Object-Oriented-Programming" class="headerlink" title="Object Oriented Programming"></a>Object Oriented Programming</h1><p><img src="/2023/10/06/CS320学习笔记/8.png" alt=""></p>
+<p><code>Dog.speak(fido,5)</code>is NOT an example of type-based dispatch</p>
+<p><code>fido.speak(5)</code>is preferred</p>
+<p><code>def __init__(dog,name,age):</code> <code>self</code> is better than <code>dog</code> for the receiver parameter</p>
+<h2 id="Special-Methods"><a href="#Special-Methods" class="headerlink" title="Special Methods"></a>Special Methods</h2><p>Not all <code>__some__</code> is special methods</p>
+<p><strong>implicitly</strong> called</p>
+<h3 id="str-vs-repr"><a href="#str-vs-repr" class="headerlink" title="__str__ vs__repr__"></a><code>__str__</code> vs<code>__repr__</code></h3><p> <code>__str__</code>, <code>__repr__</code>, control how an object looks when we print it or see it in <code>Out[N]</code> <code>print(),str()</code>方法会调用到<code>__str__</code>方法，<code>print(),str(),repr()</code>方法会调用<code>__repr__</code>方法。从下面的例子可以看出，当两个方法同时定义时，Python会优先搜索并调用<code>__str__</code>方法。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">class</span> <span class="token class-name">Str</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">def</span> <span class="token function">__str__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>         <span class="token keyword">return</span> <span class="token string">"__str__ called"</span>    
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">def</span> <span class="token function">__repr__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>         <span class="token keyword">return</span> <span class="token string">"__repr__ called"</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 
+<span class="token operator">>></span><span class="token operator">></span> s <span class="token operator">=</span> Str<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">print</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+__str__ called
+<span class="token operator">>></span><span class="token operator">></span> repr<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token string">'__repr__ called'</span>
+<span class="token operator">>></span><span class="token operator">></span> str<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+<span class="token string">'__str__ called'</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong><code>__repr__</code></strong></p>
+<ul>
+<li>The <code>__repr__</code> method is used to define the “official” string representation of an object. It is used by the <code>repr()</code> built-in function and by backticks (<code>`</code>) in Python 2.x.</li>
+<li>The string returned by <code>__repr__</code> should be a valid Python expression that, when evaluated, would create an object with the same state as the original object. In other words, it should be unambiguous and precise.</li>
+<li>This method is <strong>primarily used for debugging and development purposes</strong>.</li>
+</ul>
+<p><strong><code>__str__</code>:</strong></p>
+<ul>
+<li>The <code>__str__</code> method is used to define the <strong>“informal” or “user-friendly”</strong> string representation of an object. It is used by the <code>str()</code> built-in function and by the <code>print()</code> function.</li>
+<li>The string returned by <code>__str__</code> should be readable and understandable to users.</li>
+<li>If <code>__str__</code> is not defined, the <code>__repr__</code> method will be used as a fallback.</li>
+</ul>
+<p>In summary, <code>__repr__</code> is more for <strong>developers</strong>, providing <strong>a detailed and unambiguous representation*</strong> of an object, while <code>__str__</code> is for <strong>users</strong>, presenting a <strong>more user-friendly and readable representation</strong> of the object. It’s common to implement <code>__repr__</code> and optionally <code>__str__</code> for your custom classes to enhance their debuggability and usability.</p>
+<p><code>__repr_html__</code>, generate HTML to create more visual representaitons of objects in Jupyter.</p>
+<p><code>__eq__</code>, <code>__ne__</code>, <code>__lt__</code>, <code>__ge__</code>,<code>__le__</code>, <code>__ge__</code>,define how ==, !=, &lt;, &gt;, &lt;=, &gt;= behaves for two different objects, for <code>sorted</code>, must implement <code>__lt__</code></p>
+<p><code>__len__</code>, <code>__getitem__</code>, build our own sequences that we <code>index</code>, <code>slice</code>, and <code>loop</code> over. </p>
+<p><code>__enter__</code>, <code>__exit__</code>, context managers, (like automatically close file)</p>
+<p>with语句，先调用<code>__enter__</code>在<code>__init__</code>之后，在with结束后调用<code>__exit__</code></p>
+<p>positional arguments includes <code>self</code></p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">getgrade</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">""" This function computes a grade given a score"""</span>
+    <span class="token keyword">if</span> score <span class="token operator">></span> <span class="token number">80</span><span class="token punctuation">:</span>
+        grade <span class="token operator">=</span> <span class="token string">'A'</span>
+    <span class="token keyword">elif</span> <span class="token number">80</span> <span class="token operator">></span> score <span class="token operator">></span> <span class="token number">70</span><span class="token punctuation">:</span>
+        grade <span class="token operator">=</span> <span class="token string">'B'</span>
+    <span class="token keyword">elif</span> <span class="token number">70</span> <span class="token operator">></span> score <span class="token operator">></span> <span class="token number">60</span><span class="token punctuation">:</span>
+        grade <span class="token operator">=</span> <span class="token string">'C'</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        grade <span class="token operator">=</span> <span class="token string">'D'</span>
+
+    <span class="token keyword">return</span> name <span class="token operator">+</span> <span class="token string">" had grade: "</span> <span class="token operator">+</span> grade 
+getgrade<span class="token punctuation">(</span><span class="token string">'prince'</span><span class="token punctuation">,</span> <span class="token number">78</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># To call this function using positional arguments:</span>
+getgrade<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">'prince'</span><span class="token punctuation">,</span> score<span class="token operator">=</span><span class="token number">78</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># using keyword arguments:  </span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>positional arguments就是不带=，带=就是keyword</p>
+<p>Attributes are the individual data items or characteristics associated with an object.</p>
+<ul>
+<li><p>class attribute </p>
+</li>
+<li><p>instance attribute</p>
+</li>
+</ul>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyClass</span><span class="token punctuation">:</span>
+    class_attribute <span class="token operator">=</span> <span class="token number">42</span>  <span class="token comment" spellcheck="true"># 'class_attribute' is a class attribute</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>value <span class="token operator">=</span> value  <span class="token comment" spellcheck="true"># 'value' is an instance attribute</span>
+
+obj1 <span class="token operator">=</span> MyClass<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>value<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># Out put 10</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span>class_attribute<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># Output: 42</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Assume <code>Car</code> is one of the child class of <code>Vehicle</code>. Which of the following allows me to call the <code>drive()</code> method defined in the <code>Vehicle</code> class within the <code>Car</code> class? </p>
+<ul>
+<li><p><code>super().drive()</code></p>
+</li>
+<li><p><code>Vehicle.drive(self)</code></p>
+</li>
+</ul>
+<p>The X class is a parent of the Y class; both have an <code>__init__</code>method. Both <code>__init__</code> methods are guaranteed to run when a new instance of Y is created, regardless of the code in Y’s <code>__init__</code> method.</p>
+<ul>
+<li>False</li>
+</ul>
+<p>htop shows <strong>how much memory is being used</strong></p>
+<p>TextIOWrapper is for <strong>converting bytes to str</strong></p>
+<p>What is the benefit of reading a CSV inside a .zip file directly from Python, without unzipping it from the command line first?</p>
+<ul>
+<li>to save storage space </li>
+</ul>
+<p>What is the benefit of using <code>csv.DictReader</code> instead of <code>pd.read_csv</code> ?</p>
+<ul>
+<li>save memory space</li>
+</ul>
+<h1 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h1><h2 id="Call-graph"><a href="#Call-graph" class="headerlink" title="Call graph"></a>Call graph</h2><p><img src="/2023/10/06/CS320学习笔记/9.png" alt=""></p>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>global frams hold all global variables</p>
+<p>stack frams <strong>hold local variables</strong></p>
+<p>Each function can have <strong>multiple</strong> frames on the stack at a time.</p>
+<p><img src="/2023/10/06/CS320学习笔记/10.png" alt=""></p>
+<p><img src="/2023/10/06/CS320学习笔记/11.png" alt=""></p>
+<h1 id="BST"><a href="#BST" class="headerlink" title="BST"></a>BST</h1><p>左儿子比自己小，右儿子比自己大，建树和输入顺序有关系</p>
+<p>randomly input 会让树更balanced</p>
+<p>insert 复杂度 $O(H)$ 最坏$O(N)$ 最好$O(logN)$ <img src="/2023/10/06/CS320学习笔记/12.png" alt=""></p>
+<h1 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h1><p>DAG : 有向无环图</p>
+<p>Strongly connected: 强连通图，考虑direction，所有节点都能相互走到</p>
+<p>Weakly connected：弱联通，忽略方向，所有节点都能互相到达</p>
+<p>Acyclic：无环</p>
+<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p>用stack栈，每次加入节点的孩子，先加大的再小的（保证尾巴先出来的是小的），尾进尾出</p>
+<p>对于环，遇到已经加到栈的孩子仍然新加一个相同的</p>
+<p>A</p>
+<p>H B</p>
+<p>H E C</p>
+<p>H E D</p>
+<p>H E</p>
+<p>H G F</p>
+<p>H G</p>
+<p>H</p>
+<p>M I</p>
+<p>M L K J</p>
+<p>M L</p>
+<p>M</p>
+<p>A, B, C, D, E, F, G, H, I, J, K, L ,M</p>
+<p><img src="/2023/10/06/CS320学习笔记/14.png" alt=""></p>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>用deque双端队列，每次加入节点的孩子，先加小的再大的，头进尾出</p>
+<p>A</p>
+<p>H B</p>
+<p>G D C H</p>
+<p>I G D C </p>
+<p>I G D</p>
+<p>F E I G</p>
+<p>F E I</p>
+<p>K J F E</p>
+<p>K J F</p>
+<p>K J</p>
+<p>K</p>
+<p>A, B, H, C, D, G, I, E, F, J, K</p>
+<p><img src="/2023/10/06/CS320学习笔记/13.png" alt=""></p>
+
             </div>
 
             <!-- Post Comments -->
