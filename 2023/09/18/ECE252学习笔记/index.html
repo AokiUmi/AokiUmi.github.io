@@ -391,10 +391,16 @@
 </li>
 </ul>
 <h3 id="Logic-Gates"><a href="#Logic-Gates" class="headerlink" title="Logic Gates"></a>Logic Gates</h3><p><img src="/2023/09/18/ECE252学习笔记/10.png" alt="">  </p>
+<p>The shape of the gate allows us to visually determine all of these.</p>
+<p>The inputs of these gates don’t need to be labeled because in these functions, the order of inputs doesn’t matter.</p>
 <h2 id="Combinational-Blocks"><a href="#Combinational-Blocks" class="headerlink" title="Combinational Blocks"></a>Combinational Blocks</h2><h3 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h3><p>Converts an <strong>n-bit</strong> input codeword into a unique m-bit output value, where $m=2^n$</p>
 <p><strong>Exactly one</strong> output can be true at any given time</p>
 <p>Here we are only concerned with how the decoder <strong>behaves</strong>, not how it is constructed internally</p>
 <p>If the input value is N, the output is N</p>
+<p>When we represent a logic structure with a block, the internal details are hidden. When using the block in a logic circuit, we only need to know <strong>what the block does</strong>.</p>
+<p>Inside the block’s symbol, we label each pin to indicate <strong>the pin’s function in the underlying logic structure</strong>.</p>
+<p>When we draw signal names or Boolean values on the outside of the block near the pins, they indicate <strong>what is externally connected to the block</strong> (the Boolean value or signal name.</p>
+<p>We label each decoder output with a decimal number that <strong>is equal to the input code value that causes that output to be 1</strong>.</p>
 <p><img src="/2023/09/18/ECE252学习笔记/11.png" alt="">  </p>
 <h3 id="Multiplexers-Muxes"><a href="#Multiplexers-Muxes" class="headerlink" title="Multiplexers(Muxes)"></a>Multiplexers(Muxes)</h3><p>Selection: based on the select input(s), choose one of the data inputs to drive the output</p>
 <ul>
@@ -404,10 +410,13 @@
 </li>
 </ul>
 <p>n select lines, $2^n$ input lines</p>
+<p>The output of a multiplexer always has the same value as one of its <strong>data inputs</strong>.</p>
+<p>The multiplexer’s <strong>select inputs</strong> control which of its <strong>data inputs</strong> is sent to the output.</p>
 <p><img src="/2023/09/18/ECE252学习笔记/12.png" alt="">  </p>
 <p>Data inputs must <strong>be labeled</strong> to indicate which input is chosen for <strong>a given select value</strong><br>Select inputs must <strong>be labeled</strong> so we know <strong>the ordering of bits</strong> within the select value We need to interpret the select as a binary number</p>
 <p>Exception: a 2:1 mux has only one select signal so it does not need a label</p>
-<h3 id="Adders"><a href="#Adders" class="headerlink" title="Adders"></a>Adders</h3><h4 id="Full-adder"><a href="#Full-adder" class="headerlink" title="Full adder:"></a>Full adder:</h4><p><strong>Accept three inputs</strong>: a bit from each addend and a carry value from bit position to the right<br><strong>Produce two outputs</strong>: the sum bit at that position, and a carry value to send to the bit position to the left</p>
+<h3 id="Adders"><a href="#Adders" class="headerlink" title="Adders"></a>Adders</h3><h4 id="Full-adder"><a href="#Full-adder" class="headerlink" title="Full adder:"></a>Full adder:</h4><p>A structure that performs <strong>the addition for one bit position of a multi-bit binary addition</strong> operation.</p>
+<p><strong>Accept three inputs</strong>: a bit from each addend and a carry value from bit position to the right<br><strong>Produce two outputs</strong>: the sum bit at that position, and a carry value to send to the bit position to the left</p>
 <p>A full adder performs addition for <strong>a single bit position</strong></p>
 <p>Cout,Cin: 进位</p>
 <h4 id="Ripple-Carry-Adder"><a href="#Ripple-Carry-Adder" class="headerlink" title="Ripple Carry Adder"></a>Ripple Carry Adder</h4><p>A series of full adders, where each full adder performs the addition for a single bit position.</p>
@@ -419,12 +428,15 @@
 <li><p>Adder, Mux, Decoder,</p>
 </li>
 </ul>
-<h2 id="Sequential-Circuits"><a href="#Sequential-Circuits" class="headerlink" title="Sequential Circuits"></a>Sequential Circuits</h2><ul>
+<h2 id="Sequential-Circuits"><a href="#Sequential-Circuits" class="headerlink" title="Sequential Circuits"></a>Sequential Circuits</h2><p>The behavior of a <strong>sequential logic circuit</strong> is determined by <strong>both its current and past input values</strong>.</p>
+<ul>
 <li><p>Some systems need to store information about <strong>past behavior</strong> to know how to react to inputs</p>
 </li>
 <li><p>Sometimes just need to store data for later access</p>
 </li>
 </ul>
+<p>A circuit’s <strong>current state</strong> is the binary number that is currently stored in the circuit’s flip-flops.</p>
+<p>The <strong>state</strong> of a sequential logic circuit can change, <strong>only at the triggering (active) edge of its clock signal</strong>.</p>
 <h2 id="Flip-Flop"><a href="#Flip-Flop" class="headerlink" title="Flip-Flop"></a>Flip-Flop</h2><p>It has <strong>one bit</strong> of data input, <strong>one bit</strong> of data output<br>It also has a “clock” input that controls when the value carried by the input signal is stored into the flip-flop</p>
 <p>The value held by a flip-flop cannot change until the clock allows it(or power is lost to the system…)</p>
 <p>The flip-flop’s output is always equal to the value it is storing</p>
@@ -449,13 +461,15 @@
 </li>
 <li><p>During operation, the code stored in the FSM’s flip-flopstells us (and the machine) which is the <strong>current state</strong>.</p>
 </li>
-<li><p>The next state becomes the current state when theflip-flop contents are updated</p>
+<li><p>The next state becomes the current state when the flip-flop contents are updated</p>
 </li>
 </ul>
 <p>The FSM’s behavior depends both upon the <strong>current state and the input(s)</strong></p>
 <ul>
 <li>The next state is <strong>a function of the current state and current input values</strong></li>
 </ul>
+<p>A state diagram describes the <strong>behavior</strong> of a state machine by showing for each state, <strong>what it should do in response to the inputs</strong>.</p>
+<p>A given row of the state table lists the output value(s) it will produce for that row’s <strong>current state</strong>.</p>
 <h3 id="Hardware-Design"><a href="#Hardware-Design" class="headerlink" title="Hardware Design"></a>Hardware Design</h3><p>A register is a group of flip-flops used to storemulti-bit binary values</p>
 <p><img src="/2023/09/18/ECE252学习笔记/16.png" alt=""> </p>
 <h2 id="Register-Memory"><a href="#Register-Memory" class="headerlink" title="Register Memory"></a>Register Memory</h2><h3 id="Register"><a href="#Register" class="headerlink" title="Register"></a>Register</h3><p>A register is a group of flip-flops used to <strong>store multi-bit binary values</strong></p>
