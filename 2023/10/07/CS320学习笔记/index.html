@@ -191,7 +191,7 @@
 <p>A compiler is another tool for running the same code on different CPUs</p>
 <p>Interpreter <strong>translates Python code</strong> into machine code for a give CPU instruction set, </p>
 <p>hiding details about the <strong>CPU’s instruction</strong> set from the programmer.</p>
-<p>Translate from the instructions of one CPU architecture to instructions of a different CPU architecture.</p>
+<p>Translate Python code to CPU instructions</p>
 <h2 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h2><p>OS jobs: Allocate and Abstract Resources, software that <strong>manage computer hardware and software resources</strong>, providing a stable and consistent interface for users and applications to interact with the computer system.</p>
 <p>Only one process can run on CPU at a time  (or a few things if the CPU has multiple “cores”)</p>
 <ul>
@@ -234,6 +234,12 @@
 <p>This is the detached HEAD state; HEAD is pointing directly to a commit instead of a branch.</p>
 <p>git demonstration</p>
 <p><img src="/2023/10/07/CS320学习笔记/3.png" alt=""></p>
+<p><strong>fast forwarding:</strong> If master has not diverged, instead of creating a new commit, git will then simply point master to the latest commit of the feature branch. This is a “fast forward”.</p>
+<p><img src="/2023/10/07/CS320学习笔记/16.png" alt=""></p>
+<p><img src="/2023/10/07/CS320学习笔记/15.png" alt=""></p>
+<p>如果合并的两个branch在一条线上，git checkout 前面的branch，merge后面的，就会触发fast forwarding</p>
+<p><code>--no--ff</code> means 不用fast forwarding</p>
+<p><img src="/2023/10/07/CS320学习笔记/17.png" alt=""></p>
 <p>If you’re on branch <strong>x</strong> and run ‘git merge y’, then you will point to new branch named <strong>x</strong></p>
 <p>When making a git commit, the head is recommend to point to <strong>branch</strong>, otherwise may cause detached HEAD problem</p>
 <p><strong>checkout:</strong></p>
@@ -263,7 +269,8 @@
 </ul>
 <p><strong>Special case:</strong></p>
 <p>for <code>deque</code>(双端队列): $O(1)$<code>deque.popleft(0),deque.pop()</code></p>
-<p>for <code>heapq</code>(小根堆): $O(1)$ <code>heapq.heappop()</code></p>
+<p>for <code>heapq</code>(小根堆): $O(1ogN)$ <code>heapq.heappop(), heapq.heappush(x)</code></p>
+<p>$O(N)$ <code>heapq.heapify(L)</code></p>
 <h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p>看图说话</p>
 <p><img src="/2023/10/07/CS320学习笔记/5.png" alt=""></p>
 <p><img src="/2023/10/07/CS320学习笔记/6.png" alt=""></p>
@@ -311,7 +318,7 @@ __str__ called
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">getgrade</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">""" This function computes a grade given a score"""</span>
     <span class="token keyword">if</span> score <span class="token operator">></span> <span class="token number">80</span><span class="token punctuation">:</span>
-        grade <span class="token operator">=</span> <span class="token string">'A'</span>
+        grade <span class="token operator">=</span> <span class="token string">'A'</span>y
     <span class="token keyword">elif</span> <span class="token number">80</span> <span class="token operator">></span> score <span class="token operator">></span> <span class="token number">70</span><span class="token punctuation">:</span>
         grade <span class="token operator">=</span> <span class="token string">'B'</span>
     <span class="token keyword">elif</span> <span class="token number">70</span> <span class="token operator">></span> score <span class="token operator">></span> <span class="token number">60</span><span class="token punctuation">:</span>
@@ -363,8 +370,8 @@ obj1 <span class="token operator">=</span> MyClass<span class="token punctuation
 <li>save memory space</li>
 </ul>
 <h1 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h1><h2 id="Call-graph"><a href="#Call-graph" class="headerlink" title="Call graph"></a>Call graph</h2><p><img src="/2023/10/07/CS320学习笔记/9.png" alt=""></p>
-<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>global frams hold all global variables</p>
-<p>stack frams <strong>hold local variables</strong></p>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><p>global frames hold all global variables</p>
+<p>stack frames <strong>hold local variables</strong></p>
 <p>Each function can have <strong>multiple</strong> frames on the stack at a time.</p>
 <p><img src="/2023/10/07/CS320学习笔记/10.png" alt=""></p>
 <p><img src="/2023/10/07/CS320学习笔记/11.png" alt=""></p>
@@ -375,7 +382,8 @@ obj1 <span class="token operator">=</span> MyClass<span class="token punctuation
 <p>Strongly connected: 强连通图，考虑direction，所有节点都能相互走到</p>
 <p>Weakly connected：弱联通，忽略方向，所有节点都能互相到达</p>
 <p>Acyclic：无环</p>
-<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p>用stack栈，每次加入节点的孩子，先加大的再小的（保证尾巴先出来的是小的），尾进尾出</p>
+<h2 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h2><p>优先深节点</p>
+<p>用stack栈，每次加入节点的孩子，先加大的再小的（保证尾巴先出来的是小的），尾进尾出</p>
 <p>对于环，遇到已经加到栈的孩子仍然新加一个相同的</p>
 <p>A</p>
 <p>H B</p>
@@ -391,17 +399,18 @@ obj1 <span class="token operator">=</span> MyClass<span class="token punctuation
 <p>M</p>
 <p>A, B, C, D, E, F, G, H, I, J, K, L ,M</p>
 <p><img src="/2023/10/07/CS320学习笔记/14.png" alt=""></p>
-<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>用deque双端队列，每次加入节点的孩子，先加小的再大的，头进尾出</p>
+<h2 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h2><p>优先更浅的节点</p>
+<p>用deque双端队列，每次加入节点的孩子，先加小的再大的，尾进头出</p>
 <p>A</p>
-<p>H B</p>
-<p>G D C H</p>
-<p>I G D C </p>
-<p>I G D</p>
-<p>F E I G</p>
-<p>F E I</p>
-<p>K J F E</p>
-<p>K J F</p>
-<p>K J</p>
+<p>B H</p>
+<p>H C D G</p>
+<p>C D G I</p>
+<p>D G I</p>
+<p>G I E F</p>
+<p>I E F</p>
+<p>E F J K</p>
+<p>F J K</p>
+<p>J K</p>
 <p>K</p>
 <p>A, B, H, C, D, G, I, E, F, J, K</p>
 <p><img src="/2023/10/07/CS320学习笔记/13.png" alt=""></p>
